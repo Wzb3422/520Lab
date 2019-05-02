@@ -3,14 +3,14 @@ import Loadable from 'react-loadable'
 import Loading from '../common/Loading/index'
 
 const LoadableComponent = Loadable({
-  loader: () => import('./homepage'),
+  loader: () => import('./archivepage'),
   loading: Loading
 })
 
-class HomepageLoadable extends Component {
+class ArchiveLoadable extends Component {
   render() {
     return <LoadableComponent />
   }
 }
 
-export default HomepageLoadable
+export default ArchiveLoadable

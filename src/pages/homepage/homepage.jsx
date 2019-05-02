@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import {
   HomeWarpper,
+  Content,
   Box,
+  Logo,
   Btnred,
   Btnblack
 } from './style'
@@ -10,9 +13,13 @@ class Homepage extends Component {
   render() {
     return (
       <HomeWarpper>
-        <Box></Box>
-        <Btnred>发起研究</Btnred>
-        <Btnblack>研究档案</Btnblack>
+        <Content>
+          <Box>
+            <Logo/>
+          </Box>
+          <Link to="/new/"><Btnred>发起研究</Btnred></Link>
+          <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
+        </Content>
       </HomeWarpper>
     );
   }

@@ -45,7 +45,12 @@ const GlobalReset = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  /* 下面是自定义的全局样式 */
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600');
+  
+  a {
+    text-decoration: none;
+  }
 `
 
 export default GlobalReset

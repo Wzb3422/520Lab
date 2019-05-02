@@ -1,27 +1,49 @@
 import styled from 'styled-components'
 import outline from './img/outline.svg'
+import logo from './img/logo.png'
 import btnred from './img/btn-red.svg'
 import btnblack from './img/btn-black.svg'
 
 export const HomeWarpper = styled.div`
+  height: 100%;
+  widtH: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
 `
 
 export const Box = styled.div`
-  height: 356px;
+  height: 328px;
   width: 311px;
-  margin-top: 64px;
-  background: url(${outline});
+  background: url(${outline}) no-repeat;
+  margin-bottom: 36px;
+`
+
+export const Logo = styled.img.attrs({
+  src: logo
+})`
+  height: 66px;
+  width: 228px;
+  position: relative;
+  top: -30px;
+  left: 13%;
 `
 
 export const Btnred = styled.div`
   height: 76px;
   width: 206px;
-  margin-top: 36px;
   background: url(${btnred});
   font-size: 23px;
   line-height: 76px;
