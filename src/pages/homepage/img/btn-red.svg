@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="206px" height="76px" viewBox="0 0 206 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>发起研究</title>
+    <desc>Created with Sketch.</desc>
+    <g id="出题视角" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-85.000000, -461.000000)">
+            <g id="发起研究" transform="translate(85.000000, 461.786880)">
+                <path d="M1.67613903,4.47574926 L9.35676115,72.5070133 L197.300523,73.4928474 L204.343662,1.52428049 L1.67613903,4.47574926 Z" id="Rectangle" stroke="#2E2E2E" stroke-width="3" fill="#F8F8F8"></path>
+                <polygon id="Rectangle-Copy" fill="#FF446B" points="9 11.1084078 199 7 191.373422 67 16.5762718 66.9870141"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
