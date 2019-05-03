@@ -41,6 +41,19 @@ export const Logo = styled.img.attrs({
   left: 13%;
 `
 
+export const Name = styled.div`
+  position: relative;
+  width: 200px;
+  font-size: 23px;
+  top: 217px;
+  text-align: center;
+  color: #2e2e2e;
+  margin: auto;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+`
+
 export const Btnred = styled.div`
   height: 76px;
   width: 206px;
