@@ -18,6 +18,9 @@
     |-- favicon 网页图标
   - src 项目工程目录
     |-- pages 存放各页面文件夹
+    |   |-- archivepage 研究档案页
+    |   |-- common 公用组件\字体等
+    |   |-- homepage 首页
     |-- App.js 最高级组件 控制路由
     |-- index.js 项目入口文件
   - .gitignore

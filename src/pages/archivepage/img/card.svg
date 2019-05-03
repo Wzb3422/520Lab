@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="313px" height="96px" viewBox="0 0 313 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>card</title>
+    <desc>Created with Sketch.</desc>
+    <g id="出题视角" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="记录-出的题" transform="translate(-26.000000, -103.000000)">
+            <g id="card" transform="translate(26.000000, 103.000000)">
+                <polygon id="Rectangle-Copy" fill="#B3B3B3" points="5 20.0825866 313 14 313 92.0021542 15.1159195 96"></polygon>
+                <polygon id="Rectangle" fill="#2E2E2E" points="0 14.0825866 308 8 308 86.0021542 10.1159195 90"></polygon>
+                <polygon id="Rectangle" fill="#F8F8F8" points="3 19.7844992 299.56394 12 304 84 13.582072 84"></polygon>
+                <polygon id="Rectangle" fill="#FF446B" points="16 6.78658075 81 3 74.6644273 65 23.1921128 62.5434494"></polygon>
+                <polygon id="Rectangle-Copy-3" fill="#2E2E2E" points="13 3.72550686 75 0 68.9568384 61 19.8601691 58.5830712"></polygon>
+                <polygon id="Rectangle-Copy-2" fill="#F8F8F8" points="16.177979 7 71 3.00452478 63.7431147 54.9000454 22.6544467 54.9000454"></polygon>
+                <g id="你的答案" transform="translate(88.000000, 24.000000)"></g>
+                <g id="你的答案-copy" transform="translate(189.000000, 61.000000)" fill="#F8F8F8" font-family="PingFangSC-Semibold, PingFang SC" font-size="13" font-weight="500" letter-spacing="0.609375">
+                    <g id="B" transform="translate(0.030303, 0.000000)">
+                        <text>
+                            <tspan x="0" y="14">B</tspan>
+                        </text>
+                    </g>
+                </g>
+                <polygon id="Path-23-Copy-2" fill="#B3B3B3" points="206 34.8874246 212 61.3770577 283.63238 63.4157454 291.322179 33.1872442"></polygon>
+                <polygon id="Path-23" fill="#2E2E2E" points="202 31.7001804 208 58.1898136 279.63238 60.2285013 287.322179 30"></polygon>
+                <polygon id="Path-23-Copy" fill="#F8F8F8" points="206 34.4800283 212.194886 55.7021452 276.249605 56.5519189 282.624913 32.1248294"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
