@@ -6,7 +6,8 @@ import {
   Box,
   Logo,
   Btnred,
-  Btnblack
+  Btnblack,
+  Name
 } from './style'
 
 class Homepage extends Component {
@@ -16,6 +17,7 @@ class Homepage extends Component {
         <Content>
           <Box>
             <Logo/>
+            <Name>hahahaha</Name>
           </Box>
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
           <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
