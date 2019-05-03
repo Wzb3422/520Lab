@@ -6,6 +6,7 @@
 
 + 本项目采用yarn进行包管理
 + 所有组件采用[react-loadable](https://github.com/jamiebuilds/react-loadable)组件进行异步加载
++ 每个页面是组件化的 页面的state分别管理在每个页面对应的文件夹中 state请在mapStateToProps中引入， 对state的变更请在mapStateToDispatch中利用actionCreator派发事件， 在子reducer中接受并处理
 
 ## Path
 
@@ -19,8 +20,15 @@
   - src 项目工程目录
     |-- pages 存放各页面文件夹
     |   |-- archivepage 研究档案页
+    |   |   |-- img 图片
+    |   |   |-- store 本页的子级store
+    |   |   |   |-- index.js 出口文件
+    |   |   |   |-- reducer.js 本页的reducer 该页的所有对state的改变都在且仅在这里完成
     |   |-- common 公用组件\字体等
     |   |-- homepage 首页
+    |-- store 最高级store
+    |   |-- index.js 出口文件
+    |   |-- reducer.js 最高级reducer
     |-- App.js 最高级组件 控制路由
     |-- index.js 项目入口文件
   - .gitignore
