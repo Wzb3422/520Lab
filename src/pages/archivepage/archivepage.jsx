@@ -17,6 +17,7 @@ import { connect } from 'react-redux'
 import {
   actionCreator
 } from './store'
+import { Link } from 'react-router-dom'
 
 class Archive extends Component {
   render() {
@@ -42,25 +43,33 @@ class Archive extends Component {
               <Name>艺术家</Name>
               <Similarity>相似度</Similarity>
               <Rate>10%</Rate>
-              <Details>详细信息</Details>
+              <Link to="/detail/">
+                <Details>详细信息</Details>
+              </Link>
             </Card>
             <Card>
               <Name>艺术家</Name>
               <Similarity>相似度</Similarity>
               <Rate>10%</Rate>
-              <Details>详细信息</Details>
+              <Link to="/detail/">
+                <Details>详细信息</Details>
+              </Link>
             </Card>
             <Card>
               <Name>艺术家</Name>
               <Similarity>相似度</Similarity>
               <Rate>10%</Rate>
-              <Details>详细信息</Details>
+              <Link to="/detail/">
+                <Details>详细信息</Details>
+              </Link>
             </Card>
             <Card>
               <Name>艺术家</Name>
               <Similarity>相似度</Similarity>
               <Rate>10%</Rate>
-              <Details>详细信息</Details>
+              <Link to="/detail/">
+                <Details>详细信息</Details>
+              </Link>
             </Card>
             <BottomBtn>发起新的研究</BottomBtn>
           </Box>

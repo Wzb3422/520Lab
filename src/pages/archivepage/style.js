@@ -112,7 +112,8 @@ export const Details = styled.div`
   width: 80px;
   position: absolute;
   right: 28px;
-  top: 38px;
+  top: 30px;
+  line-height: 30px;
   font-size: 13px;
   text-align: center;
   font-weight: bold;
