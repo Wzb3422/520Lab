@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import {
   ArchiveWarpper,
+  Content,
   Title,
   LeftActive,
-  RightActive
+  RightActive,
+  Box,
+  Card,
+  Name,
+  Similarity,
+  Rate,
+  Details,
+  BottomBtn
 } from './style'
 import { connect } from 'react-redux'
 import {
@@ -14,20 +22,49 @@ class Archive extends Component {
   render() {
     return (
       <ArchiveWarpper>
-        <Title>
-          <LeftActive
-            active={this.props.active}
-            onClick={(e) => {this.props.switchHeader(e, 0)}}
-          >
-            发起的研究
-          </LeftActive>
-          <RightActive
-            active={this.props.active}
-            onClick={(e) => {this.props.switchHeader(e, 1)}}
-          >
-            参与的研究
-          </RightActive>
-        </Title>
+        <Content>
+          <Box>
+            <Title>
+              <LeftActive
+                active={this.props.active}
+                onClick={(e) => {this.props.switchHeader(e, 0)}}
+              >
+                发起的研究
+              </LeftActive>
+              <RightActive
+                active={this.props.active}
+                onClick={(e) => {this.props.switchHeader(e, 1)}}
+              >
+                参与的研究
+              </RightActive>
+            </Title>
+            <Card>
+              <Name>艺术家</Name>
+              <Similarity>相似度</Similarity>
+              <Rate>10%</Rate>
+              <Details>详细信息</Details>
+            </Card>
+            <Card>
+              <Name>艺术家</Name>
+              <Similarity>相似度</Similarity>
+              <Rate>10%</Rate>
+              <Details>详细信息</Details>
+            </Card>
+            <Card>
+              <Name>艺术家</Name>
+              <Similarity>相似度</Similarity>
+              <Rate>10%</Rate>
+              <Details>详细信息</Details>
+            </Card>
+            <Card>
+              <Name>艺术家</Name>
+              <Similarity>相似度</Similarity>
+              <Rate>10%</Rate>
+              <Details>详细信息</Details>
+            </Card>
+            <BottomBtn>发起新的研究</BottomBtn>
+          </Box>
+        </Content>
       </ArchiveWarpper>
     );
   }
