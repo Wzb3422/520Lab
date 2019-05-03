@@ -20,7 +20,7 @@ export const Title = styled.div`
 export const LeftActive = styled.div`
   width: 150px;
   height: 54px;
-  background: url(${leftactive}) no-repeat;
+  background: url(${props => props.active === 0 ? leftactive: null}) no-repeat;
   position: absolute;
   left: 12px;
   top: 10px;
@@ -33,12 +33,12 @@ export const LeftActive = styled.div`
 export const RightActive = styled.div`
   height: 41px;
   width: 135px;
-  background: url(${rightactive}) no-repeat;
+  background: url(${props => props.active === 1 ? rightactive : null}) no-repeat;
   position: absolute;
   right: 10px;
   top: 18px;
   font-size: 19px;
   color: #fff;
-  line-height: 40px;
+  line-height: 38px;
   text-align: center;
 `
