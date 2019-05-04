@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="169px" height="111px" viewBox="0 0 169 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>box</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="384.590821%" fx="50%" fy="384.590821%" r="384.590821%" gradientTransform="translate(0.500000,3.845908),scale(0.180046,1.000000),rotate(-90.000000),translate(-0.500000,-3.845908)" id="radialGradient-1">
+            <stop stop-color="#989898" offset="0%"></stop>
+            <stop stop-color="#BFBEBE" offset="100%"></stop>
+        </radialGradient>
+        <polygon id="path-2" points="29.0721247 38 20 44 148.417324 44 137.20808 38"></polygon>
+        <filter x="-5.5%" y="-83.3%" width="110.9%" height="333.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0803611866 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="记录-出的题" transform="translate(-104.000000, -254.000000)">
+            <g id="box" transform="translate(104.000000, 254.000000)">
+                <polygon id="Path-34" fill="#E1E1E1" points="29 38 37.6729418 111 128.917821 111 137.395957 38"></polygon>
+                <polygon id="Path-34-Copy" fill="#FF446B" points="41 51.3029026 49.2001352 102.002644 118.239969 102.887052 127.056694 50"></polygon>
+                <polygon id="Path-35" fill="#353535" points="62 62 65.5966026 88.0688544 72.4720617 88.0688544 71.4665565 62"></polygon>
+                <polygon id="Path-35" fill="#353535" points="104.542869 63 101.773957 86.9298892 95 86.9298892 96.1864348 63"></polygon>
+                <polygon id="Path-36" fill="url(#radialGradient-1)" points="29.0699706 38 137.20808 38 125.315252 18.530176 41.1354116 18.530176"></polygon>
+                <polygon id="Path-37" fill="#CFCFCF" points="41.1354116 19 12.8630705 7 -8.52651283e-14 25.0804015 29.1380538 38"></polygon>
+                <polygon id="Path-37-Copy" fill="#DADADA" transform="translate(146.770517, 22.548955) scale(-1, 1) translate(-146.770517, -22.548955) " points="168.541033 19.0979102 139.501643 7 125 25.4677923 157.070557 38.0979102"></polygon>
+                <polygon id="Path-38" fill="#D8D8D8" points="40.2093804 19 45.4459066 1.50674171 117.763887 0.471866715 125.315252 19"></polygon>
+                <g id="Path-39">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="#D5D5D5" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

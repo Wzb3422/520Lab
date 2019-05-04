@@ -5,6 +5,7 @@ import rightactive from './img/po2.svg'
 import card from './img/card.svg'
 import outline from './img/outline.svg'
 import bottombtn from './img/bottom_button.svg'
+import emptybox from './img/empty_box.svg'
 
 export const ArchiveWarpper = styled.div`
   position: absolute;
@@ -31,7 +32,7 @@ export const Title = styled.div`
   position: absolute;
   top: -20px;
   left: 10px;
-  z-index: 1;
+  z-index: 2;
 `
 
 export const Container = styled.div`
@@ -41,10 +42,11 @@ export const Container = styled.div`
   top:-13px;
 `
 export const Tip = styled.div`
+  text-align: center;
   position: relative;
-  top: 22px;
+  top: 124px;
   font-size: 16px;
-  width: 100px;
+  width: 300px;
   margin: auto;
   color: #2e2e2e;
 `
@@ -164,4 +166,21 @@ export const FilterButtom = styled.div`
   width: 314px;
   top: 466px;
   background: linear-gradient(rgba(0,0,0,0), #f8f8f8);;
+`
+
+export const EmptyBox = styled.img.attrs({
+  src: emptybox
+})`
+  position: relative;
+  width: 254px;
+  height: 104px;
+  margin-bottom: 15px;
+`
+
+export const TipText = styled.div`
+  color: #FF446B;
+  font-weight: 500;
+  font-size: ${props => (props.size === "large" ? 22 : 11)}px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 `
