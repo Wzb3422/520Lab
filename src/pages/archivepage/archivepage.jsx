@@ -13,7 +13,9 @@ import {
   RightActive,
   Similarity,
   Tip,
-  Title
+  Title,
+  FilterTop,
+  FilterButtom
 } from './style'
 import {connect} from 'react-redux'
 import {actionCreator} from './store'
@@ -71,6 +73,8 @@ class Archive extends Component {
                 参与的研究
               </RightActive>
             </Title>
+            <FilterTop/>
+            <FilterButtom/>
             <Container>
               {
                 List1.length === 0 ?

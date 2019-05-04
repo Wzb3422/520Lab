@@ -145,3 +145,23 @@ export const BottomBtn = styled.div`
   font-weight: bold;
   text-align: center;
 `
+
+export const FilterTop = styled.div`
+  position: absolute;
+  z-index: 1;
+  left: 12px;
+  height: 12px;
+  width: 314px;
+  top: 56px;
+  background: linear-gradient(#f8f8f8, rgba(0,0,0,0));
+`
+
+export const FilterButtom = styled.div`
+  position: absolute;
+  z-index: 1;
+  left: 12px;
+  height: 12px;
+  width: 314px;
+  top: 466px;
+  background: linear-gradient(rgba(0,0,0,0), #f8f8f8);;
+`
