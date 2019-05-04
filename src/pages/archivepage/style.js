@@ -31,12 +31,28 @@ export const Title = styled.div`
   position: absolute;
   top: -20px;
   left: 10px;
+  z-index: 1;
+`
+
+export const Container = styled.div`
+  overflow: auto;
+  height: 420px;
+  position: relative;
+  top:-13px;
+`
+export const Tip = styled.div`
+  position: relative;
+  top: 22px;
+  font-size: 16px;
+  width: 100px;
+  margin: auto;
+  color: #2e2e2e;
 `
 
 export const LeftActive = styled.div`
   width: 150px;
   height: 54px;
-  background: url(${props => props.active === 0 ? leftactive: null}) no-repeat;
+  background: url(${props => props.active === 0 ? leftactive : null}) no-repeat;
   position: absolute;
   left: 12px;
   top: 10px;
@@ -71,8 +87,7 @@ export const Card = styled.div`
   height: 96px;
   width: 313px;
   background: url(${card}) no-repeat;
-  margin-left: 12px;
-  margin-top: 5px;
+  margin: 5px 0 8px 12px;
   position: relative;
 `
 
@@ -93,7 +108,6 @@ export const Similarity = styled.div`
   bottom: 26px;
   left: 88px;
   font-size: 10px;
-  line-height: 10px;
   font-weight: bold;
 `
 
