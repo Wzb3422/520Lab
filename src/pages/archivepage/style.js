@@ -5,6 +5,7 @@ import rightactive from './img/po2.svg'
 import card from './img/card.svg'
 import outline from './img/outline.svg'
 import bottombtn from './img/bottom_button.svg'
+import emptybox from './img/empty_box.svg'
 
 export const ArchiveWarpper = styled.div`
   position: absolute;
@@ -31,12 +32,29 @@ export const Title = styled.div`
   position: absolute;
   top: -20px;
   left: 10px;
+  z-index: 2;
+`
+
+export const Container = styled.div`
+  overflow: auto;
+  height: 420px;
+  position: relative;
+  top:-13px;
+`
+export const Tip = styled.div`
+  text-align: center;
+  position: relative;
+  top: 124px;
+  font-size: 16px;
+  width: 300px;
+  margin: auto;
+  color: #2e2e2e;
 `
 
 export const LeftActive = styled.div`
   width: 150px;
   height: 54px;
-  background: url(${props => props.active === 0 ? leftactive: null}) no-repeat;
+  background: url(${props => props.active === 0 ? leftactive : null}) no-repeat;
   position: absolute;
   left: 12px;
   top: 10px;
@@ -71,8 +89,7 @@ export const Card = styled.div`
   height: 96px;
   width: 313px;
   background: url(${card}) no-repeat;
-  margin-left: 12px;
-  margin-top: 5px;
+  margin: 5px 0 8px 12px;
   position: relative;
 `
 
@@ -93,7 +110,6 @@ export const Similarity = styled.div`
   bottom: 26px;
   left: 88px;
   font-size: 10px;
-  line-height: 10px;
   font-weight: bold;
 `
 
@@ -130,4 +146,41 @@ export const BottomBtn = styled.div`
   font-size: 26px;
   font-weight: bold;
   text-align: center;
+`
+
+export const FilterTop = styled.div`
+  position: absolute;
+  z-index: 1;
+  left: 12px;
+  height: 12px;
+  width: 314px;
+  top: 56px;
+  background: linear-gradient(#f8f8f8, rgba(0,0,0,0));
+`
+
+export const FilterButtom = styled.div`
+  position: absolute;
+  z-index: 1;
+  left: 12px;
+  height: 12px;
+  width: 314px;
+  top: 466px;
+  background: linear-gradient(rgba(0,0,0,0), #f8f8f8);;
+`
+
+export const EmptyBox = styled.img.attrs({
+  src: emptybox
+})`
+  position: relative;
+  width: 254px;
+  height: 104px;
+  margin-bottom: 15px;
+`
+
+export const TipText = styled.div`
+  color: #FF446B;
+  font-weight: 500;
+  font-size: ${props => (props.size === "large" ? 22 : 11)}px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 `
