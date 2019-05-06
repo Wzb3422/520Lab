@@ -34,14 +34,14 @@ export const Title = styled.div`
   position: absolute;
   top: -20px;
   left: 10px;
-  z-index: 2;
+  translateZ: 2;
 `
 
 export const Container = styled.div`
   overflow: auto;
+  position: relative;  
   height: 420px;
-  position: relative;
-  top:-13px;
+  top: -13px;
 `
 export const Tip = styled.div`
   text-align: center;
@@ -152,22 +152,21 @@ export const BottomBtn = styled.div`
 
 export const FilterTop = styled.div`
   position: absolute;
-  z-index: 1;
   left: 12px;
   height: 12px;
   width: 314px;
   top: 56px;
-  background: linear-gradient(#f8f8f8, rgba(0, 0, 0, 0));
+  background: linear-gradient(#f8f8f8, rgba(255, 255, 255, 0));
 `
 
 export const FilterButtom = styled.div`
+  transformZ:100;
   position: absolute;
-  z-index: 1;
   left: 12px;
   height: 12px;
   width: 314px;
   top: 466px;
-  background: linear-gradient(rgba(0, 0, 0, 0), #f8f8f8);
+  background: linear-gradient(rgba(255, 255, 255, 0), #f8f8f8);
 `
 
 export const EmptyBox = styled.img.attrs({
