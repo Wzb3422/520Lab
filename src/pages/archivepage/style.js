@@ -6,6 +6,7 @@ import card from './img/card.svg'
 import outline from './img/outline.svg'
 import bottombtn from './img/bottom_button.svg'
 import emptybox from './img/empty_box.svg'
+import bigrate from './img/po3.svg'
 
 export const ArchiveWarpper = styled.div`
   position: absolute;
@@ -155,7 +156,7 @@ export const FilterTop = styled.div`
   height: 12px;
   width: 314px;
   top: 56px;
-  background: linear-gradient(#f8f8f8, rgba(0,0,0,0));
+  background: linear-gradient(#f8f8f8, rgba(0, 0, 0, 0));
 `
 
 export const FilterButtom = styled.div`
@@ -165,7 +166,7 @@ export const FilterButtom = styled.div`
   height: 12px;
   width: 314px;
   top: 466px;
-  background: linear-gradient(rgba(0,0,0,0), #f8f8f8);;
+  background: linear-gradient(rgba(0, 0, 0, 0), #f8f8f8);
 `
 
 export const EmptyBox = styled.img.attrs({
@@ -183,4 +184,29 @@ export const TipText = styled.div`
   font-size: ${props => (props.size === "large" ? 22 : 11)}px;
   margin-bottom: 8px;
   letter-spacing: 1px;
+`
+
+export const BigRate = styled.div`
+  height: 42px;
+  width: 89px;
+  background: url(${bigrate});
+  color: #fff;
+  line-height: 40px;
+  text-align:center;
+  font-size: 24px;
+  position: absolute;
+  top: 25px;
+  right: 24px;
+`
+
+export const BigName = styled.div`
+  height: 248px;
+  width: 100px;
+  line-height:24px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 34px;
+  left: 80px;
 `

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="42px" viewBox="0 0 89 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>数值 copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="出题视角" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="记录-答的题" transform="translate(-223.000000, -132.000000)">
+            <g id="card" transform="translate(35.000000, 106.000000)">
+                <g id="数值-copy" transform="translate(188.000000, 26.000000)">
+                    <polygon id="Path-26" fill="#FF446B" points="5 9.19662514 9.5833382 42 85.0321471 42 89 5"></polygon>
+                    <polygon id="Path-26-Copy" fill="#2E2E2E" points="0 4.19662514 4.5833382 37 80.0321471 37 84 0"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

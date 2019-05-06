@@ -3,29 +3,22 @@ import {
   ArchiveWarpper,
   BottomBtn,
   Box,
-  Card,
   Container,
   Content,
-  Details,
-  EmptyBox,
   FilterButtom,
   FilterTop,
   LeftActive,
-  Name,
-  Rate,
   RightActive,
-  Similarity,
-  Tip,
-  TipText,
   Title
 } from './style'
-import {connect} from 'react-redux'
-import {actionCreator} from './store'
-import {Link} from 'react-router-dom'
+import Iinitiated from './components/Iinitiated'
+import Ijoined from './components/Ijoined'
+import { connect } from 'react-redux'
+import { actionCreator } from './store'
 
 class Archive extends Component {
   render() {
-    /*    const List1 = [
+    /*    const list = [
           {
             id: "1",
             name: "艺术家",
@@ -52,23 +45,22 @@ class Archive extends Component {
             similarityRate: "50%",
           }
         ];*/
-    const List2 = []
     return (
       <ArchiveWarpper>
         <Content>
           <Box>
             <Title>
               <LeftActive
-                active={this.props.active}
-                onClick={(e) => {
+                active = {this.props.active}
+                onClick = {(e) => {
                   this.props.switchHeader(e, 0)
                 }}
               >
                 发起的研究
               </LeftActive>
               <RightActive
-                active={this.props.active}
-                onClick={(e) => {
+                active = {this.props.active}
+                onClick = {(e) => {
                   this.props.switchHeader(e, 1)
                 }}
               >
@@ -78,23 +70,9 @@ class Archive extends Component {
             <FilterTop/>
             <FilterButtom/>
             <Container>
+              {/* 根据active值条件渲染内容 */}
               {
-                List2.length === 0 ?
-                  <Tip>
-                    <EmptyBox/>
-                    <TipText size={"large"}>档案是空的</TipText>
-                    <TipText size={"small"}>快去发起新的研究叭 ੭ ᐕ)੭*⁾⁾</TipText>
-                  </Tip>
-                  : List2.map((item) => (
-                    <Card key={item.id}>
-                      <Name>{item.name}</Name>
-                      <Similarity>相似度</Similarity>
-                      <Rate>{item.similarityRate}</Rate>
-                      <Link to="/detail/">
-                        <Details>详细信息</Details>
-                      </Link>
-                    </Card>
-                  ))
+                this.props.active ? <Ijoined /> : <Iinitiated list = {this.props.IinitiatedList} />
               }
             </Container>
             <BottomBtn>发起新的研究</BottomBtn>
@@ -107,7 +85,8 @@ class Archive extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    active: state.archive.active
+    active: state.archive.active,
+    IinitiatedList: state.archive.IinitiatedList
   }
 }
 
