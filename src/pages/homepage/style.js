@@ -5,8 +5,6 @@ import btnred from './img/btn-red.svg'
 import btnblack from './img/btn-black.svg'
 
 export const HomeWarpper = styled.div`
-  height: 100%;
-  widtH: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -16,6 +14,7 @@ export const HomeWarpper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(0 0 10px rgba(58,58,58,.27))
 `
 
 export const Content = styled.div`
