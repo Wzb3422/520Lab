@@ -201,7 +201,7 @@ export const BigRate = styled.div`
 `
 
 export const BigName = styled.div`
-  height: 248px;
+  height: 24px;
   width: 100px;
   line-height:24px;
   font-size: 24px;

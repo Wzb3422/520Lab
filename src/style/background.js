@@ -27,7 +27,7 @@ export const Grid = styled.div`
   z-index: -7;
 `
 
-export const Imge = styled.div`
+export const Image = styled.div`
   height: 100%;
   width: 100%;
   position: absolute;
@@ -36,14 +36,14 @@ export const Imge = styled.div`
   bottom: 0;
   left: 0;
   background-image: 
-     linear-gradient(
-        -25deg,
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,0) 37%,
-        rgba(255,77,124,0.96) 37%,
-        rgba(255,77,124,0.96) 63%,
-        rgba(0,0,0,0) 63%,
-        rgba(0,0,0,0) 100%
-     );
+   linear-gradient(
+     -25deg,
+     rgba(0, 0, 0, 0) 0%,
+     rgba(0, 0, 0, 0) 37%,
+     rgba(255, 77, 124, 0.96) 37%,
+     rgba(255, 77, 124, 0.96) 63%,
+     rgba(0, 0, 0, 0) 63%,
+     rgba(0, 0, 0, 0) 100%
+   );
   z-index: -6;
 `

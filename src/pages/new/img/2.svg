@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="32px" viewBox="0 0 38 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>序号2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="PingFangSC-Semibold, PingFang SC" font-size="36" font-weight="500" letter-spacing="2.25">
+        <g id="答题" transform="translate(-106.000000, -83.000000)">
+            <g id="第一题" transform="translate(47.000000, 66.000000)">
+                <g id="序号2" transform="translate(55.000000, 4.000000)">
+                    <text id="二" stroke="#FFF4F8" stroke-width="2" transform="translate(24.604690, 29.102747) rotate(-5.000000) translate(-24.604690, -29.102747) " fill="#FFFFFF" fill-opacity="0.953577899">
+                        <tspan x="5.10469018" y="42.1027472">二</tspan>
+                    </text>
+                    <text id="二" transform="translate(21.604690, 27.134493) rotate(-5.000000) translate(-21.604690, -27.134493) " fill="#2E2E2E">
+                        <tspan x="2.10469018" y="40.1344933">二</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
