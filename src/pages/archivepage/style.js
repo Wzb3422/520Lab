@@ -18,6 +18,7 @@ export const ArchiveWarpper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(3px 3px 9px rgba(58,58,58,.27));
 `
 
 export const Content = styled.div`
