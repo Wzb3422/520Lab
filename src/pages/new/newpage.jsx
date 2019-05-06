@@ -12,7 +12,8 @@ import {
   Option,
   Label,
   Text,
-  ArrowLeft
+  ArrowLeft,
+  ArrowRight
 } from './style'
 
 
@@ -46,7 +47,8 @@ function newpage() {
             <Text>你吃饭了吗</Text>
           </Option>
         </OptionContainer>
-        {/* <ArrowLeft /> */}
+        <ArrowLeft />
+        <ArrowRight />
       </Box>
     </NewWapper>
   )

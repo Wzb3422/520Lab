@@ -15,6 +15,7 @@ import Iinitiated from './components/Iinitiated'
 import Ijoined from './components/Ijoined'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
+import { Link } from 'react-router-dom'
 
 class Archive extends Component {
   render() {
@@ -75,7 +76,9 @@ class Archive extends Component {
                 this.props.active ? <Ijoined /> : <Iinitiated list = {this.props.IinitiatedList} />
               }
             </Container>
-            <BottomBtn>发起新的研究</BottomBtn>
+            <Link to="/new/">
+              <BottomBtn>发起新的研究</BottomBtn>
+            </Link>
           </Box>
         </Content>
       </ArchiveWarpper>

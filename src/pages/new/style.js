@@ -123,7 +123,15 @@ export const Arrow = styled.div`
   height: 65px;
   width: 43px;
   position: absolute;
-  top: 233px;
+  top: 273px;
 `
 
-export const ArrowLeft = styled(Arrow)
+export const ArrowLeft = styled(Arrow)`
+  left: -16px;
+  background: url(${arrowleft});
+`
+
+export const ArrowRight = styled(Arrow)`
+  right: -12px;
+  background: url(${arrowright});
+`
