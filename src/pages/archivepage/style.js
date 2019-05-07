@@ -41,21 +41,18 @@ export const Container = styled.div`
   position: relative;  
   height: 420px;
   top: -13px;
-  .join-enter {
-    opacity: 0;
-  }
-  .join-enter-active {
-    opacity: 1;
-    transition: opacity 500ms;
-  }
-  .join-exit {
-    opacity: 1;
-  }
-  .join-exit-active {
-    opacity: 0;
-    transition: opacity 500ms;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
+
+export const ItemLimit = styled.div`
+  height: 860px;
+  width: 332px;
+  overflow: hidden;
+  background: green;
+`
+
 export const Tip = styled.div`
   text-align: center;
   position: relative;
@@ -173,7 +170,7 @@ export const FilterTop = styled.div`
 `
 
 export const FilterButtom = styled.div`
-  transformZ:100;
+  transform: 100;
   position: absolute;
   left: 12px;
   height: 12px;
@@ -222,4 +219,16 @@ export const BigName = styled.div`
   position: absolute;
   top: 34px;
   left: 80px;
+`
+
+export const JoinWarpper = styled.div`
+  position: absolute;
+  left: ${props => props.active === 0 ? '-352px' : '0'};
+  transition: left .6s ease-in;
+`
+
+export const InitiatedWarpper = styled.div`
+  position: absolute;
+  left: ${props => props.active === 1 ? '704px' : '0'};
+  transition: left .6s ease-in;
 `

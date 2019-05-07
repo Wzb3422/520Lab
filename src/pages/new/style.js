@@ -11,6 +11,7 @@ import num5 from './img/5.svg'
 import option from './img/option.svg'
 import arrowleft from './img/arrow_l.svg'
 import arrowright from './img/arrow_r.svg'
+import switchBtn from './img/switch.svg'
 
 const numArray = [num1, num2, num3, num4, num5]
 
@@ -146,4 +147,23 @@ export const BigText = styled.div`
   display: inline;
   font-size: 23px;
   letter-spacing: .8px;
+`
+
+export const SwitchBtn = styled.div`
+  height: 88px;
+  width: 146px;
+  background: url(${switchBtn});
+  position: absolute;
+  left: 100px;
+  bottom: -24px;
+`
+
+export const SwitchText = styled.div`
+  height: 24px;
+  width: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 26px;
+  left: 26px;
 `

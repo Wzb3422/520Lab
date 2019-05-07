@@ -2,18 +2,19 @@ import React, { Fragment } from 'react'
 import {
   Card,
   BigRate,
-  BigName
+  BigName,
+  JoinWarpper
 } from '../style'
 
 
 function Ijoined(props) {
   return (
-    <Fragment>
+    <JoinWarpper active={props.active}>
       <Card>
         <BigName>艺术家</BigName>
         <BigRate>80%</BigRate>
       </Card>
-    </Fragment>
+    </JoinWarpper>
   )
 }
 

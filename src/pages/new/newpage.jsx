@@ -16,7 +16,9 @@ import {
   OptionContainer,
   Question,
   Text,
-  Ti
+  Ti,
+  SwitchBtn,
+  SwitchText
 } from './style'
 
 const question = "那是真的牛批?那是真的牛批?那是真的牛批?那是真的牛批?"
@@ -53,6 +55,9 @@ class newpage extends Component {
           </OptionContainer>
           <ArrowLeft/>
           <ArrowRight/>
+          <SwitchBtn>
+            <SwitchText>换一题</SwitchText>
+          </SwitchBtn>
         </Box>
       </NewWapper>
     )

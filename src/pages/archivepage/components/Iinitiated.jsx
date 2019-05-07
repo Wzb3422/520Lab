@@ -7,14 +7,15 @@ import {
   Rate,
   Similarity,
   Tip,
-  TipText
+  TipText,
+  InitiatedWarpper
 } from '../style'
 import { Link } from 'react-router-dom'
 
 function Iinitiated(props) {
   let { list } = props
   return (
-    <Fragment>
+    <InitiatedWarpper active={props.active}>
       {
         list.length === 0 ?
           <Tip>
@@ -33,7 +34,7 @@ function Iinitiated(props) {
             </Card>
           ))
       }
-    </Fragment>
+    </InitiatedWarpper>
   );
 }
 
