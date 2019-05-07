@@ -34,7 +34,6 @@ export const Title = styled.div`
   position: absolute;
   top: -20px;
   left: 10px;
-  translateZ: 2;
 `
 
 export const Container = styled.div`
@@ -42,6 +41,20 @@ export const Container = styled.div`
   position: relative;  
   height: 420px;
   top: -13px;
+  .join-enter {
+    opacity: 0;
+  }
+  .join-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .join-exit {
+    opacity: 1;
+  }
+  .join-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
 `
 export const Tip = styled.div`
   text-align: center;

@@ -4,6 +4,7 @@ import HomepageLoadable from './pages/homepage'
 import ArchiveLoadable from './pages/archivepage'
 import DetailLoadable from './pages/detail'
 import NewpageLoadable from './pages/new'
+import WhisperpageLoadable from './pages/whisper'
 
 function Routers() {
   return (
@@ -12,6 +13,7 @@ function Routers() {
       <Route path="/new/" component={NewpageLoadable} />
       <Route path="/archive/" component={ArchiveLoadable} />
       <Route path="/detail/" component={DetailLoadable} />
+      <Route path="/whisper/" component={WhisperpageLoadable} />
     </Router>
   )
 }

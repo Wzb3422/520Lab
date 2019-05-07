@@ -22,7 +22,7 @@ export const Content = styled.div`
 `
 
 export const Box = styled.div`
-  height: 607px;
+  height: 600px;
   width: 351px;
   background: url(${outline});
   position: relative;
@@ -39,7 +39,7 @@ export const Header = styled.div`
 
 export const CardContainer = styled.div`
   position: absolute;
-  top: 48px;
+  top: 36px;
   left: 13px;
 `
 
@@ -58,5 +58,26 @@ export const Num = styled.div`
   position: absolute;
   left: 36px;
   top: 38px;
+`
 
+export const Question = styled.div`
+  height: 18px;
+  width: 168px;
+  line-height: 18px;
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  right: 48px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: #fff;
+`
+
+export const YourAnswerBox = styled.div`
+  height: 19px;
+  width: 206px;
+  position: absolute;
+  bottom: 30px;
+  left:  
 `

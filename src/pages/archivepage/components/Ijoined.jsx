@@ -5,6 +5,7 @@ import {
   BigName
 } from '../style'
 
+
 function Ijoined(props) {
   return (
     <Fragment>

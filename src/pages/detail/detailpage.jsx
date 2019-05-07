@@ -6,7 +6,8 @@ import {
   Header,
   CardContainer,
   Card,
-  Num
+  Num,
+  Question
 } from './style'
 
 function Detail() {
@@ -18,18 +19,23 @@ function Detail() {
           <CardContainer>
             <Card>
               <Num>1</Num>
+              <Question>我觉得我可能这样脱单?</Question>
             </Card>
             <Card>
-              <Num>2</Num>
+              <Num>1</Num>
+              <Question>我觉得我可能这样脱单?</Question>
             </Card>
             <Card>
-              <Num>3</Num>
+              <Num>1</Num>
+              <Question>我觉得我可能这样脱单?</Question>
             </Card>
             <Card>
-              <Num>4</Num>
+              <Num>1</Num>
+              <Question>我觉得我可能这样脱单?</Question>
             </Card>
             <Card>
-              <Num>5</Num>
+              <Num>1</Num>
+              <Question>我觉得我可能这样脱单?</Question>
             </Card>
           </CardContainer>
         </Box>

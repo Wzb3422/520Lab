@@ -1,1 +1,2 @@
 export const SWITCH_HEADER = 'SWITCH_HEADER'
+export const TOGGLE_JOIN = 'TOGGLE_JOIN'

@@ -1,4 +1,7 @@
-import {SWITCH_HEADER} from './constants'
+import {
+  SWITCH_HEADER,
+  TOGGLE_JOIN
+} from './constants'
 
 const defaultState = {
   active: 0,
@@ -28,7 +31,8 @@ const defaultState = {
       name: "艺术家",
       similarityRate: "50%",
     }
-  ]
+  ],
+  isIjoinedShow: true
 }
 
 export default (state = defaultState, action) => {
@@ -36,6 +40,9 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case SWITCH_HEADER:
       newState.active = action.value
+      return newState
+    case TOGGLE_JOIN:
+      newState.isIjoinedShow = !newState.isIjoinedShow
       return newState
     default:
       return state

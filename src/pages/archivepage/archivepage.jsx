@@ -1,4 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
+import {
+  CSSTransition
+} from 'react-transition-group'
 import {
   ArchiveWarpper,
   BottomBtn,
@@ -44,7 +47,12 @@ class Archive extends Component {
             <Container>
               {/* 根据active值条件渲染内容 */}
               {
-                this.props.active ? <Ijoined /> : <Iinitiated list = {this.props.IinitiatedList} />
+                this.props.active ?
+                <CSSTransition in={this.props.isIjoinedShow} timeout={500} classNames="join">
+                  <Ijoined/>
+                </CSSTransition>
+                :
+                <Iinitiated list = {this.props.IinitiatedList} />
               }
             </Container>
             <FilterTop/>
@@ -62,7 +70,8 @@ class Archive extends Component {
 const mapStateToProps = (state) => {
   return {
     active: state.archive.active,
-    IinitiatedList: state.archive.IinitiatedList
+    IinitiatedList: state.archive.IinitiatedList,
+    isIjoinedShow: state.archive.isIjoinedShow
   }
 }
 
@@ -70,6 +79,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     switchHeader(e, value) {
       dispatch(actionCreator.switchHeaderAction(value))
+    },
+    toggleJoin() {
+      dispatch(actionCreator.toggleJoin())
     }
   }
 }
