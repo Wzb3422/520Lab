@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="313px" height="101px" viewBox="0 0 313 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>card</title>
+    <desc>Created with Sketch.</desc>
+    <g id="main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="记录-详细报告" transform="translate(-28.000000, -81.000000)">
+            <g id="card" transform="translate(28.000000, 81.000000)">
+                <polygon id="Rectangle-Copy" fill="#B3B3B3" points="5 25.0825866 313 19 313 97.0021542 15.1159195 101"></polygon>
+                <polygon id="Rectangle" fill="#2E2E2E" points="0 19.0825866 308 13 308 91.0021542 10.1159195 95"></polygon>
+                <polygon id="Rectangle" fill="#F8F8F8" points="3 24.7844992 299.56394 17 304 89 13.582072 89"></polygon>
+                <polygon id="Rectangle" fill="#FF446B" points="20 34.9315464 68 32 63.3214233 80 25.3110986 78.0981543"></polygon>
+                <polygon id="Path-23-Copy" fill="#2E2E2E" points="76 6.03008976 81.7413629 34 272.207628 34 278 0"></polygon>
+                <polygon id="Rectangle" fill="#FF446B" points="75 63 294.833788 64.9986443 298 84.9921805 81.4094034 86"></polygon>
+                <g id="你的答案" transform="translate(84.000000, 41.000000)"></g>
+                <g id="你的答案-copy" transform="translate(87.000000, 66.000000)">
+                    <g id="B" transform="translate(102.030303, 0.000000)"></g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

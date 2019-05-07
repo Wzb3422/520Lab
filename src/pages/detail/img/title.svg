@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="172px" height="58px" viewBox="0 0 172 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>title</title>
+    <desc>Created with Sketch.</desc>
+    <g id="main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="记录-详细报告" transform="translate(-153.000000, -16.000000)">
+            <g id="title" transform="translate(153.000000, 16.000000)">
+                <polygon id="Path-22" fill="#2E2E2E" points="0 3 5.55018587 56 50.3287354 50.3214771 52 4"></polygon>
+                <polygon id="Path-22-Copy" fill="#2E2E2E" points="46 11 49.576926 54.3021883 89.1329787 57.3719978 91 8.33768437"></polygon>
+                <polygon id="Path-22-Copy-2" fill="#2E2E2E" points="85.3972956 0 87.1083228 47.4726517 128.088925 52.1926853 131.622568 5"></polygon>
+                <polygon id="Path-22-Copy-3" fill="#2E2E2E" points="127.006641 11 127.006641 54.8334953 172 57.0619012 169 7.34031568"></polygon>
+                <text id="详" font-family="PingFangSC-Semibold, PingFang SC" font-size="34" font-weight="500" letter-spacing="2.125" fill="#FFFFFF" fill-opacity="0.953577899">
+                    <tspan x="9" y="40">详</tspan>
+                </text>
+                <text id="细" font-family="PingFangSC-Semibold, PingFang SC" font-size="29" font-weight="500" letter-spacing="1.8125" fill="#FFFFFF" fill-opacity="0.953577899">
+                    <tspan x="54" y="42">细</tspan>
+                </text>
+                <text id="报" font-family="PingFangSC-Semibold, PingFang SC" font-size="29" font-weight="500" letter-spacing="1.8125" fill="#FFFFFF" fill-opacity="0.953577899">
+                    <tspan x="94" y="36">报</tspan>
+                </text>
+                <text id="告" font-family="PingFangSC-Semibold, PingFang SC" font-size="29" font-weight="500" letter-spacing="1.8125" fill="#FFFFFF" fill-opacity="0.953577899">
+                    <tspan x="133" y="42">告</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

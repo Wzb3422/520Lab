@@ -141,6 +141,7 @@ export const ArrowRight = styled(Arrow)`
   right: -4px;
   background: url(${arrowright});
 `
+
 export const BigText = styled.div`
   display: inline;
   font-size: 23px;
