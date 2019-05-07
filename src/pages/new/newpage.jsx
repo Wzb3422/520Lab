@@ -1,33 +1,38 @@
 import React from 'react';
 
 import {
-  NewWapper,
-  Header,
+  ArrowLeft,
+  ArrowRight,
+  BigText,
   Box,
   Di,
-  Num,
-  Ti,
-  Question,
-  OptionContainer,
-  Option,
+  Header,
   Label,
+  NewWapper,
+  Num,
+  Option,
+  OptionContainer,
+  Question,
   Text,
-  ArrowLeft,
-  ArrowRight
+  Ti
 } from './style'
 
 
 function newpage() {
+  const question = "那是真的牛批?那是真的牛批?那是真的牛批?那是真的牛批?"
   return (
     <NewWapper>
       <Box>
         <Header>
-          <Di />
-          <Num num={1} />
-          <Ti />
+          <Di/>
+          <Num num={1}/>
+          <Ti/>
         </Header>
         <Question>
-          那是真的牛批?那是真的牛批?那是真的牛批?那是真的牛批?
+          <BigText>
+            {question.substring(0,2)}
+          </BigText>
+          {question.substring(2)}
         </Question>
         <OptionContainer>
           <Option>
@@ -47,8 +52,8 @@ function newpage() {
             <Text>你吃饭了吗</Text>
           </Option>
         </OptionContainer>
-        <ArrowLeft />
-        <ArrowRight />
+        <ArrowLeft/>
+        <ArrowRight/>
       </Box>
     </NewWapper>
   )

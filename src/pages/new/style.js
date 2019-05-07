@@ -24,6 +24,7 @@ export const NewWapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(3px 3px 9px rgba(58,58,58,.27));
 `
 
 export const Content = styled.div`
@@ -41,8 +42,8 @@ export const Header = styled.div`
 `
 
 export const Box = styled.div`
-  width: 321px;
-	height: 496px;
+  width: 333px;
+	height: 508px;
   position: relative;
   background: url(${outline});
 `
@@ -75,12 +76,15 @@ export const Ti = styled.div`
 `
 
 export const Question = styled.div`
+  font-family: PingFangSC-Medium;
   height: 40px;
   width: 220px;
   position: absolute;
   top: 100px;
   left: 60px;
   word-wrap: normal;
+  overflow: hidden;
+  letter-spacing: 1.1px;
 `
 
 export const OptionContainer = styled.div`
@@ -105,6 +109,7 @@ export const Label = styled.div`
   line-height: 20px;
   text-align: center;
   position: absolute;
+  font-family: "SFProText-BoldItalic",sans-serif;
   top: 14px;
   left: 8px;
 `
@@ -117,13 +122,14 @@ export const Text = styled.div`
   position: absolute;
   top: 15px;
   left: 62px;
+  letter-spacing: .5px;
 `
 
 export const Arrow = styled.div`
   height: 65px;
   width: 43px;
   position: absolute;
-  top: 273px;
+  top: 246px;
 `
 
 export const ArrowLeft = styled(Arrow)`
@@ -132,6 +138,11 @@ export const ArrowLeft = styled(Arrow)`
 `
 
 export const ArrowRight = styled(Arrow)`
-  right: -12px;
+  right: -4px;
   background: url(${arrowright});
+`
+export const BigText = styled.div`
+  display: inline;
+  font-size: 23px;
+  letter-spacing: .8px;
 `
