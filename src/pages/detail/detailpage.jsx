@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import {
   DetailWarpper,
   Content,
@@ -7,41 +8,61 @@ import {
   CardContainer,
   Card,
   Num,
-  Question
+  Question,
+  YourAnswerBox,
+  YourAnswerLeft,
+  YourAnswerRight,
+  YourChoice,
+  YourAnswer,
+  HisAnswer
 } from './style'
 
-function Detail() {
-  return (
-    <DetailWarpper>
-      <Content>
-        <Box>
-          <Header />
-          <CardContainer>
-            <Card>
-              <Num>1</Num>
-              <Question>我觉得我可能这样脱单?</Question>
-            </Card>
-            <Card>
-              <Num>1</Num>
-              <Question>我觉得我可能这样脱单?</Question>
-            </Card>
-            <Card>
-              <Num>1</Num>
-              <Question>我觉得我可能这样脱单?</Question>
-            </Card>
-            <Card>
-              <Num>1</Num>
-              <Question>我觉得我可能这样脱单?</Question>
-            </Card>
-            <Card>
-              <Num>1</Num>
-              <Question>我觉得我可能这样脱单?</Question>
-            </Card>
-          </CardContainer>
-        </Box>
-      </Content>
-    </DetailWarpper>
-  );
+class Detail extends Component {
+  render() {
+    return (
+      <DetailWarpper>
+        <Content>
+          <Box>
+            <Header />
+            <CardContainer>
+              {
+                this.props.questionList.map((item, index) => {
+                  return (
+                    <Card key={index}>
+                      <Num num={index}></Num>
+                      <Question>{item.question}</Question>
+                      <YourAnswerBox>
+                        <YourAnswerLeft>
+                          你的答案
+                        </YourAnswerLeft>
+                        <YourAnswerRight>
+                          <YourChoice>A</YourChoice>
+                          <YourAnswer>手机还在床下</YourAnswer>
+                        </YourAnswerRight>
+                      </YourAnswerBox>
+                      <HisAnswer></HisAnswer>
+                    </Card>
+                  )
+                })
+              }
+            </CardContainer>
+          </Box>
+        </Content>
+      </DetailWarpper>
+    );
+  }
 }
 
-export default Detail
+const mapStateToProps = (state) => {
+  return {
+    questionList: state.detail.questionList
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail)
