@@ -124,8 +124,42 @@ export const YourAnswer = styled.div`
 
 export const HisAnswer = styled.div`
   width: 200px;
-  height: 19px;
+  height: 17px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  bottom: 17px;
+  left: 86px;
+  color: #fff;
+`
+
+export const HisAnswerText = styled.div`
+  height: 17px;
+  width: 56px;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: .6px;
+`
+
+export const HisAnswerRight = styled.div`
+  height: 17px;
+  width: auto;
+`
+
+export const HisAnswerOption = styled.div`
+  height: 17px;
+  width: 10px;
+  font-size: 16px;
+  float: left;
+  line-height: 12px;
+  margin-right: .6px;
+`
+
+export const HisAnswerContent = styled.div`
+  height: 17px;
+  float: right;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: .8px;
 `

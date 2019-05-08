@@ -14,7 +14,11 @@ import {
   YourAnswerRight,
   YourChoice,
   YourAnswer,
-  HisAnswer
+  HisAnswer,
+  HisAnswerText,
+  HisAnswerRight,
+  HisAnswerContent,
+  HisAnswerOption
 } from './style'
 
 class Detail extends Component {
@@ -40,7 +44,13 @@ class Detail extends Component {
                           <YourAnswer>手机还在床下</YourAnswer>
                         </YourAnswerRight>
                       </YourAnswerBox>
-                      <HisAnswer></HisAnswer>
+                      <HisAnswer>
+                        <HisAnswerText>TA的答案</HisAnswerText>
+                        <HisAnswerRight>
+                          <HisAnswerOption>A</HisAnswerOption>
+                          <HisAnswerContent>你的外卖到了</HisAnswerContent>
+                        </HisAnswerRight>
+                      </HisAnswer>
                     </Card>
                   )
                 })

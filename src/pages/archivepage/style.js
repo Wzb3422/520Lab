@@ -223,12 +223,12 @@ export const BigName = styled.div`
 
 export const JoinWarpper = styled.div`
   position: absolute;
-  left: ${props => props.active === 0 ? '-352px' : '0'};
-  transition: left .6s ease-in;
+  left: ${props => props.active === 0 ? '704px' : '0'};
+  transition: left .6s ease-out;
 `
 
 export const InitiatedWarpper = styled.div`
   position: absolute;
-  left: ${props => props.active === 1 ? '704px' : '0'};
-  transition: left .6s ease-in;
+  left: ${props => props.active === 1 ? '-352px' : '0'};
+  transition: left .6s ease-out;
 `
