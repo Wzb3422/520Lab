@@ -22,7 +22,7 @@ import {
   RightEye
 } from './style'
 
-const question = "爱你萌嗷！！！！！"
+const question = "同学通过扫描二维码回答问题和小家园达到了相应的相爱度即可抽取参与小礼品嗷嗷嗷嗷嗷"     //最多39个字
 const tag = ['A', 'B', 'C', 'D']
 
 class newpage extends Component {

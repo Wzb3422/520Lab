@@ -99,7 +99,7 @@ export const Box = styled.div`
 export const HeaderText = styled.div`
   position: absolute;
   top: 37px;
-  left: 17px;
+  left: 20px;
   width: 150px;
   height: 70px;
 `
@@ -165,8 +165,9 @@ export const Question = styled.div`
 export const QsText = styled.div`
   font-family: PingFangSC-Medium;
   font-size: 16px;
-  line-height: 17px;
   letter-spacing: .8px;
+  line-height: 17px;
+  height: 50px;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -241,7 +242,7 @@ export const SwitchBtn = styled.div`
   width: 146px;
   background: url(${switchBtn});
   position: absolute;
-  left: 100px;
+  left: 92px;
   bottom: -26px;
 `
 
