@@ -30,6 +30,21 @@ const defaultState = {
       id: "5",
       name: "艺术家",
       similarityRate: "50%",
+    },
+    {
+      id: "6",
+      name: "艺术家",
+      similarityRate: "50%",
+    },
+    {
+      id: "7",
+      name: "艺术家",
+      similarityRate: "50%",
+    },
+    {
+      id: "8",
+      name: "艺术家",
+      similarityRate: "50%",
     }
   ],
   isIjoinedShow: true

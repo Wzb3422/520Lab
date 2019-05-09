@@ -42,15 +42,10 @@ class Archive extends Component {
               </RightActive>
             </Title>
             <Container>
-              <Ijoined active={this.props.active}/>
-              <Iinitiated
-                list={this.props.IinitiatedList}
-                active={this.props.active}
-              />
               {/* 根据active值条件渲染内容 */}
-              {/* {
+              {
                 this.props.active ? <Ijoined/> : <Iinitiated list = {this.props.IinitiatedList} />
-              } */}
+              }
             </Container>
             <FilterTop/>
             <FilterButtom/>

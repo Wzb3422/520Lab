@@ -41,9 +41,7 @@ export const Container = styled.div`
   position: relative;  
   height: 420px;
   top: -13px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-left: 12px;
 `
 
 export const ItemLimit = styled.div`
@@ -101,7 +99,7 @@ export const Card = styled.div`
   height: 96px;
   width: 313px;
   background: url(${card}) no-repeat;
-  margin: 5px 0 8px 12px;
+  margin: 5px 0 0 0;
   position: relative;
 `
 
@@ -222,13 +220,13 @@ export const BigName = styled.div`
 `
 
 export const JoinWarpper = styled.div`
-  position: absolute;
-  left: ${props => props.active === 0 ? '704px' : '0'};
-  transition: left .6s ease-out;
+  /* position: absolute; */
+  /* left: ${props => props.active === 0 ? '704px' : '0'}; */
+  /* transition: left .6s ease-out; */
 `
 
 export const InitiatedWarpper = styled.div`
-  position: absolute;
-  left: ${props => props.active === 1 ? '-352px' : '0'};
-  transition: left .6s ease-out;
+  /* position: absolute; */
+  /* left: ${props => props.active === 1 ? '-352px' : '0'}; */
+  /* transition: left .6s ease-out; */
 `

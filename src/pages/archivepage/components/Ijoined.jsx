@@ -14,6 +14,46 @@ function Ijoined(props) {
         <BigName>艺术家</BigName>
         <BigRate>80%</BigRate>
       </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
+      <Card>
+        <BigName>艺术家</BigName>
+        <BigRate>80%</BigRate>
+      </Card>
     </JoinWarpper>
   )
 }
