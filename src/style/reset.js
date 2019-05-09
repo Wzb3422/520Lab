@@ -20,7 +20,7 @@ const GlobalReset = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: PingFangSC-Medium, 'Source Sans Pro', sans-serif;
+    font-family: PingFangSC-Semibold, Helvetica, Arial, sans-serif;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
@@ -46,7 +46,6 @@ const GlobalReset = createGlobalStyle`
     border-spacing: 0;
   }
   /* 下面是自定义的全局样式 */
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600');
   
   a {
     text-decoration: none;

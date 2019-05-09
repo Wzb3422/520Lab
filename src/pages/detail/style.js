@@ -20,6 +20,7 @@ export const DetailWarpper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(0 0 10px rgba(58,58,58,.27));
 `
 
 export const Content = styled.div`
@@ -106,7 +107,7 @@ export const YourAnswerRight = styled.div`
   width: 100px;
   height: 14px;
   display: flex;
-` 
+`
 
 export const YourChoice = styled.div`
   height: 14px;

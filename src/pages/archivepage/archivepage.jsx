@@ -9,7 +9,7 @@ import {
   FilterTop,
   LeftActive,
   RightActive,
-  Title
+  Title,
 } from './style'
 import Iinitiated from './components/Iinitiated'
 import Ijoined from './components/Ijoined'
