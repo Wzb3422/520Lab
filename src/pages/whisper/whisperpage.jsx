@@ -8,14 +8,16 @@ import {
   RedBtn,
   WhiteBtn
 } from './style'
+
 class whisperpage extends Component {
   render() {
+    const tips = "sdadsdas";
     return (
       <WhisperWarpper>
         <Content>
-          <Header />
+          <Header/>
           <Box>
-            <Input />
+            <Input placeholder={tips}/>
           </Box>
           <WhiteBtn>小家园替你写</WhiteBtn>
           <RedBtn>塞入纸条</RedBtn>

@@ -25,15 +25,15 @@ export const Grid = styled.div`
     repeating-linear-gradient(
       45deg, 
       #2e2e2e 0%, 
-      #2e2e2e .14%, 
-      rgba(255, 255, 255, 0) .14%, 
+      #2e2e2e .15%, 
+      rgba(255, 255, 255, 0) .15%, 
       rgba(255, 255, 255, 0) 5.5%
     ), 
     repeating-linear-gradient(
       -45deg, 
       #2e2e2e 0%, 
-      #2e2e2e .13%, 
-      rgba(255, 255, 255, 0) .13%,
+      #2e2e2e .15%, 
+      rgba(255, 255, 255, 0) .15%,
       rgba(255, 255, 255, 0) 5.5%
     );
   background-color: #fff;
@@ -53,8 +53,8 @@ export const Image = styled.div`
       -25deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0) 37%,
-      rgba(255, 77, 124, 0.96) 37%,
-      rgba(255, 77, 124, 0.96) 63%,
+      rgb(255, 77, 124) 37%,
+      rgb(255, 77, 124) 63%,
       rgba(255, 255, 255, 0) 63%,
       rgba(255, 255, 255, 0) 100%
     );

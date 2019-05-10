@@ -14,6 +14,7 @@ export const WhisperWarpper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(58,58,58,.27));
 `
 
 export const Content = styled.div`
@@ -25,7 +26,6 @@ export const Content = styled.div`
 export const Header = styled.div`
   width: 308px;
   height: 84px;
-  margin-top: 53px;
   background: url(${title});
   background-size: 100% 100%;
 `
@@ -37,17 +37,16 @@ export const Box = styled.div`
   background: url(${card});
 `
 
-export const Input = styled.textarea.attrs({
-  placeholder: '你想说点什么呢?'
-})`
+export const Input = styled.textarea`
   width: 255px;
   height: 190px;
   resize: none;
+  font-size: 19px;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 3px;
   outline: none;
   border: none;
-  margin: 14px 18px;
+  margin: 17px 18px;
   background: #f8f8f8;
 `
 
