@@ -7,6 +7,7 @@ import num2 from './img/2.png'
 import num3 from './img/3.png'
 import num4 from './img/4.png'
 import num5 from './img/5.png'
+import sticker from './img/sticker.svg'
 
 const numArray = [num1, num2, num3, num4, num5]
 
@@ -34,7 +35,6 @@ export const Box = styled.div`
   width: 351px;
   background: url(${outline}) no-repeat;
   position: relative;
-  /* background-size: 351px 500px; */
 `
 
 export const Header = styled.div`
@@ -60,15 +60,15 @@ export const Card = styled.div`
 `
 
 export const Num = styled.div`
-  width: 18px;
-	height: 29px;
+  width: 19px;
+	height: 27px;
 	font-size: 38px;
   font-weight: bold;
   background: url(${props => numArray[props.num]});
-  background-size:100% 100%;
+  background-size: 100% 100%;
   position: absolute;
   left: 36px;
-  top: 42px;
+  top: 43px;
 `
 
 export const Question = styled.div`
@@ -76,13 +76,15 @@ export const Question = styled.div`
   width: 168px;
   line-height: 18px;
   text-align: center;
-  overflow: hidden;
   position: absolute;
   top: 10px;
-  right: 48px;
+  right: 51px;
   letter-spacing: 1px;
   font-size: 13px;
   color: #fff;
+  overflow: hidden;
+  word-wrap: normal;
+  text-overflow: ellipsis;
 `
 
 export const YourAnswerBox = styled.div`
@@ -105,16 +107,26 @@ export const YourAnswerLeft = styled.div`
 
 export const YourAnswerRight = styled.div`
   width: 100px;
-  height: 14px;
+  height: 19.16px;
   display: flex;
+  align-items: center;  
+`
+
+export const Sticker = styled.div`
+  width: 19.16px;
+  height: 19.16px;
+  background: url(${sticker});
+  margin: auto 8px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const YourChoice = styled.div`
   height: 14px;
-  width: 12px;
-  font-size: 16px;
-  position: relative;
-  bottom: 2px;
+  margin: auto;
+  font-size: 13px;
+  color: #fff;
 `
 
 export const YourAnswer = styled.div`
@@ -136,7 +148,6 @@ export const HisAnswer = styled.div`
 `
 
 export const HisAnswerText = styled.div`
-  height: 17px;
   width: 56px;
   font-size: 10px;
   line-height: 16px;
@@ -144,21 +155,24 @@ export const HisAnswerText = styled.div`
 `
 
 export const HisAnswerRight = styled.div`
+  display: flex;
+  justify-content:center;
+  align-items:Center;
   height: 17px;
   width: auto;
+  
 `
 
 export const HisAnswerOption = styled.div`
-  height: 17px;
   width: 10px;
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: 700;
   float: left;
-  line-height: 12px;
-  margin-right: .6px;
+  margin: auto 8px auto 0;
 `
 
 export const HisAnswerContent = styled.div`
-  height: 17px;
+  margin: auto 0;
   float: right;
   font-size: 10px;
   line-height: 16px;

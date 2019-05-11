@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
 import {
-  DetailWarpper,
-  Content,
   Box,
-  Header,
-  CardContainer,
   Card,
+  CardContainer,
+  Content,
+  DetailWarpper,
+  Header,
+  HisAnswer,
+  HisAnswerContent,
+  HisAnswerOption,
+  HisAnswerRight,
+  HisAnswerText,
   Num,
   Question,
+  Sticker,
+  YourAnswer,
   YourAnswerBox,
   YourAnswerLeft,
   YourAnswerRight,
-  YourChoice,
-  YourAnswer,
-  HisAnswer,
-  HisAnswerText,
-  HisAnswerRight,
-  HisAnswerContent,
-  HisAnswerOption
+  YourChoice
 } from './style'
 
 class Detail extends Component {
@@ -27,20 +28,22 @@ class Detail extends Component {
       <DetailWarpper>
         <Content>
           <Box>
-            <Header />
+            <Header/>
             <CardContainer>
               {
                 this.props.questionList.map((item, index) => {
                   return (
                     <Card key={index}>
-                      <Num num={index}></Num>
+                      <Num num={index}/>
                       <Question>{item.question}</Question>
                       <YourAnswerBox>
                         <YourAnswerLeft>
                           你的答案
                         </YourAnswerLeft>
                         <YourAnswerRight>
-                          <YourChoice>A</YourChoice>
+                          <Sticker>
+                            <YourChoice>A</YourChoice>
+                          </Sticker>
                           <YourAnswer>手机还在床下</YourAnswer>
                         </YourAnswerRight>
                       </YourAnswerBox>
@@ -70,9 +73,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-
-  }
+  return {}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail)

@@ -1,25 +1,27 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {
+  Angel,
   ArrowLeft,
   ArrowRight,
   Box,
   Di,
   Header,
+  HeaderText,
   Label,
+  LeftEye,
   NewWapper,
   Num,
   Option,
   OptionContainer,
+  QsText,
   Question,
+  RightEye,
   SwitchBtn,
   SwitchText,
   Text,
   Ti,
-  QsText,
-  HeaderText,
-  LeftEye,
-  RightEye
+  QuestionText
 } from './style'
 
 const question = "同学通过扫描二维码回答问题和小家园达到了相应的相爱度即可抽取参与小礼品嗷嗷嗷嗷嗷"     //最多39个字
@@ -36,6 +38,8 @@ class newpage extends Component {
               <Num num={1}/>
               <Ti/>
             </HeaderText>
+            <Angel/>
+            <QuestionText/>
             <LeftEye/>
             <RightEye/>
           </Header>

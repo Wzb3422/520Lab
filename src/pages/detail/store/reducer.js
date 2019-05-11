@@ -1,10 +1,10 @@
 const defaultState = {
   questionList: [
     {
-      question: '最让我有起床动力的是',
+      question: '最让我有起床动力的是哈哈哈哈哈哈哈',
       yours: {
         choice: 'A',
-        content: '你的外卖到了'
+        content: '你的外卖到了哈哈哈哈哈哈'
       },
       his: {
         choice: 'B',
@@ -22,6 +22,17 @@ const defaultState = {
         content: '手机还在床下'
       }
     },{
+      question: '最让我有起床动力的是',
+      yours: {
+        choice: 'A',
+        content: '你的外卖到了'
+      },
+      his: {
+        choice: 'B',
+        content: '手机还在床下'
+      }
+    },
+    {
       question: '最让我有起床动力的是',
       yours: {
         choice: 'A',
