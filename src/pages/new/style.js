@@ -202,6 +202,10 @@ export const OptionContainer = styled.div`
   position: absolute;
   top: 180px;
   left: 38px;
+  overflow: hidden;
+`
+
+export const OptionAnimationWarpper = styled.div`
 `
 
 export const Option = styled.div`
