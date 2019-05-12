@@ -21,7 +21,7 @@ export const DetailWarpper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 10px rgba(58,58,58,.27));
+  filter: drop-shadow(0 0 10px rgba(58, 58, 58, .27));
 `
 
 export const Content = styled.div`
@@ -106,7 +106,7 @@ export const YourAnswerLeft = styled.div`
 `
 
 export const YourAnswerRight = styled.div`
-  width: 100px;
+  max-width: 130px;
   height: 19.16px;
   display: flex;
   align-items: center;  
@@ -124,7 +124,7 @@ export const Sticker = styled.div`
 
 export const YourChoice = styled.div`
   height: 14px;
-  margin: auto;
+  margin: auto 0 auto 1px;
   font-size: 13px;
   color: #fff;
 `
@@ -133,10 +133,15 @@ export const YourAnswer = styled.div`
   flex: 1;
   font-size: 10px;
   line-height: 16px;
+  height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: .8px;
 `
 
 export const HisAnswer = styled.div`
-  width: 200px;
+  width: 202px;
   height: 17px;
   display: flex;
   align-items: center;
@@ -157,10 +162,9 @@ export const HisAnswerText = styled.div`
 export const HisAnswerRight = styled.div`
   display: flex;
   justify-content:center;
-  align-items:Center;
+  align-items: center;
   height: 17px;
-  width: auto;
-  
+  max-width: 123px;
 `
 
 export const HisAnswerOption = styled.div`
@@ -168,13 +172,15 @@ export const HisAnswerOption = styled.div`
   font-size: 13px;
   font-weight: 700;
   float: left;
-  margin: auto 8px auto 0;
+  margin: auto 11px auto 2px;
 `
 
 export const HisAnswerContent = styled.div`
-  margin: auto 0;
-  float: right;
+  flex: 1;
   font-size: 10px;
   line-height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   letter-spacing: .8px;
 `

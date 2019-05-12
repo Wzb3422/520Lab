@@ -219,7 +219,7 @@ export const Label = styled.div`
   line-height: 20px;
   text-align: center;
   position: absolute;
-  font-weight: 800;
+  font-weight: bold;
   font-style: italic;
   top: 14px;
   left: 7px;
@@ -230,6 +230,7 @@ export const Text = styled.div`
   width: 166px;
   line-height: 20px;
   font-size: 13px;
+  font-weight: bold;
   position: absolute;
   top: 15px;
   left: 62px;

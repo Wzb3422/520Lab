@@ -42,16 +42,16 @@ class Detail extends Component {
                         </YourAnswerLeft>
                         <YourAnswerRight>
                           <Sticker>
-                            <YourChoice>A</YourChoice>
+                            <YourChoice>{item.yours.choice}</YourChoice>
                           </Sticker>
-                          <YourAnswer>手机还在床下</YourAnswer>
+                          <YourAnswer>{item.yours.content}</YourAnswer>
                         </YourAnswerRight>
                       </YourAnswerBox>
                       <HisAnswer>
                         <HisAnswerText>TA的答案</HisAnswerText>
                         <HisAnswerRight>
-                          <HisAnswerOption>A</HisAnswerOption>
-                          <HisAnswerContent>你的外卖到了</HisAnswerContent>
+                          <HisAnswerOption>{item.his.choice}</HisAnswerOption>
+                          <HisAnswerContent>{item.his.content}</HisAnswerContent>
                         </HisAnswerRight>
                       </HisAnswer>
                     </Card>

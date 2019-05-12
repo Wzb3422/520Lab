@@ -8,7 +8,7 @@ const defaultState = {
       },
       his: {
         choice: 'B',
-        content: '手机还在床下'
+        content: '手机还在床下哈哈哈哈哈哈哈'
       }
     },
     {
@@ -18,8 +18,8 @@ const defaultState = {
         content: '你的外卖到了'
       },
       his: {
-        choice: 'B',
-        content: '手机还在床下'
+        choice: 'A',
+        content: '你的外卖到了'
       }
     },{
       question: '最让我有起床动力的是',
