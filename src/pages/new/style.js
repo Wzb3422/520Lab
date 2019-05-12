@@ -207,7 +207,7 @@ export const OptionContainer = styled.div`
 export const Option = styled.div`
   width: 246px;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 14px;
   background: url(${option});
   position: relative;
 `
@@ -221,7 +221,7 @@ export const Label = styled.div`
   position: absolute;
   font-weight: bold;
   font-style: italic;
-  top: 14px;
+  top: 15px;
   left: 7px;
 `
 
