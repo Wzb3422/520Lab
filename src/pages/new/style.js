@@ -12,6 +12,8 @@ import option from './img/option.svg'
 import arrowleft from './img/arrow_l.svg'
 import arrowright from './img/arrow_r.svg'
 import switchBtn from './img/switch.svg'
+import angel from './img/angel.png'
+import question from './img/question.png'
 
 const OpenClose = keyframes` 
     0% {
@@ -94,6 +96,24 @@ export const Box = styled.div`
   position: relative;
   left: 4px;
   background: url(${outline});
+`
+
+export const Angel = styled.div`
+  position: absolute;
+  width: 103px;
+  height: 95px;
+  left: 200px;
+  top: 12px;
+  background: url(${angel});
+`
+
+export const QuestionText = styled.div`
+  position: absolute;
+  width: 115px;
+  height: 19px;
+  left: 155px;
+  top: 111px;
+  background: url(${question});
 `
 
 export const HeaderText = styled.div`
@@ -191,7 +211,7 @@ export const OptionAnimationWarpper = styled.div`
 export const Option = styled.div`
   width: 246px;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 14px;
   background: url(${option});
   position: relative;
 `
@@ -203,9 +223,9 @@ export const Label = styled.div`
   line-height: 20px;
   text-align: center;
   position: absolute;
-  font-weight: 800;
+  font-weight: bold;
   font-style: italic;
-  top: 14px;
+  top: 15px;
   left: 7px;
 `
 
@@ -214,6 +234,7 @@ export const Text = styled.div`
   width: 166px;
   line-height: 20px;
   font-size: 13px;
+  font-weight: bold;
   position: absolute;
   top: 15px;
   left: 62px;

@@ -104,13 +104,17 @@ export const Card = styled.div`
 `
 
 export const Name = styled.div`
-  width: 70px;
-  height: 20px;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
   position: absolute;
   left: 88px;
   top: 24px;
   font-size: 20px;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `
 
 export const Similarity = styled.div`
@@ -211,12 +215,15 @@ export const BigName = styled.div`
   height: 24px;
   width: 100px;
   line-height:24px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  text-align: center;
+  margin-left: 8px;
   position: absolute;
   top: 34px;
   left: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `
 
 export const JoinWarpper = styled.div`

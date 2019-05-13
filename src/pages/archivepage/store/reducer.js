@@ -8,7 +8,7 @@ const defaultState = {
   IinitiatedList: [
     {
       id: "1",
-      name: "艺术家",
+      name: "艺术家哈哈哈哈",
       similarityRate: "10%",
     },
     {

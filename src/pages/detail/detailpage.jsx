@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
 import {
-  DetailWarpper,
-  Content,
   Box,
-  Header,
-  CardContainer,
   Card,
+  CardContainer,
+  Content,
+  DetailWarpper,
+  Header,
+  HisAnswer,
+  HisAnswerContent,
+  HisAnswerOption,
+  HisAnswerRight,
+  HisAnswerText,
   Num,
   Question,
+  Sticker,
+  YourAnswer,
   YourAnswerBox,
   YourAnswerLeft,
   YourAnswerRight,
-  YourChoice,
-  YourAnswer,
-  HisAnswer,
-  HisAnswerText,
-  HisAnswerRight,
-  HisAnswerContent,
-  HisAnswerOption
+  YourChoice
 } from './style'
 
 class Detail extends Component {
@@ -27,28 +28,30 @@ class Detail extends Component {
       <DetailWarpper>
         <Content>
           <Box>
-            <Header />
+            <Header/>
             <CardContainer>
               {
                 this.props.questionList.map((item, index) => {
                   return (
                     <Card key={index}>
-                      <Num num={index}></Num>
+                      <Num num={index}/>
                       <Question>{item.question}</Question>
                       <YourAnswerBox>
                         <YourAnswerLeft>
                           你的答案
                         </YourAnswerLeft>
                         <YourAnswerRight>
-                          <YourChoice>A</YourChoice>
-                          <YourAnswer>手机还在床下</YourAnswer>
+                          <Sticker>
+                            <YourChoice>{item.yours.choice}</YourChoice>
+                          </Sticker>
+                          <YourAnswer>{item.yours.content}</YourAnswer>
                         </YourAnswerRight>
                       </YourAnswerBox>
                       <HisAnswer>
                         <HisAnswerText>TA的答案</HisAnswerText>
                         <HisAnswerRight>
-                          <HisAnswerOption>A</HisAnswerOption>
-                          <HisAnswerContent>你的外卖到了</HisAnswerContent>
+                          <HisAnswerOption>{item.his.choice}</HisAnswerOption>
+                          <HisAnswerContent>{item.his.content}</HisAnswerContent>
                         </HisAnswerRight>
                       </HisAnswer>
                     </Card>
@@ -70,9 +73,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-
-  }
+  return {}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail)

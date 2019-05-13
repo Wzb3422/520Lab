@@ -1,31 +1,31 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import {
+  Angel,
   ArrowLeft,
   ArrowRight,
   Box,
   Di,
   Header,
+  HeaderText,
   Label,
+  LeftEye,
   NewWapper,
   Num,
   Option,
-  OptionContainer,
   OptionAnimationWarpper,
+  OptionContainer,
+  QsText,
   Question,
+  QuestionText,
+  RightEye,
   SwitchBtn,
   SwitchText,
   Text,
-  Ti,
-  QsText,
-  HeaderText,
-  LeftEye,
-  RightEye
+  Ti
 } from './style'
 import 'animate.css'
-import {
-  actionCreator
-} from './store'
+import {actionCreator} from './store'
 
 const question = "同学通过扫描二维码回答问题和小家园达到了相应的相爱度即可抽取参与小礼品嗷嗷嗷嗷嗷"     //最多39个字
 const tag = ['A', 'B', 'C', 'D']
@@ -41,6 +41,8 @@ class newpage extends Component {
               <Num num={this.props.num}/>
               <Ti/>
             </HeaderText>
+            <Angel/>
+            <QuestionText/>
             <LeftEye/>
             <RightEye/>
           </Header>
@@ -48,7 +50,8 @@ class newpage extends Component {
             <QsText>{question}</QsText>
           </Question>
           <OptionContainer>
-            <OptionAnimationWarpper className={this.props.isIn ? 'animated fadeOutLeft fast' : 'animated fadeInRight fast'}>
+            <OptionAnimationWarpper
+              className={this.props.isIn ? 'animated fadeOutLeft fast' : 'animated fadeInRight fast'}>
               {
                 this.props.options.map((item, index) => {
                   return (

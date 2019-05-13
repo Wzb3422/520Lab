@@ -45,6 +45,7 @@ export const Btnred = styled.div`
   width: 206px;
   background: url(${btnred});
   font-size: 23px;
+  font-weight: bold;
   line-height: 76px;
   text-align: center;
   color: #fff;
@@ -57,6 +58,7 @@ export const Btnblack = styled.div`
   margin-top: 5px;
   background: url(${btnblack});
   font-size: 16px;
+  font-weight: bold;
   line-height: 58px;
   text-align: center;
   color: #fff;
