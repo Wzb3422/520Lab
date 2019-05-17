@@ -11,7 +11,7 @@ function Ijoined(props) {
   return (
     <JoinWarpper active={props.active}>
       <Card>
-        <BigName>艺术家</BigName>
+        <BigName>艺术家咯咯咯咯咯</BigName>
         <BigRate>80%</BigRate>
       </Card>
       <Card>

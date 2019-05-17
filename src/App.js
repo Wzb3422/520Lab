@@ -3,7 +3,7 @@ import Routers from './Router'
 import GlobalReset from './style/reset'
 import { Provider } from 'react-redux'
 import store from './store'
-import { Grid,Image } from './style/background'
+import { Grid, Image } from './style/background'
 
 function App() {
   return (

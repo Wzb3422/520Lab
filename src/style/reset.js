@@ -20,7 +20,7 @@ const GlobalReset = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: PingFangSC-Semibold, Helvetica, Arial, sans-serif;
+    font-family: PingFangSC, Helvetica, Arial, sans-serif;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
