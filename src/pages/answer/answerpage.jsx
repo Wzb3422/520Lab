@@ -38,20 +38,20 @@ class Answerpage extends Component {
 
   next() {
     console.log('next')
-    this.setState({num: this.state.num + 1})
+    this.props.changeNum(1)
   }
 
   back() {
-    this.setState({num: this.state.num - 1})
+    this.props.changeNum(-1)
   }
 
   isShowLeft() {
-    let num = this.state.num;
+    let num = this.props.num;
     return (1 <= num && num <= 4)
   }
 
   isShowRight() {
-    let num = this.state.num;
+    let num = this.props.num;
     return (0 <= num && num <= 3)
   }
 
@@ -59,16 +59,12 @@ class Answerpage extends Component {
     return fn ? null : "none"
   }
 
-  componentDidMount () {
-
-  }
-
   render() {
-    let { num } = this.state;
+    let { num } = this.props;
     const Show = Answerpage.showMiddleWare;
     return (
       <NewWapper>
-        {this.props.new.map(item => (
+        {this.props.questions.map(item => (
           <Container key={item.index}>
             <Box className={num >= item.index ?
               "animated fadeOutLeft fast" :
@@ -120,14 +116,15 @@ class Answerpage extends Component {
 
 const mapStateToProps = state => {
   return {
-    ...state
+    questions: state.answer.questions,
+    num: state.answer.num
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    ChangeQusetion(e) {
-      dispatch(actionCreator.changeSheetAsyncAction());
+    changeNum(payload) {
+      dispatch(actionCreator.changeNumAction(payload))
     }
   };
 };

@@ -10,13 +10,11 @@ import {
   Di,
   Header,
   HeaderText,
-  Label,
   LeftEye,
   NewWapper,
   NoArrowLeft,
   NoArrowRight,
   Num,
-  Option,
   OptionContainer,
   Question,
   QuestionLogo,
@@ -24,11 +22,12 @@ import {
   RightEye,
   SwitchBtn,
   SwitchText,
-  Text,
   Ti
 } from "./style";
+import Option from './components/option'
 import "animate.css";
 import {actionCreator} from "./store";
+import axios from 'axios'
 
 const tag = ["A", "B", "C", "D"]
 
@@ -36,25 +35,26 @@ class newpage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      num: 0,
+      num: 0
     }
   }
 
   next() {
-    this.setState({num: this.state.num + 1})
+    this.props.changeNum(1)
   }
 
   back() {
-    this.setState({num: this.state.num - 1})
+    this.props.changeNum(-1)
   }
 
+
   isShowLeft() {
-    let num = this.state.num;
+    let num = this.props.num;
     return (1 <= num && num <= 4)
   }
 
   isShowRight() {
-    let num = this.state.num;
+    let num = this.props.num;
     return (0 <= num && num <= 3)
   }
 
@@ -62,12 +62,22 @@ class newpage extends Component {
     return fn ? null : "none"
   }
 
+  componentDidMount () {
+    axios.get('/api/list.json')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        throw new Error(err)
+      })
+  }
+
   render() {
-    const {num} = this.state;
+    const { num } = this.props;
     const Show = newpage.showMiddleWare;
     return (
       <NewWapper>
-        {this.props.new.map(item => (
+        {this.props.questions.map(item => (
           <Container key={item.index}>
             <Box className={num >= item.index ?
               "animated fadeOutLeft fast" :
@@ -88,13 +98,15 @@ class newpage extends Component {
                 <QustionContent>{item.question}</QustionContent>
               </Question>
               <OptionContainer>
-                {item.options.map((ele, index) => {
+                {item.options.map((item, index) => {
                   return (
-                    <Option onClick={() => this.next()}
-                            key={ele}
+                    <Option
+                      key={item}
+                      tag={tag[index]}
+                      text={item}
+                      next={this.next}
+                      onClick={this.next}
                     >
-                      <Label>{tag[index]}</Label>
-                      <Text>{ele}</Text>
                     </Option>
                   );
                 })}
@@ -117,13 +129,16 @@ class newpage extends Component {
 }
 
 const mapStateToProps = state => {
-  return state;
+  return {
+    num: state.new.num,
+    questions: state.new.questions
+  };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    ChangeQusetion(e) {
-      dispatch(actionCreator.changeSheetAsyncAction());
+    changeNum(payload) {
+      dispatch(actionCreator.changeNumAction(payload))
     }
   };
 };

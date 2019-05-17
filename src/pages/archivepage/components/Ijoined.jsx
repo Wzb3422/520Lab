@@ -5,11 +5,13 @@ import {
   BigName,
   JoinWarpper
 } from '../style'
-
+import 'animate.css'
 
 function Ijoined(props) {
   return (
-    <JoinWarpper active={props.active}>
+    <JoinWarpper
+      className={'animated fadeIn'}
+      active={props.active}>
       <Card>
         <BigName>艺术家咯咯咯咯咯</BigName>
         <BigRate>80%</BigRate>
