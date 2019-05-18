@@ -1,27 +1,14 @@
 import {
-  CHANGE_SHEET,
-  CHANGE_NUM
+  CHANGE_NUM_NEW,
+  SET_ANSWER_NEW
 } from './constants'
 
-export const changeSheetAction = () => ({
-  type: CHANGE_SHEET
-})
-
 export const changeNumAction = (value) => ({
-  type: CHANGE_NUM,
+  type: CHANGE_NUM_NEW,
   value
 })
 
-
-export const changeSheetAsyncAction = (e, changeNum) => {
-  return dispatch => {
-    dispatch(changeSheetAction())
-    dispatch(changeNumAction(changeNum))
-    setTimeout(
-      () => {
-        dispatch(changeSheetAction())
-      },
-      800
-    )
-  }
-}
+export const setAnswerAction = (value) => ({
+  type: SET_ANSWER_NEW,
+  value
+})

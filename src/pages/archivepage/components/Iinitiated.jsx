@@ -15,7 +15,9 @@ import { Link } from 'react-router-dom'
 function Iinitiated(props) {
   let { list } = props
   return (
-    <InitiatedWarpper active={props.active}>
+    <InitiatedWarpper
+      className={'animated fadeIn fast'}
+      active={props.active}>
       {
         list.length === 0 ?
           <Tip>

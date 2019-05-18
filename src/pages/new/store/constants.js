@@ -1,2 +1,2 @@
-export const CHANGE_SHEET = 'CHANGE_SHEET'
-export const CHANGE_NUM = 'CHANGE_NUM'
+export const CHANGE_NUM_NEW = 'CHANGE_NUM_NEW'
+export const SET_ANSWER_NEW = 'SET_ANSWER_NEW'
