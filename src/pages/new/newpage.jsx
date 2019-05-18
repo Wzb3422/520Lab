@@ -156,7 +156,7 @@ class newpage extends Component {
           <Sure>确定</Sure>
           <Cancel onClick={() => this.hidAlert()}>取消</Cancel>
         </Alert>
-      </NewWapper>
+      </NewWrapper>
     );
   }
 }
