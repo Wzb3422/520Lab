@@ -1,5 +1,6 @@
 import {
-  CHANGE_NUM
+  CHANGE_NUM_NEW,
+  SET_ANSWER_NEW
 } from './constants'
 
 const defaultState = {
@@ -40,14 +41,23 @@ const defaultState = {
       yourOption: null,
       index: 1,
     }
-  ]
+  ],
+  setAnswer: []
 }
 
 export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state))
   switch(action.type) {
-    case CHANGE_NUM:
-      newState.num += parseInt(action.value)
+    case CHANGE_NUM_NEW:
+      if ( action.value === 1 && newState.num < 4 ) {
+        newState.num += parseInt(action.value)
+      }
+      if (action.value === -1) {
+        newState.num += parseInt(action.value)
+      }
+      return newState
+    case SET_ANSWER_NEW:
+      newState.setAnswer[newState.num] = action.value
       return newState
     default:
       return newState

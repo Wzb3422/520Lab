@@ -11,7 +11,7 @@ import {
   Header,
   HeaderText,
   LeftEye,
-  NewWapper,
+  NewWrapper,
   NoArrowLeft,
   NoArrowRight,
   Num,
@@ -40,6 +40,7 @@ class newpage extends Component {
   }
 
   next() {
+    console.log('next')
     this.props.changeNum(1)
   }
 
@@ -76,7 +77,7 @@ class newpage extends Component {
     const { num } = this.props;
     const Show = newpage.showMiddleWare;
     return (
-      <NewWapper>
+      <NewWrapper>
         {this.props.questions.map(item => (
           <Container key={item.index}>
             <Box className={num >= item.index ?
@@ -104,8 +105,6 @@ class newpage extends Component {
                       key={item}
                       tag={tag[index]}
                       text={item}
-                      next={this.next}
-                      onClick={this.next}
                     >
                     </Option>
                   );
@@ -123,7 +122,7 @@ class newpage extends Component {
           <ArrowLeft onClick={() => this.back()} style={{display: Show(this.isShowLeft())}}/>
           <ArrowRight onClick={() => this.next()} style={{display: Show(this.isShowRight())}}/>
         </ArrowContainer>
-      </NewWapper>
+      </NewWrapper>
     );
   }
 }

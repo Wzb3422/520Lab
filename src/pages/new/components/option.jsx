@@ -1,30 +1,27 @@
 import React, { Component, Fragment } from 'react';
 import './option.css'
+import { connect } from 'react-redux'
+import { actionCreator } from '../store'
 
 class Option extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state= {
-      isActive: false
-    }
-    this.turnRed = this.turnRed.bind(this)
-  }
 
-  turnRed() {
-    console.log('I love ccp')
-    this.setState({
-      isActive: true
-    })
-  }
+  // turnRed() {
+  //   console.log('I love ccp')
+  //   this.setState({
+  //     isActive: true
+  //   })
+  // }
 
   render() {
     return (
       <Fragment>
         <div
-          className={ this.state.isActive ?  'active option' : 'option'}
+          className={'option'}
           onClick={() => {
-            this.turnRed()
+            // this.turnRed()
+            this.props.setAnswer(this.props.tag)
+            this.props.changeNum(1)
           }}
         >
           <div className={'label'}>{this.props.tag}</div>
@@ -35,4 +32,21 @@ class Option extends Component {
   }
 }
 
-export default Option;
+const mapStateToProps = state => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    changeNum(payload) {
+      dispatch(actionCreator.changeNumAction(payload))
+    },
+    setAnswer(payload) {
+      dispatch(actionCreator.setAnswerAction(payload))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Option);

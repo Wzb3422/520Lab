@@ -69,7 +69,7 @@ export const Stack = styled.div`
   position:relative
 `
 
-export const NewWapper = styled.div`
+export const NewWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
