@@ -34,6 +34,7 @@ import {
 } from "./style";
 import "animate.css";
 import {actionCreator} from "./store";
+import axios from 'axios'
 
 const tag = ["A", "B", "C", "D"]
 
@@ -88,6 +89,16 @@ class newpage extends Component {
     this.setState({alertShow: false})
   }
 
+  componentDidMount () {
+    axios.get('/api/list.json')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        throw new Error(err)
+      })
+  }
+
   render() {
     const {num, alertShow} = this.state;
     const Show = newpage.showMiddleWare;
@@ -116,12 +127,13 @@ class newpage extends Component {
               <OptionContainer>
                 {item.options.map((ele, index) => {
                   return (
-                    <Option onClick={() => this.selectAnswer(item.index, index)}
-                            key={index}
-                    >
-                      <Label>{tag[index]}</Label>
-                      <Text>{ele}</Text>
-                    </Option>
+                    <Option
+                      key={item}
+                      tag={tag[index]}
+                      text={item}
+                      next={this.next}
+                      onClick={this.next}
+                    />
                   );
                 })}
               </OptionContainer>
@@ -149,7 +161,10 @@ class newpage extends Component {
 }
 
 const mapStateToProps = state => {
-  return state;
+  return {
+    num: state.new.num,
+    questions: state.new.questions
+  };
 };
 
 const mapDispatchToProps = dispatch => {
