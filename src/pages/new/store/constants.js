@@ -1,3 +1,3 @@
-export const CHANGE_NUM_NEW = 'CHANGE_NUM_NEW'
-export const SET_ANSWER_NEW = 'SET_ANSWER_NEW'
+export const CHANGE_OPTION = 'CHANGE_OPTION'
+export const SELECT_OPTION = 'SELECT_OPTION'
 export const SET_QUESTIONS = 'SET_QUESTIONS'
