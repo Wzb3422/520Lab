@@ -1,17 +1,18 @@
-import {
-  CHANGE_NUM_NEW,
-  SET_ANSWER_NEW,
-  SET_QUESTIONS
-} from './constants'
+import {CHANGE_OPTION, SELECT_OPTION, SET_QUESTIONS} from './constants'
 import get from '../../../lib/get'
 
-export const changeNumAction = (value) => ({
-  type: CHANGE_NUM_NEW,
-  value
+export const selectOptionAction = (value) => ({
+  type: SELECT_OPTION,
+  ...value
 })
 
-export const setAnswerAction = (value) => ({
-  type: SET_ANSWER_NEW,
+export const changeOptionAction = (value) => ({
+  type: CHANGE_OPTION,
+  ...value
+})
+
+export const setQuestionsAction = (value) => ({
+  type: SET_QUESTIONS,
   value
 })
 
@@ -21,16 +22,12 @@ export const getQuestionAction = (token) => {
       let ret = get('/api/question', token)
       resolve(ret)
     })
-    .then(ret => {
-      dispatch(setQuestionsAction(ret.data))
-    })
-    .catch(err => {
-      throw new Error(err)
-    })
+      .then(ret => {
+        dispatch(setQuestionsAction(ret))
+      })
+      .catch(err => {
+        throw new Error(err)
+      })
   }
 }
 
-export const setQuestionsAction = (value) => ({
-  type: SET_QUESTIONS,
-  value
-})
