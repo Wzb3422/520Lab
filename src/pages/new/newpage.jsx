@@ -25,7 +25,6 @@ import {
   RightEye,
   SwitchBtn,
   SwitchText,
-  Text,
   Ti,
   Sure,
   Cancel
