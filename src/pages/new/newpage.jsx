@@ -27,7 +27,6 @@ import {
 import Option from './components/option'
 import "animate.css";
 import {actionCreator} from "./store";
-import axios from 'axios'
 
 const tag = ["A", "B", "C", "D"]
 
@@ -64,13 +63,7 @@ class newpage extends Component {
   }
 
   componentDidMount () {
-    axios.get('/api/list.json')
-      .then(res => {
-        console.log(res.data)
-      })
-      .catch(err => {
-        throw new Error(err)
-      })
+    this.props.getQuestionsList(this.props.token)
   }
 
   render() {
@@ -130,7 +123,8 @@ class newpage extends Component {
 const mapStateToProps = state => {
   return {
     num: state.new.num,
-    questions: state.new.questions
+    questions: state.new.questions,
+    token: state.login.token
   };
 };
 
@@ -138,6 +132,9 @@ const mapDispatchToProps = dispatch => {
   return {
     changeNum(payload) {
       dispatch(actionCreator.changeNumAction(payload))
+    },
+    getQuestionsList(token) {
+      dispatch(actionCreator.getQuestionAction(token))
     }
   };
 };

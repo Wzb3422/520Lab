@@ -1,12 +1,13 @@
 import {
   ON_CHANGE_USERNAME,
-  ON_CHANGE_PASSWORD
+  ON_CHANGE_PASSWORD,
+  SET_TOKEN
 } from './constants'
 
 const defaultState = {
   token: '',
-  username: 'username',
-  password: 'pwd'
+  username: '6109118175',
+  password: '3422w8516'
 }
 
 
@@ -18,6 +19,9 @@ export default (state = defaultState, action) => {
       return newState
     case ON_CHANGE_PASSWORD:
       newState.password = action.value
+      return newState
+    case SET_TOKEN:
+      newState.token = action.value
       return newState
     default:
       return newState

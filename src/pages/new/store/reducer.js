@@ -1,6 +1,7 @@
 import {
   CHANGE_NUM_NEW,
-  SET_ANSWER_NEW
+  SET_ANSWER_NEW,
+  SET_QUESTIONS
 } from './constants'
 
 const defaultState = {
@@ -58,6 +59,9 @@ export default (state = defaultState, action) => {
       return newState
     case SET_ANSWER_NEW:
       newState.setAnswer[newState.num] = action.value
+      return newState
+    case SET_QUESTIONS:
+      newState.questions = action.value
       return newState
     default:
       return newState

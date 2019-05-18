@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   LoginWrapper
 } from './style'
+import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
 
@@ -24,6 +25,7 @@ class Loginpage extends Component {
         <button
           onClick={() => (this.props.login(this.props.username, this.props.password))}
         >点我登录</button>
+        {this.props.token ? <Redirect to="/new/"/> : null}
       </LoginWrapper>
     );
   }
@@ -32,7 +34,8 @@ class Loginpage extends Component {
 const mapStateToProps = state => {
   return {
     username: state.login.username,
-    password: state.login.password
+    password: state.login.password,
+    token: state.login.token
   }
 }
 

@@ -1,10 +1,9 @@
 import {
   ON_CHANGE_USERNAME,
   ON_CHANGE_PASSWORD,
-  LOGIN_ASYNC,
-  LOGIN
+  SET_TOKEN
 } from './constants'
-import axios from 'axios'
+import post from '../../../lib/post'
 
 export const onUsernameChangeAction = (value) => ({
   type: ON_CHANGE_USERNAME,
@@ -22,19 +21,26 @@ export const onPasswordChangeAction = (value) => ({
 
 export const loginAsyncAction = (username, password) => {
   return dispatch => {
-    axios({
-      method: 'post',
-      url: 'http://47.101.204.202:5000/api/user/login',
-      data: {
-        username,
-        password
-      }
+    let data = {
+      username,
+      password
+    }
+    new Promise(resolve => {
+      let ret = post('/api/user/login', data, '')
+      resolve(ret)
     })
-    .then(res => {
-      console.log(res.data)
+    .then(ret => {
+      console.log(ret)
+      dispatch(setTokenAction(ret.token))
     })
     .catch(err => {
       throw new Error(err)
     })
   }
 }
+
+
+export const setTokenAction = (value) => ({
+  type: SET_TOKEN,
+  value
+})
