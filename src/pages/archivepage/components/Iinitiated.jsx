@@ -29,7 +29,7 @@ function Iinitiated(props) {
             <Card key={item.id}>
               <Name>{item.name}</Name>
               <Similarity>相似度</Similarity>
-              <Rate>{item.similarityRate}</Rate>
+              <Rate>{item.score}%</Rate>
               <Link to="/detail/">
                 <Details>详细信息</Details>
               </Link>

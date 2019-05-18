@@ -52,7 +52,7 @@ export const getIinitiatedAsyncAction = (token) => {
     })
     .then(ret => {
       console.log(ret)
-      // dispatch(getIinitiatedAction(ret.data))
+      dispatch(getIinitiatedAction(ret.data))
     })
     .catch(err => {
       throw new Error(err)

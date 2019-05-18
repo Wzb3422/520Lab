@@ -7,48 +7,7 @@ import {
 
 const defaultState = {
   active: 0,
-  IinitiatedList: [
-    {
-      id: "1",
-      name: "艺术家哈哈哈哈",
-      similarityRate: "10%",
-    },
-    {
-      id: "2",
-      name: "艺术家",
-      similarityRate: "20%",
-    },
-    {
-      id: "3",
-      name: "艺术家",
-      similarityRate: "30%",
-    },
-    {
-      id: "4",
-      name: "艺术家",
-      similarityRate: "40%",
-    },
-    {
-      id: "5",
-      name: "艺术家",
-      similarityRate: "50%",
-    },
-    {
-      id: "6",
-      name: "艺术家",
-      similarityRate: "50%",
-    },
-    {
-      id: "7",
-      name: "艺术家",
-      similarityRate: "50%",
-    },
-    {
-      id: "8",
-      name: "艺术家",
-      similarityRate: "50%",
-    }
-  ],
+  IinitiatedList: [],
   IjoinedList: [],
   isIjoinedShow: true
 }
@@ -64,6 +23,24 @@ export default (state = defaultState, action) => {
       return newState
     case GET_IJOINED:
       newState.IjoinedList = action.value
+      return newState
+    case GET_IINIT:
+      let originList = action.value
+      let list = []
+      originList.map((item, index) => {
+        let { set_id } = item
+        item.all_answers.map(item => {
+          list.push({
+            set_id,
+            name: item.name,
+            answers: item.answers,
+            score: item.score
+          })
+          return null
+        })
+        return null
+      })
+      newState.IinitiatedList = list
       return newState
     default:
       return state
