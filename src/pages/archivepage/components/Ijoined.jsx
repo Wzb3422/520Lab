@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   Card,
   BigRate,
@@ -7,57 +7,25 @@ import {
 } from '../style'
 import 'animate.css'
 
-function Ijoined(props) {
-  return (
-    <JoinWarpper
-      className={'animated fadeIn'}
-      active={props.active}>
-      <Card>
-        <BigName>艺术家咯咯咯咯咯</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-      <Card>
-        <BigName>艺术家</BigName>
-        <BigRate>80%</BigRate>
-      </Card>
-    </JoinWarpper>
-  )
+class Ijoined extends Component {
+  render() {
+    return (
+      <JoinWarpper
+        className={'animated fadeIn'}
+        active={this.props.active}>
+        {
+          this.props.IjoinedList.map((item, index) => {
+            return (
+              <Card key={index}>
+                <BigName>{item.set_man}</BigName>
+                <BigRate>{item.score}%</BigRate>
+              </Card>
+            )
+          })
+        }
+      </JoinWarpper>
+    )
+  }
 }
 
 export default Ijoined

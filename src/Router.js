@@ -7,6 +7,7 @@ import NewpageLoadable from './pages/new'
 import WhisperpageLoadable from './pages/whisper'
 import AnswerpageLoadable from './pages/answer'
 import LoginpageLoadable from './pages/login'
+import SharepageLoadable from './pages/share'
 
 function Routers() {
   return (
@@ -18,6 +19,7 @@ function Routers() {
       <Route path="/whisper/" component={WhisperpageLoadable} />
       <Route path="/answer/" component={AnswerpageLoadable} />
       <Route path="/login/" component={LoginpageLoadable} />
+      <Route path="/share/" component={SharepageLoadable} />
     </Router>
   )
 }

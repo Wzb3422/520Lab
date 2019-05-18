@@ -1,6 +1,8 @@
 import {
   SWITCH_HEADER,
-  TOGGLE_JOIN
+  TOGGLE_JOIN,
+  GET_IJOINED,
+  GET_IINIT
 } from './constants'
 
 const defaultState = {
@@ -47,6 +49,7 @@ const defaultState = {
       similarityRate: "50%",
     }
   ],
+  IjoinedList: [],
   isIjoinedShow: true
 }
 
@@ -58,6 +61,9 @@ export default (state = defaultState, action) => {
       return newState
     case TOGGLE_JOIN:
       newState.isIjoinedShow = !newState.isIjoinedShow
+      return newState
+    case GET_IJOINED:
+      newState.IjoinedList = action.value
       return newState
     default:
       return state

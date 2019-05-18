@@ -56,3 +56,17 @@ yarn build
 本项目Git commit信息遵循[Conventional Commits规范](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)并且附加[Git emoji](https://gitmoji.carloscuesta.me/)
 
 5ad77db82d125112c511b713e29dcdab
+
+### 页面分工
+
++ 登录注册页面
+
++ 出题/答题页面
+
++ 出题记录页面
+
+  + 出题的详情页面
+
++ 答题记录页面
+
++ 留言页面

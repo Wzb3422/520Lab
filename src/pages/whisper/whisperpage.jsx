@@ -21,7 +21,7 @@ class whisperpage extends Component {
     return (
       <WhisperWarpper>
         <Content>
-          <Header/>
+          <Header/> 
           <Box>
             <Input
               value={this.props.message}
