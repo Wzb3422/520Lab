@@ -16,6 +16,7 @@ import no_arrowright from './img/no_arrow_r.svg'
 import switchBtn from './img/switch.svg'
 import angel from './img/angel.png'
 import question from './img/question.png'
+import alert from './img/alert.svg'
 
 const OpenClose = keyframes` 
     0% {
@@ -308,9 +309,48 @@ export const SwitchText = styled.div`
 `
 
 export const Alert = styled.div`
-
+  position: absolute;
+  width: 350px;
+  height: 223px;
+  background: url(${alert});
 `
 
-export const Black = styled.div`
+export const AlertTitle = styled.div`
+  position: absolute;
+  top: 71px;
+  left: 67px;
+  font-size: 24px;
+  color: #171717;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+`
 
+export const Sure = styled.div`
+  position: absolute;
+  top: 135px;
+  right: 87px;
+  font-size: 21px;
+  color: #171717;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+`
+
+export const Cancel = styled.div`
+  position: absolute;
+  top: 139px;
+  left: 77px;
+  font-size: 21px;
+  color: #171717;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+`
+
+export const BackGround = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: rgba(0,0,0,0.52);
 `
