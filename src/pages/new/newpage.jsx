@@ -1,10 +1,13 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {
+  Alert,
   Angel,
+  AlertTitle,
   ArrowContainer,
   ArrowLeft,
   ArrowRight,
+  BackGround,
   Box,
   Container,
   Di,
@@ -22,7 +25,10 @@ import {
   RightEye,
   SwitchBtn,
   SwitchText,
-  Ti
+  Text,
+  Ti,
+  Sure,
+  Cancel
 } from "./style";
 import Option from './components/option'
 import "animate.css";
@@ -34,7 +40,7 @@ class newpage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      num: 0
+      alertShow: false
     }
   }
 
@@ -62,12 +68,33 @@ class newpage extends Component {
     return fn ? null : "none"
   }
 
+  selectAnswer(questionIndex, optionIndex) {
+    return (
+      0 <= this.state.num && this.state.num <= 3 ?
+        this.submit(questionIndex, optionIndex) & this.next() :
+        this.showAlert()
+    )
+  }
+
+  submit(questionIndex, optionIndex) {
+    //TODO: action
+  }
+
+  showAlert() {
+    this.setState({alertShow: true})
+  }
+
+  hidAlert() {
+    this.setState({alertShow: false})
+  }
+
   componentDidMount () {
     this.props.getQuestionsList(this.props.token)
   }
 
   render() {
     const { num } = this.props;
+    const {alertShow} = this.state;
     const Show = newpage.showMiddleWare;
     return (
       <NewWrapper>
@@ -98,8 +125,9 @@ class newpage extends Component {
                       key={item}
                       tag={tag[index]}
                       text={item}
-                    >
-                    </Option>
+                      next={this.next}
+                      onClick={this.next}
+                    />
                   );
                 })}
               </OptionContainer>
@@ -115,6 +143,12 @@ class newpage extends Component {
           <ArrowLeft onClick={() => this.back()} style={{display: Show(this.isShowLeft())}}/>
           <ArrowRight onClick={() => this.next()} style={{display: Show(this.isShowRight())}}/>
         </ArrowContainer>
+        <BackGround onClick={() => this.hidAlert()} style={{display: Show(alertShow)}}/>
+        <Alert style={{display: Show(alertShow)}}>
+          <AlertTitle>确认生成研究问卷</AlertTitle>
+          <Sure>确定</Sure>
+          <Cancel onClick={() => this.hidAlert()}>取消</Cancel>
+        </Alert>
       </NewWrapper>
     );
   }
