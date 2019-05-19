@@ -1,5 +1,9 @@
 import React, {Component} from "react";
 import {
+  ActiveOptionFirst,
+  ActiveOptionForth,
+  ActiveOptionSecond,
+  ActiveOptionThird,
   Alert,
   AlertTitle,
   Angel,
@@ -21,6 +25,7 @@ import {
   Num,
   Option,
   OptionContainer,
+  OptionsLayOut,
   Question,
   QuestionLogo,
   QustionContent,
@@ -29,12 +34,7 @@ import {
   SwitchBtn,
   SwitchText,
   Text,
-  Ti,
-  ActiveOptionFirst,
-  ActiveOptionSecond,
-  ActiveOptionThird,
-  ActiveOptionForth,
-  OptionsLayOut
+  Ti
 } from "./style";
 import "animate.css";
 import {connect} from 'react-redux'
@@ -132,10 +132,10 @@ class newpage extends Component {
                   item.options.map((ele, index) => {
                       return (
                         <OptionsLayOut key={index}>
-                          <ActiveOptionFirst style={{display: Show(item.yourOption===0)}}/>
-                          <ActiveOptionSecond style={{display: Show(item.yourOption===1)}}/>
-                          <ActiveOptionThird style={{display: Show(item.yourOption===2)}}/>
-                          <ActiveOptionForth style={{display: Show(item.yourOption===3)}}/>
+                          <ActiveOptionFirst style={{display: Show(item.yourOption === 0)}}/>
+                          <ActiveOptionSecond style={{display: Show(item.yourOption === 1)}}/>
+                          <ActiveOptionThird style={{display: Show(item.yourOption === 2)}}/>
+                          <ActiveOptionForth style={{display: Show(item.yourOption === 3)}}/>
                           <Option
                             onClick={() => this.selectAnswer({
                               questionIndex: item.index,
