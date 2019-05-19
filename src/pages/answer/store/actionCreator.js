@@ -1,4 +1,4 @@
-import {ANSWER_SELECT_OPTION, ANSWER_SET_QUESTIONS, POST_ANSWER} from './constants'
+import {ANSWER_SELECT_OPTION, ANSWER_SET_QUESTIONS, POST_ANSWER, CHECK_EVER_ANSWER} from './constants'
 import get from '../../../lib/get'
 import post from '../../../lib/post'
 import {AddIndex} from '../../../lib/formatArray'
@@ -52,6 +52,27 @@ export const postAnswerAsyncAction = (answer, setid, token) => {
     })
     .then(ret => {
       dispatch(postAnswerAction(ret.data.score))
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+  }
+}
+
+export const checkEverAnswerAction = value => ({
+  type: CHECK_EVER_ANSWER,
+  value
+})
+
+export const checkEverAnswerAsyncAction = (token, setid) => {
+  return dispatch => {
+    new Promise(resolve => {
+      let ret = get(`/api/answercheck/${setid}`, token)
+      resolve(ret)
+    })
+    .then(ret => {
+      console.log(ret)
+      dispatch(checkEverAnswerAction(ret.status))
     })
     .catch(err => {
       throw new Error(err)

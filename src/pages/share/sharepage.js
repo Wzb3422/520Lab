@@ -1,12 +1,8 @@
 import React, {Component} from 'react'
 import {Box, Img, QRcodeBox, ShareWrapper,} from './style'
 import QRCode from 'qrcode.react'
-<<<<<<< HEAD
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import Clipboard from 'react-clipboard.js';
-=======
-import {connect} from 'react-redux'
 import ClipboardButton from 'react-clipboard.js';
 
 const button = {
@@ -20,7 +16,6 @@ const button = {
   background: '#fff',
   letterSpacing: '.4px',
 }
->>>>>>> 4872f8a37a0bcf8f866783dd74f469143edee4c5
 
 class sharepage extends Component {
   constructor(props) {

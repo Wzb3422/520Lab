@@ -12,6 +12,7 @@ export default (state = defaultState, action) => {
   switch(action.type) {
     case POST_ANSWER:
       newState.score = action.value
+      console.log(action.value)
       if (newState.score <= 30) {
         newState.index = 0
       }
