@@ -3,7 +3,8 @@ import {
 } from './constants'
 
 const defaultState = {
-  score: 73
+  score: 73,
+  index: 0
 }
 
 export default (state = defaultState, action) => {
@@ -11,6 +12,18 @@ export default (state = defaultState, action) => {
   switch(action.type) {
     case POST_ANSWER:
       newState.score = action.value
+      if (newState.score <= 30) {
+        newState.index = 0
+      }
+      if (newState.score > 30 && newState <= 60) {
+        newState.index = 1
+      }
+      if (newState.score > 60 && newState.score <= 90) {
+        newState.index = 2
+      }
+      if (newState.score > 90) {
+        newState.index = 3
+      }
       return newState
     default:
       return newState

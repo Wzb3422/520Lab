@@ -40,6 +40,7 @@ export const postAnswerAsyncAction = (answer, setid, token) => {
     let answerProp = {}
     answer.map((item, index) => {
       answerProp[item.id] = map[item.yourOption]
+      return null
     })
     let data = {
       set_id: setid,

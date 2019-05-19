@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import pa from './img/1.jpg'
-import pb from './img/2.jpg'
-import pc from './img/3.jpg'
-import pd from './img/4.jpg'
 
+const urlArray = [
+  'https://ncustatic.ncuos.com/index/1558261577665.poster1.jpg',
+  'https://ncustatic.ncuos.com/index/1558261560098.poster2.jpg',
+  'https://ncustatic.ncuos.com/index/1558261592305.poster3.jpg',
+  'https://ncustatic.ncuos.com/index/1558261600792.poster4.jpg'
+]
 export const PosterWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -18,9 +20,9 @@ export const PosterWrapper = styled.div`
   filter: drop-shadow(0 0 10px rgba(58,58,58,.27));
 `
 
-export const PosterImg = styled.img.attrs({
-  src: pa
-})`
+export const PosterImg = styled.div`
   height: 564px;
   width: 380px;
+  background: url(${props => urlArray[props.index]}) no-repeat;
+  background-size: 100%;
 `

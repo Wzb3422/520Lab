@@ -9,7 +9,7 @@ class Posterpage extends Component {
   render() {
     return (
       <PosterWrapper>
-        <PosterImg></PosterImg>
+        <PosterImg index={this.props.index}></PosterImg>
       </PosterWrapper>
     );
   }
@@ -17,13 +17,13 @@ class Posterpage extends Component {
 
 const mapStateToProps = state => {
   return {
-    score: state.poster.score
+    score: state.poster.score,
+    index: state.poster.index
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-
   }
 }
 
