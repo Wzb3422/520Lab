@@ -21,7 +21,7 @@ export const Box = styled.div`
 `
 
 export const Img = styled.img.attrs({
-  src: 'https://i.loli.net/2019/05/18/5ce0072859a6b75109.jpg'
+  src: 'https://ncustatic.ncuos.com/index/1558263259553.5ce0072859a6b75109.jpg'
 })`
   height: 100%;
   width: 100%;

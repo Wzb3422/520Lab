@@ -25,4 +25,11 @@ export const PosterImg = styled.div`
   width: 380px;
   background: url(${props => urlArray[props.index]}) no-repeat;
   background-size: 100%;
+  position: relative;
+`
+
+export const QRcodeBox = styled.div`
+  position: absolute;
+  bottom: 68px;
+  right: 56px;
 `

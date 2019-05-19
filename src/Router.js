@@ -9,6 +9,7 @@ import AnswerpageLoadable from './pages/answer'
 import LoginpageLoadable from './pages/login'
 import SharepageLoadable from './pages/share'
 import PosterpageLoadable from './pages/poster'
+import Indexpage from './pages/index'
 // import RedirectToLogin from './lib/redirectTologin'
 
 function Routers() {
@@ -23,7 +24,7 @@ function Routers() {
       <Route path="/login/" component={LoginpageLoadable} />
       <Route path="/share/" component={SharepageLoadable} />
       <Route path="/poster/" component={PosterpageLoadable} />
-      {/* <Route path="/" component={RedirectToLogin} /> */}
+      <Route exact path="/" component={Indexpage} />
     </Router>
   )
 }
