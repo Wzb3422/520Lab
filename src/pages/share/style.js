@@ -38,3 +38,14 @@ export const QRcodeBox = styled.div.attrs({
   width: 84px;
   border: none;
 `
+
+export const Button = styled.div`
+  font-size: 15px;
+  line-height: 35px;
+  width: 200px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 12px auto 0 auto;
+  background: #fff;
+  letter-spacing: .4px;
+`
