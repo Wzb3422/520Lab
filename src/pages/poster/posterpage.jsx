@@ -20,7 +20,7 @@ class Posterpage extends Component {
           <QRcodeBox>
             <QRCode value={`https://520.ncuos.com/login?setid=${this.props.setid}`} size={77} />
           </QRcodeBox>
-          <Link to="/new/">
+          <Link to="/home/">
             <NewBtn>发起我的研究&nbsp;</NewBtn>
           </Link>
             <NewBtn>&nbsp;</NewBtn>
