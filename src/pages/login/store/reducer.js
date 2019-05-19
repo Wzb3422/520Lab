@@ -5,7 +5,8 @@ import {
   SET_NAME,
   SET_ID,
   UPDATE_MSG,
-  SET_SEX
+  SET_SEX,
+  CHECK_EVER_ANSWER
 } from './constants'
 
 const defaultState = {
@@ -13,7 +14,8 @@ const defaultState = {
   username: '',
   password: '',
   setid: 0,
-  message: ''
+  message: '',
+  everAnswer: false
 }
 
 
@@ -40,6 +42,9 @@ export default (state = defaultState, action) => {
       return newState
     case SET_SEX:
       newState.sex = action.value
+      return newState
+    case CHECK_EVER_ANSWER:
+      newState.everAnswer = action.value
       return newState
     default:
       return newState

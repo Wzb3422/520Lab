@@ -17,7 +17,7 @@ export default (state = defaultState, action) => {
       if (newState.score <= 30) {
         newState.index = 0
       }
-      if (newState.score > 30 && newState <= 60) {
+      if (newState.score > 30 && newState.score <= 60) {
         newState.index = 1
       }
       if (newState.score > 60 && newState.score <= 90) {
@@ -26,7 +26,6 @@ export default (state = defaultState, action) => {
       if (newState.score > 90) {
         newState.index = 3
       }
-      console.log(`index = ${newState.index}`)
       return newState
     default:
       return newState
