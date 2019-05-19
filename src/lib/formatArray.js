@@ -22,9 +22,11 @@ export const OriginDataFormat = function (arr) {
   let result = arr.data.filter(
     item => (List.has(item.id))
   );
-  let startIndex = 1;
-  result.map(item => (item.index = startIndex++));
-
-  return result.reverse()
+  return AddIndex(result)
 };
 
+export const AddIndex = function (result) {
+  let startIndex = 1;
+  result.map(item => (item.index = startIndex++));
+  return result.reverse()
+}

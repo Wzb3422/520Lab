@@ -24,6 +24,7 @@ class Loginpage extends Component {
       let key = item.split('=')[0]
       let value = item.split('=')[1]
       qsObj[key] = value
+      return null
     })
     let { setid: id } = qsObj
     this.props.updateSetid(id)

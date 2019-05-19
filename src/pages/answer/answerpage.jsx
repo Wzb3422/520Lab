@@ -31,8 +31,6 @@ import {
   QustionContent,
   RightEye,
   Sure,
-  SwitchBtn,
-  SwitchText,
   Text,
   Ti
 } from "./style";
@@ -53,7 +51,7 @@ class answerpage extends Component {
   }
 
   componentDidMount() {
-    this.props.getQuestionsList(this.props.token)
+    this.props.getQuestionsList(this.props.token,this.props.set_id)
   }
 
   next() {
@@ -91,11 +89,6 @@ class answerpage extends Component {
   isShowRight() {
     let num = this.state.num;
     return (0 <= num && num <= 3)
-  }
-
-  changeYourQuestion(index) {
-    let id = parseInt(Math.random() * 41 + 1);
-    this.props.getOneQuestion(index, id, this.props.token)
   }
 
   static showMiddleWare(fn) {
@@ -150,9 +143,6 @@ class answerpage extends Component {
                   )
                 }
               </OptionContainer>
-              <SwitchBtn>
-                <SwitchText onClick={() => this.changeYourQuestion(item.index)}>换一题</SwitchText>
-              </SwitchBtn>
             </Box>
           </Container>
         ))}
@@ -164,7 +154,7 @@ class answerpage extends Component {
         </ArrowContainer>
         <BackGround onClick={() => this.hideAlert()} style={{display: Show(alertShow)}}/>
         <Alert style={{display: Show(alertShow)}}>
-          <AlertTitle>确认生成研究问卷</AlertTitle>
+          <AlertTitle>确认提交研究问卷</AlertTitle>
           <Sure>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
@@ -176,7 +166,8 @@ class answerpage extends Component {
 const mapStateToProps = state => {
   return {
     questions: state.new,
-    token: state.login.token
+    token: state.login.token,
+    set_id: state.login.set_id
   };
 };
 
@@ -185,12 +176,9 @@ const mapDispatchToProps = dispatch => {
     selectOption(value) {
       dispatch(actionCreator.selectOptionAction(value))
     },
-    getQuestionsList(token) {
-      dispatch(actionCreator.getQuestionAction(token))
+    getQuestionsList(token,id) {
+      dispatch(actionCreator.getQuestionAction(token,id))
     },
-    getOneQuestion(index, id, token) {
-      dispatch(actionCreator.getOneQuestionAction(index, id, token))
-    }
   };
 };
 

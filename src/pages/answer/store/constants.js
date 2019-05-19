@@ -1,1 +1,2 @@
-export const CHANGE_NUM = 'CHANGE_NUM'
+export const SELECT_OPTION = 'SELECT_OPTION'
+export const SET_QUESTIONS = 'SET_QUESTIONS'
