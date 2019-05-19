@@ -37,6 +37,7 @@ import {
 import "animate.css";
 import {connect} from 'react-redux'
 import {actionCreator} from './store'
+import { Redirect } from 'react-router-dom'
 
 const tag = ["A", "B", "C", "D"]
 
@@ -47,11 +48,12 @@ class answerpage extends Component {
       num: 0,
       alertShow: false,
       selectTimes: 0,
+      updatedQues: false
     }
   }
 
   componentDidMount() {
-    this.props.getQuestionsList(this.props.token,this.props.set_id)
+    this.props.getQuestionsList(this.props.token,this.props.setid)
   }
 
   next() {
@@ -95,12 +97,18 @@ class answerpage extends Component {
     return fn ? null : "none"
   }
 
+  updateQuestion() {
+    this.setState({
+      updatedQues: true
+    })
+  }
+
   render() {
     const {num, alertShow} = this.state;
     const Show = answerpage.showMiddleWare;
     return (
       <NewWrapper>
-        {false && this.props.questions.map(item => (
+        {this.props.questions.map(item => (
           <Container key={item.index}>
             <Box className={(num >= item.index) ?
               "animated fadeOutLeft fast" :
@@ -155,9 +163,10 @@ class answerpage extends Component {
         <BackGround onClick={() => this.hideAlert()} style={{display: Show(alertShow)}}/>
         <Alert style={{display: Show(alertShow)}}>
           <AlertTitle>确认提交研究问卷</AlertTitle>
-          <Sure>确定</Sure>
+          <Sure onClick={this.updateQuestion}>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
+        {this.state.updatedQues ? <Redirect to="/whisper/" /> : null}
       </NewWrapper>
     );
   }
@@ -165,19 +174,19 @@ class answerpage extends Component {
 
 const mapStateToProps = state => {
   return {
-    questions: state.new,
+    questions: state.answer,
     token: state.login.token,
-    set_id: state.login.set_id
+    setid: state.login.setid
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     selectOption(value) {
-      dispatch(actionCreator.selectOptionAction(value))
+      dispatch(actionCreator.AnswerselectOptionAction(value))
     },
     getQuestionsList(token,id) {
-      dispatch(actionCreator.getQuestionAction(token,id))
+      dispatch(actionCreator.AnswerGetQuestionAction(token,id))
     },
   };
 };
