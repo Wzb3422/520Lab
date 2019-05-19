@@ -20,7 +20,7 @@ export const Content = styled.div`
 `
 
 export const Prompt = styled.img.attrs({
-  src: 'https://ncustatic.ncuos.com/index/1558264162562.profa.png'
+  src: 'https://ncustatic.ncuos.com/index/1558308528818.KUANGKUANG.png'
 })`
   width: 304px;
   height: 402px;
