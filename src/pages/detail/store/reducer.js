@@ -1,57 +1,18 @@
+import {
+  GET_QUES_TEXT
+} from './constants'
+
 const defaultState = {
   questionList: [
     {
-      question: '最让我有起床动力的是哈哈哈哈哈哈哈',
+      question: '获取失败',
       yours: {
         choice: 'A',
-        content: '你的外卖到了哈哈哈哈哈哈'
+        content: '获取失败'
       },
       his: {
         choice: 'B',
-        content: '手机还在床下哈哈哈哈哈哈哈'
-      }
-    },
-    {
-      question: '最让我有起床动力的是',
-      yours: {
-        choice: 'A',
-        content: '你的外卖到了'
-      },
-      his: {
-        choice: 'A',
-        content: '你的外卖到了'
-      }
-    },{
-      question: '最让我有起床动力的是',
-      yours: {
-        choice: 'A',
-        content: '你的外卖到了'
-      },
-      his: {
-        choice: 'B',
-        content: '手机还在床下'
-      }
-    },
-    {
-      question: '最让我有起床动力的是',
-      yours: {
-        choice: 'A',
-        content: '你的外卖到了'
-      },
-      his: {
-        choice: 'B',
-        content: '手机还在床下'
-      }
-    },
-    {
-      question: '最让我有起床动力的是',
-      yours: {
-        choice: 'A',
-        content: '你的外卖到了'
-      },
-      his: {
-        choice: 'B',
-        content: '手机还在床下'
+        content: '获取失败'
       }
     }
   ]
@@ -60,6 +21,9 @@ const defaultState = {
 export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state))
   switch(action.type) {
+    case GET_QUES_TEXT:
+      newState.questionList = action.value
+      return newState
     default:
       return newState
   }

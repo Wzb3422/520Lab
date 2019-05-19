@@ -2,7 +2,8 @@ import {
   SWITCH_HEADER,
   TOGGLE_JOIN,
   GET_IJOINED,
-  GET_IINIT
+  GET_IINIT,
+  DETAIL_CLICK
 } from './constants'
 import get from '../../../lib/get'
 
@@ -51,7 +52,6 @@ export const getIinitiatedAsyncAction = (token) => {
       resolve(ret)
     })
     .then(ret => {
-      console.log(ret)
       dispatch(getIinitiatedAction(ret.data))
     })
     .catch(err => {
@@ -59,3 +59,8 @@ export const getIinitiatedAsyncAction = (token) => {
     })
   }
 }
+
+export const detailClickAction = (value) => ({
+  type: DETAIL_CLICK,
+  value
+})

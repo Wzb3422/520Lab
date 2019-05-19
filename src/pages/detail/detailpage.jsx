@@ -21,8 +21,16 @@ import {
   YourAnswerRight,
   YourChoice
 } from './style'
+import {
+  actionCreator
+} from './store'
 
 class Detail extends Component {
+
+  componentDidMount() {
+    this.props.getQuestionText(this.props.token, this.props.detailobj)
+  }
+
   render() {
     return (
       <DetailWarpper>
@@ -68,12 +76,18 @@ class Detail extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    questionList: state.detail.questionList
+    questionList: state.detail.questionList,
+    token: state.login.token,
+    detailobj: state.archive.detailobj
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    getQuestionText(token, obj) {
+      dispatch(actionCreator.getQuestonTextAsyncAction(token, obj))
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail)
