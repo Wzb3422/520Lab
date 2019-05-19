@@ -30,6 +30,11 @@ import {
   SwitchText,
   Text,
   Ti,
+  ActiveOptionFirst,
+  ActiveOptionSecond,
+  ActiveOptionThird,
+  ActiveOptionForth,
+  OptionsLayOut
 } from "./style";
 import "animate.css";
 import {connect} from 'react-redux'
@@ -43,7 +48,7 @@ class newpage extends Component {
     this.state = {
       num: 0,
       alertShow: false,
-      selectTimes:0,
+      selectTimes: 0,
     }
   }
 
@@ -52,11 +57,11 @@ class newpage extends Component {
   }
 
   next() {
-    this.setState({num: this.state.num + 1,selectTimes:this.state.selectTimes + 1})
+    this.setState({num: this.state.num + 1, selectTimes: this.state.selectTimes + 1})
   }
 
   back() {
-    this.setState({num: this.state.num - 1,selectTimes:this.state.selectTimes + 1})
+    this.setState({num: this.state.num - 1, selectTimes: this.state.selectTimes + 1})
   }
 
   selectAnswer(value) {
@@ -86,6 +91,11 @@ class newpage extends Component {
   isShowRight() {
     let num = this.state.num;
     return (0 <= num && num <= 3)
+  }
+
+  changeYourQuestion(index) {
+    let id = parseInt(Math.random() * 41 + 1);
+    this.props.getOneQuestion(index, id, this.props.token)
   }
 
   static showMiddleWare(fn) {
@@ -121,25 +131,27 @@ class newpage extends Component {
                 {
                   item.options.map((ele, index) => {
                       return (
-                        <Option
-                          key={index}
-                          onClick={() => this.selectAnswer(
-                            {
+                        <OptionsLayOut key={index}>
+                          <ActiveOptionFirst style={{display: Show(item.yourOption===0)}}/>
+                          <ActiveOptionSecond style={{display: Show(item.yourOption===1)}}/>
+                          <ActiveOptionThird style={{display: Show(item.yourOption===2)}}/>
+                          <ActiveOptionForth style={{display: Show(item.yourOption===3)}}/>
+                          <Option
+                            onClick={() => this.selectAnswer({
                               questionIndex: item.index,
                               optionIndex: index
-                            }
-                          )
-                          }>
-                          <Label>{tag[index]}</Label>
-                          <Text>{ele}</Text>
-                        </Option>
+                            })}>
+                            <Label>{tag[index]}</Label>
+                            <Text>{ele}</Text>
+                          </Option>
+                        </OptionsLayOut>
                       )
                     }
                   )
                 }
               </OptionContainer>
               <SwitchBtn>
-                <SwitchText>换一题</SwitchText>
+                <SwitchText onClick={() => this.changeYourQuestion(item.index)}>换一题</SwitchText>
               </SwitchBtn>
             </Box>
           </Container>
@@ -175,6 +187,9 @@ const mapDispatchToProps = dispatch => {
     },
     getQuestionsList(token) {
       dispatch(actionCreator.getQuestionAction(token))
+    },
+    getOneQuestion(index, id, token) {
+      dispatch(actionCreator.getOneQuestionAction(index, id, token))
     }
   };
 };

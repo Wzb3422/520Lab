@@ -1,5 +1,4 @@
-import {SELECT_OPTION,SET_QUESTIONS} from './constants'
-import { Li } from '../../../lib/formatArray'
+import {SELECT_OPTION,SET_QUESTIONS,CHANGE_QUESTION} from './constants'
 
 const defaultState = [];
 
@@ -16,7 +15,12 @@ export default (state = defaultState, action) => {
       console.log(newState);
       return newState;
     case SET_QUESTIONS:
-      newState = Li(action.value);
+      newState = action.value;
+      return newState;
+    case CHANGE_QUESTION:
+      action.data.index = action.questionIndex;
+      action.data.id = Number(action.data.id);
+      newState[5 - action.questionIndex] = action.data ;
       return newState;
     default:
       return newState

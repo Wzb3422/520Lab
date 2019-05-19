@@ -17,6 +17,10 @@ import switchBtn from './img/switch.svg'
 import angel from './img/angel.png'
 import question from './img/question.png'
 import alert from './img/alert.svg'
+import A_act from './img/A_act.svg'
+import B_act from './img/B_act.svg'
+import C_act from './img/C_act.svg'
+import D_act from './img/D_act.svg'
 
 const OpenClose = keyframes` 
     0% {
@@ -205,23 +209,6 @@ export const QustionContent = styled.div`
   -webkit-box-orient: vertical;
 `
 
-export const OptionContainer = styled.div`
-  height: 300px;
-  position: absolute;
-  top: 180px;
-  left: 38px;
-  overflow: hidden;
-`
-
-export const Option = styled.div`
-  width: 246px;
-  height: 50px;
-  margin-top: 14px;
-  background: url(${option});
-  position: relative;
-  pointer-events: auto
-`
-
 export const Label = styled.div`
   height: 20px;
   width: 20px;
@@ -296,6 +283,7 @@ export const SwitchBtn = styled.div`
   position: absolute;
   left: 92px;
   bottom: -26px;
+  pointer-events: auto;
 `
 
 export const SwitchText = styled.div`
@@ -353,4 +341,66 @@ export const BackGround = styled.div`
   right: 0;
   display: flex;
   background: rgba(0,0,0,0.52);
+`
+
+export const OptionContainer = styled.div`
+  height: 300px;
+  position: absolute;
+  top: 180px;
+  left: 8px;
+  width: 400px;
+  overflow: hidden;
+`
+
+export const Option = styled.div`
+  width: 246px;
+  height: 50px;
+  margin: 14px auto 0 auto;
+  background: url(${option});
+  position: relative;
+  pointer-events: auto
+`
+
+export const OptionsLayOut = styled.div`
+  width: 300px;
+  overflow: hidden;
+`
+
+export const ActiveOptionFirst = styled.div`
+  position: absolute;
+  width: 301.18px;
+  height: 65px;
+  top: 8px;
+  background: url(${A_act});
+  z-index: -1;
+`
+
+export const ActiveOptionSecond = styled.div`
+  position: absolute;
+  width: 299.38px;
+  height: 66.26px;
+  top: 69px;
+  left:1px;
+  background: url(${B_act});
+  z-index: -1;
+`
+
+export const ActiveOptionThird = styled.div`
+  position: absolute;
+  width: 297.33px;
+  height: 68.23px;
+  top: 137px;
+  left: 2.7px;
+  background: url(${C_act});
+  z-index: -1;
+`
+
+export const ActiveOptionForth = styled.div`
+  position: absolute;
+  width: 295.51px;
+  height: 63.97px;
+  top: 198px;
+  left: 3.5px;
+  background: url(${D_act});
+  z-index: -1;
 `

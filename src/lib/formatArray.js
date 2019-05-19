@@ -2,7 +2,7 @@ const randomQuestions = function () {
   let randoms = [];
   while (true) {
     let isExists = false;
-    let random = parseInt(1 + 42 * (Math.random()));
+    let random = parseInt(1 + 41 * (Math.random()));
     for (let i = 0; i < randoms.length; i++) {
       if (random === randoms[i]) {
         isExists = true;
@@ -17,7 +17,7 @@ const randomQuestions = function () {
   return randoms
 };
 
-export const Li = function (arr) {
+export const OriginDataFormat = function (arr) {
   let List = new Set(randomQuestions(arr.length));
   let result = arr.data.filter(
     item => (List.has(item.id))
@@ -27,3 +27,4 @@ export const Li = function (arr) {
 
   return result.reverse()
 };
+
