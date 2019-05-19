@@ -5,6 +5,7 @@ import { reducer as detailReducer } from '../pages/detail/store'
 import { reducer as answerReducer } from '../pages/answer/store'
 import { reducer as loginReducer } from '../pages/login/store'
 import { reducer as whisperReducer } from '../pages/whisper/store'
+import { reducer as posterReducer } from '../pages/poster/store'
 
 const reducer = combineReducers({
   archive: archiveReducer,
@@ -12,7 +13,8 @@ const reducer = combineReducers({
   detail: detailReducer,
   answer: answerReducer,
   login: loginReducer,
-  whisper: whisperReducer
+  whisper: whisperReducer,
+  poster: posterReducer
 })
 
 export default reducer

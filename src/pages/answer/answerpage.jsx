@@ -93,14 +93,15 @@ class answerpage extends Component {
     return (0 <= num && num <= 3)
   }
 
-  static showMiddleWare(fn) {
-    return fn ? null : "none"
-  }
-
   updateQuestion() {
     this.setState({
       updatedQues: true
     })
+    console.log(this.state.updatedQues)
+  }
+
+  static showMiddleWare(fn) {
+    return fn ? null : "none"
   }
 
   render() {
@@ -163,10 +164,13 @@ class answerpage extends Component {
         <BackGround onClick={() => this.hideAlert()} style={{display: Show(alertShow)}}/>
         <Alert style={{display: Show(alertShow)}}>
           <AlertTitle>确认提交研究问卷</AlertTitle>
-          <Sure onClick={this.updateQuestion}>确定</Sure>
+          <Sure onClick={() => {
+            this.props.postAnswer(this.props.questions, this.props.setid, this.props.token)
+            this.updateQuestion()
+          }}>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
-        {this.state.updatedQues ? <Redirect to="/whisper/" /> : null}
+        {this.state.updatedQues ? <Redirect to="/poster/" /> : null}
       </NewWrapper>
     );
   }
@@ -188,6 +192,9 @@ const mapDispatchToProps = dispatch => {
     getQuestionsList(token,id) {
       dispatch(actionCreator.AnswerGetQuestionAction(token,id))
     },
+    postAnswer(answer, setid, token) {
+      dispatch(actionCreator.postAnswerAsyncAction(answer, setid, token))
+    }
   };
 };
 

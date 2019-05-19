@@ -24,12 +24,12 @@ export const getQuestionAction = (token) => {
       let ret = get('/api/question', token)
       resolve(ret)
     })
-      .then(ret => {
-        dispatch(setQuestionsAction(ret))
-      })
-      .catch(err => {
-        throw new Error(err)
-      })
+    .then(ret => {
+      dispatch(setQuestionsAction(ret))
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
   }
 }
 
