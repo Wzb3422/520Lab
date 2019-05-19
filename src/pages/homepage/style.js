@@ -69,11 +69,29 @@ export const Name = styled.div`
   position: relative;
   width: 200px;
   font-size: 23px;
-  top: 217px;
+  top: 40px;
   text-align: center;
   color: #2e2e2e;
   margin: auto;
   overflow: hidden;
   text-overflow:ellipsis;
-  white-space:nowrap;
+  white-space: nowrap;
+`
+
+export const Boy = styled.div`
+  position: relative;
+  width: 194px;
+  height: 177px;
+  top: -13px;
+  left: 63px;
+  background: url("https://ncustatic.ncuos.com/index/1558268357241.B.svg");
+`
+
+export const Girl = styled.div`
+  position: relative;
+  width: 194px;
+  height: 177px;
+  top: -13px;
+  left: 63px;
+  background: url("https://ncustatic.ncuos.com/index/1558268385034.G.svg");
 `

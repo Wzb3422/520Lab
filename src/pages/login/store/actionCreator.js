@@ -4,7 +4,8 @@ import {
   SET_TOKEN,
   SET_NAME,
   SET_ID,
-  UPDATE_MSG
+  UPDATE_MSG,
+  SET_SEX
 } from './constants'
 import post from '../../../lib/post'
 
@@ -41,6 +42,7 @@ export const loginAsyncAction = (username, password) => {
       dispatch(setTokenAction(ret.token))
       dispatch(setNameAction(ret.name))
       dispatch(updateStatusMessage(ret.message))
+      dispatch(setSexAction(ret.sex))
     })
     .catch(err => {
       throw new Error(err)
@@ -56,6 +58,11 @@ export const setTokenAction = (value) => ({
 
 export const setIdAction = value => ({
   type: SET_ID,
+  value
+})
+
+export const setSexAction = value => ({
+  type: SET_SEX,
   value
 })
 

@@ -4,7 +4,8 @@ import {
   SET_TOKEN,
   SET_NAME,
   SET_ID,
-  UPDATE_MSG
+  UPDATE_MSG,
+  SET_SEX
 } from './constants'
 
 const defaultState = {
@@ -36,6 +37,9 @@ export default (state = defaultState, action) => {
       return newState
     case UPDATE_MSG:
       newState.message = action.value
+      return newState
+    case SET_SEX:
+      newState.sex = action.value
       return newState
     default:
       return newState
