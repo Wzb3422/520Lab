@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import largeButton from './img/largeButton.svg'
+import alert from './img/alert.svg'
 
 const urlArray = [
   'https://ncustatic.ncuos.com/index/1558261577665.poster1.jpg',
@@ -69,4 +70,49 @@ export const Qoute = styled.div`
   width: 86px;
   color: #fff;
   text-align: center;
+`
+
+export const Alert = styled.div`
+  position: absolute;
+  font-size: 14px;
+  height: 223px;
+  width: 340px;
+  color: #fff;
+  background: url(${alert});
+  filter: drop-shadow(0 0 10px rgba(58,58,58,.27));
+`
+
+export const Text = styled.div`
+  position: absolute;
+  top: 53px;
+  left: 55px;
+  font-size: 12px;
+  color: #171717;
+  font-weight: 600;
+  width: 228px;
+  height: 81px;
+  overflow: hidden;
+  letter-spacing: 1.5px;
+`
+
+export const Cancel = styled.div`
+  position: absolute;
+  top: 148px;
+  left: 2px;
+  font-size: 18px;
+  color: #171717;
+  font-weight: 600;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1.5px;
+`
+
+export const BackGround = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.52);
 `

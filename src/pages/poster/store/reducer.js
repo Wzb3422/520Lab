@@ -4,14 +4,16 @@ import {
 
 const defaultState = {
   score: 73,
-  index: 0
+  index: 0,
+  message: ''
 }
 
 export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state))
   switch(action.type) {
     case POST_ANSWER:
-      newState.score = action.value
+      newState.score = action.score
+      newState.message = action.message
       if (newState.score <= 30) {
         newState.index = 0
       }

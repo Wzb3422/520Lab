@@ -6,15 +6,32 @@ import {
   QRcodeBox,
   NewBtn1,
   NewBtn2,
-  Qoute
+  Qoute,
+  Alert,
+  Text,
+  BackGround,
+  Cancel
 } from './style'
 import QRCode from 'qrcode.react'
 import {
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom'
 
 class Posterpage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShow :false
+    }
+  }
+
+  static showMiddleWare(fn) {
+    return fn ? null : "none"
+  }
   render() {
+    const {isShow} = this.state;
+    const Show = Posterpage.showMiddleWare;
     return (
       <PosterWrapper>
         <PosterImg index={this.props.index}>
@@ -25,8 +42,14 @@ class Posterpage extends Component {
           <Link to="/home/">
             <NewBtn1>返回首页</NewBtn1>
           </Link>
-            <NewBtn2>查看留言</NewBtn2>
+            <NewBtn2 onClick={()=>this.setState({isShow:true})}>查看留言</NewBtn2>
         </PosterImg>
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}
+        <BackGround style={{display : Show(isShow)}}/>
+        <Alert style={{display : Show(isShow)}}>
+          <Text>{this.props.message}</Text>
+          <Cancel onClick={()=>this.setState({isShow:false})}>关闭</Cancel>
+        </Alert>
       </PosterWrapper>
     );
   }
@@ -35,8 +58,9 @@ class Posterpage extends Component {
 const mapStateToProps = state => {
   return {
     score: state.poster.score,
+    message: state.poster.message,
     index: state.poster.index,
-    whisper: state.poster.whisper
+    token: state.login.token
   }
 }
 
