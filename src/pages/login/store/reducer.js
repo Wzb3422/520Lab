@@ -9,10 +9,10 @@ import {
 
 const defaultState = {
   token: '',
-  username: '6109118175',
-  password: '3422w8516',
+  username: '',
+  password: '',
   setid: 0,
-  message: '请登录'
+  message: ''
 }
 
 

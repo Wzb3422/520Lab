@@ -178,6 +178,7 @@ class newpage extends Component {
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
         {this.state.updatedQues ? <Redirect to="/whisper/" /> : null}
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </NewWrapper>
     );
   }

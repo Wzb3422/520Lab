@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import outline from './img/outline.svg'
-import logo from './img/logo.png'
 import btnred from './img/btn-red.svg'
 import btnblack from './img/btn-black.svg'
 
@@ -31,7 +30,7 @@ export const Box = styled.div`
 `
 
 export const Logo = styled.img.attrs({
-  src: logo
+  src: 'https://ncustatic.ncuos.com/index/1558266589924.rsafcaasdsa.png'
 })`
   height: 66px;
   width: 228px;

@@ -18,7 +18,7 @@ class whisperpage extends Component {
     this.props.getAlternativesList(this.props.token)
   }
   render() {
-    const tips = "戳我";
+    const tips = "在这里留言哦";
     return (
       <WhisperWarpper>
         <Content>
@@ -36,6 +36,7 @@ class whisperpage extends Component {
           <RedBtn onClick={() => this.props.postNewQues(this.props.new, this.props.message, this.props.token)}>塞入纸条</RedBtn>
         </Content>
         {this.props.setid !== 0 ? <Redirect to="/share/" /> : null}
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </WhisperWarpper>
     );
   }
