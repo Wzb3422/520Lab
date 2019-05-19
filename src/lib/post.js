@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 async function post(path, data, token) {
-  const baseUrl = 'http://47.101.204.202:5000'
+  const baseUrl = 'https://520.ncuos.com'
   let url = baseUrl.concat(path)
   let ret = await new Promise(resolve => {
     axios({

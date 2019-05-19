@@ -18,16 +18,18 @@ class Loginpage extends Component {
 
   componentDidMount() {
     const qs = window.location.href.split('?')[1]
-    let qsItems = qs.split('&')
-    let qsObj = {}
-    qsItems.map(item => {
-      let key = item.split('=')[0]
-      let value = item.split('=')[1]
-      qsObj[key] = value
-      return null
-    })
-    let { setid: id } = qsObj
-    this.props.updateSetid(id)
+    if (qs) {
+      let qsItems = qs.split('&')
+      let qsObj = {}
+      qsItems.map(item => {
+        let key = item.split('=')[0]
+        let value = item.split('=')[1]
+        qsObj[key] = value
+        return null
+      })
+      let { setid: id } = qsObj
+      this.props.updateSetid(id)
+    }
   }
 
   render() {
