@@ -18,15 +18,17 @@ class Loginpage extends Component {
 
   componentDidMount() {
     const qs = window.location.href.split('?')[1]
-    let qsItems = qs.split('&')
-    let qsObj = {}
-    qsItems.map(item => {
-      let key = item.split('=')[0]
-      let value = item.split('=')[1]
-      qsObj[key] = value
-    })
-    let { setid: id } = qsObj
-    this.props.updateSetid(id)
+    if (qs) {
+      let qsItems = qs.split('&')
+      let qsObj = {}
+      qsItems.map(item => {
+        let key = item.split('=')[0]
+        let value = item.split('=')[1]
+        qsObj[key] = value
+      })
+      let { setid: id } = qsObj
+      this.props.updateSetid(id)
+    }
   }
 
   render() {
@@ -59,7 +61,8 @@ class Loginpage extends Component {
           <Prompt></Prompt>
             <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
         </Content>
-        {this.props.token ? <Redirect to="/home/"/> : null}
+        {this.props.setid === 0 && this.props.token ? <Redirect to="/home/"/> : null}
+        {this.props.setid !== 0 && this.props.token ? <Redirect to="/answer/"/> : null}
       </LoginWrapper>
     );
   }
@@ -69,7 +72,8 @@ const mapStateToProps = state => {
   return {
     username: state.login.username,
     password: state.login.password,
-    token: state.login.token
+    token: state.login.token,
+    setid: state.login.setid
   }
 }
 
