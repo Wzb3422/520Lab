@@ -6,6 +6,7 @@ import {
   QRcodeBox
 } from './style'
 import QRCode from 'qrcode.react'
+import { connect } from 'react-redux'
 
 class sharepage extends Component {
   render() {
@@ -14,7 +15,7 @@ class sharepage extends Component {
         <Box>
           <Img/>
           <QRcodeBox>
-            <QRCode value={`hello world`} size={84} />
+            <QRCode value={`http://localhost:3000/login?setid=${this.props.setid}`} size={84} />
           </QRcodeBox>
         </Box>
       </ShareWrapper> 
@@ -22,4 +23,19 @@ class sharepage extends Component {
   }
 }
 
-export default sharepage
+const mapStateToProps = state => {
+  return {
+    setid: state.whisper.set_id
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(sharepage)

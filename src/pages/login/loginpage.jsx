@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import {
-  LoginWrapper
+  LoginWrapper,
+  Content,
+  Title,
+  InputBox,
+  InputName,
+  Prompt,
+  LoginBtn
 } from './style'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
 
@@ -10,23 +16,30 @@ class Loginpage extends Component {
   render() {
     return (
       <LoginWrapper>
-        <input
-          type="text"
-          placeholder="Username"
-          value={this.props.username}
-          onChange={this.props.onChangeUsername}
-        />
-        <input
-          type="password"
-          placeholder="pwd"
-          value={this.props.password}
-          onChange={this.props.onChangePassword}
-        />
-        <button
-          onClick={() => (this.props.login(this.props.username, this.props.password))}
-        >点我登录</button>
-        <Link to="/whisper/">whisper</Link>
-        {this.props.token ? <Redirect to="/new/"/> : null}
+        <Content>
+          <Title />
+          <InputBox>
+            <InputName>学号</InputName>
+            <input
+            type="text"
+            placeholder="Username"
+            value={this.props.username}
+            onChange={this.props.onChangeUsername}
+          />
+          </InputBox>
+          <InputBox>
+            <InputName>密码</InputName>
+            <input
+            type="password"
+            placeholder="来搞我"
+            value={this.props.password}
+            onChange={this.props.onChangePassword}
+          />
+          </InputBox>
+          <Prompt>密码错误</Prompt>
+          <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
+        </Content>
+        {this.props.token ? <Redirect to="/"/> : null}
       </LoginWrapper>
     );
   }

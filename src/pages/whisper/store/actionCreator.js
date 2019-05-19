@@ -1,9 +1,11 @@
 import {
   ON_INPUT_CHANGE,
   GET_ALTER_LIST,
-  SHOW_ALTER
+  SHOW_ALTER,
+  POST_QUES
 } from './constants'
 import get from '../../../lib/get'
+import post from '../../../lib/post'
 
 export const onInputChangeAction = (value) => ({
   type: ON_INPUT_CHANGE,
@@ -34,3 +36,35 @@ export const getAlternativesAsyncAction = (token) => {
 export const showAlterAction = () => ({
   type: SHOW_ALTER
 })
+
+export const postNewQuesAction = value => ({
+  type: POST_QUES,
+  value
+})
+
+export const postNewQuesAsyncAction = (newData, message, token) => {
+  return dispatch => {
+    const map = ['A', 'B', 'C', 'D']
+    let questions = {}
+    console.log(newData)
+    newData.map((item, index) => {
+      questions[item.question.toString()] = map[item.yourOption]
+      return null
+    })
+    let data = {
+      questions,
+      messages: message
+    }
+    new Promise(resolve => {
+      let ret = post('/api/question/my', data, token)
+      resolve(ret)
+    })
+    .then(ret => {
+      console.log(ret)
+      dispatch(postNewQuesAction(ret.set_id))
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+  }
+}

@@ -51,6 +51,10 @@ const GlobalReset = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+  input, button {
+    border: none;
+    outline: none;
+  }
 `
 
 export default GlobalReset

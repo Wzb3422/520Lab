@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="228px" height="66px" viewBox="0 0 228 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>标题</title>
+    <desc>Created with Sketch.</desc>
+    <g id="出题视角" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-62.000000, -64.000000)">
+            <g id="标题" transform="translate(62.000000, 64.000000)">
+                <polygon id="Path-19" fill="#FF446B" points="0.0015973474 4.87111276 11.3483112 62.0015945 60.9746357 61.0314484 62.4120648 54.8299255 90.9285895 53.27028 89.3880161 62.0015945 135.98235 59.3363539 135.358587 65.6051737 191.040932 55.395394 225.947244 60.0133451 227.402343 4.87111276 193.053241 10.4770247 134.765223 3.68313689 134.765223 11.1484462 101.168398 12.9498898 102.807324 4.87111276 64.3395134 9.57159068 65.2231335 0.612358147"></polygon>
+                <polygon id="Path-18" fill="#2E2E2E" points="9.61876016 8.22956378 14.8691379 54.9206349 58.310313 56.4485289 58.310313 6.3517182"></polygon>
+                <polygon id="Path-18-Copy" fill="#2E2E2E" points="58 13.6832313 61 51.5557732 98.2064489 45.7944523 96.6405917 9.38588679"></polygon>
+                <polygon id="Path-18-Copy-5" fill="#F8F8F8" points="61.9092571 17.8798174 63.7893232 46.8907029 95.0932687 42.248042 92 14.8907029"></polygon>
+                <polygon id="Path-18-Copy-2" fill="#2E2E2E" points="98.3198887 14.5072814 96.1616316 57.8730159 138.096287 56.4485289 140.932414 14.5072814"></polygon>
+                <polygon id="Path-18-Copy-3" fill="#2E2E2E" points="140.307428 8.12585628 140.307428 59.8412698 184.940697 52.9412475 186.985165 10.9467142"></polygon>
+                <polygon id="Path-18-Copy-4" fill="#2E2E2E" points="187.997254 13.7525887 182.140318 48 223.421233 55.0812122 223.421233 12.7783017"></polygon>
+                <text id="无" transform="translate(32.896489, 30.287798) rotate(-3.000000) translate(-32.896489, -30.287798) " font-family="PingFangSC-Semibold, PingFang SC" font-size="41" font-weight="500" letter-spacing="2.5625" fill="#F8F8F8">
+                    <tspan x="14.2308259" y="44.7877983">无</tspan>
+                </text>
+                <text id="研" transform="translate(119.509330, 34.136497) rotate(2.000000) translate(-119.509330, -34.136497) " font-family="PingFangSC-Semibold, PingFang SC" font-size="35" font-weight="500" letter-spacing="2.1875" fill="#F8F8F8">
+                    <tspan x="100.843667" y="46.6364975">研</tspan>
+                </text>
+                <text id="究" transform="translate(161.666477, 32.023322) rotate(-4.000000) translate(-161.666477, -32.023322) " font-family="PingFangSC-Semibold, PingFang SC" font-size="39" font-weight="500" letter-spacing="2.4375" fill="#F8F8F8">
+                    <tspan x="143.000814" y="46.0233222">究</tspan>
+                </text>
+                <text id="所" transform="translate(207.154836, 31.832752) rotate(4.000000) translate(-207.154836, -31.832752) " font-family="PingFangSC-Semibold, PingFang SC" font-size="31" font-weight="500" letter-spacing="1.9375" fill="#F8F8F8">
+                    <tspan x="188.489174" y="42.8327523">所</tspan>
+                </text>
+                <text id="2" transform="translate(78.373269, 31.185511) rotate(-9.000000) translate(-78.373269, -31.185511) " font-family="SinhalaMN-Bold, Sinhala MN" font-size="38" font-weight="bold" letter-spacing="2.375" fill="#2E2E2E">
+                    <tspan x="67.3732691" y="42.6855106">2</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

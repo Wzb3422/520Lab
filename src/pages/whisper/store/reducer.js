@@ -1,13 +1,15 @@
 import {
   ON_INPUT_CHANGE,
   GET_ALTER_LIST,
-  SHOW_ALTER
+  SHOW_ALTER,
+  POST_QUES
 } from './constants'
 
 const defaultState = {
   message: '',
   alter: [],
-  index: 0
+  index: 0,
+  set_id: 0
 }
 
 export default (state = defaultState, action) => {
@@ -25,6 +27,9 @@ export default (state = defaultState, action) => {
       if (newState.index === 5) {
         newState.index = 0
       }
+      return newState
+    case POST_QUES:
+      newState.set_id = action.value
       return newState
     default:
       return newState

@@ -35,7 +35,7 @@ class Iinitiated extends Component {
                 <Similarity>相似度</Similarity>
                 <Rate>{item.score}%</Rate>
                 <Details onClick={() => this.props.onDetailClick(index)}>详细信息</Details>
-                {this.props.detailobj.empty ? '是' : 
+                {this.props.detailobj.empty ? null : 
                   <Redirect to="/detail/" />
                 }
               </Card>

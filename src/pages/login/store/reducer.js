@@ -5,7 +5,7 @@ import {
 } from './constants'
 
 const defaultState = {
-  token: 'eyJleHAiOjE1NTgyMzg1NTAsImlhdCI6MTU1ODE1MjE1MCwiYWxnIjoiSFM1MTIifQ.eyJpZCI6IjYxMDkxMTgxNzUifQ.lUKze6saNIy-JqP5Js9ErZ8M4cOFtPzEejVV9HV-TDtfLmUK2mUVIlSn-u857UVmROuEMH6gMGl5Dwu6sgrBpQ',
+  token: '',
   username: '6109118175',
   password: '3422w8516'
 }

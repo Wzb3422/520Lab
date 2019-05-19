@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="299px" height="61px" viewBox="0 0 299 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>input</title>
+    <desc>Created with Sketch.</desc>
+    <g id="main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="login" transform="translate(-39.000000, -170.000000)">
+            <g id="input" transform="translate(39.000000, 170.000000)">
+                <polygon id="Path-27" fill="#DEDEDE" points="41.7320429 22.4635083 39 58.4635329 280.921659 61 298.837631 18"></polygon>
+                <polygon id="Path-27" fill="#2E2E2E" points="35.7320429 15.4635083 33 51.4635329 274.921659 54 292.837631 11"></polygon>
+                <polygon id="Path-40" fill="#FF446B" points="-9.9475983e-14 1.0658141e-14 11.3379663 33 69.1521205 28.2299022 76.4825634 1.0658141e-14"></polygon>
+                <polygon id="Path-40" fill="#686868" points="8 5 18.8932388 37 74.4396544 32.3744506 81.4825634 5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,6 +10,7 @@ import {
 } from './style'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
+import { Redirect } from 'react-router-dom'
 
 class whisperpage extends Component {
 
@@ -32,8 +33,9 @@ class whisperpage extends Component {
           <WhiteBtn
             onClick={this.props.showAlter}
           >小家园替你写</WhiteBtn>
-          <RedBtn>塞入纸条</RedBtn>
+          <RedBtn onClick={() => this.props.postNewQues(this.props.new, this.props.message, this.props.token)}>塞入纸条</RedBtn>
         </Content>
+        {this.props.setid !== 0 ? <Redirect to="/share/" /> : null}
       </WhisperWarpper>
     );
   }
@@ -44,7 +46,9 @@ class whisperpage extends Component {
 const mapStateToProps = state => {
   return {
     message: state.whisper.message,
-    token: state.login.token
+    token: state.login.token,
+    new: state.new,
+    setid: state.whisper.set_id
   }
 }
 
@@ -58,6 +62,9 @@ const mapDispatchToProps = dispatch => {
     },
     showAlter() {
       dispatch(actionCreator.showAlterAction())
+    },
+    postNewQues(newData, message, token) {
+      dispatch(actionCreator.postNewQuesAsyncAction(newData, message, token))
     }
   }
 }

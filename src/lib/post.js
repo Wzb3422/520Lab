@@ -9,9 +9,7 @@ async function post(path, data, token) {
       method: 'post',
       url,
       data,
-      head: {
-        Authorization: `Bearer ${token}`
-      }
+      headers: {'Authorization': `Bearer ${token}`}
     })
     .then(res => resolve(res.data))
   })
