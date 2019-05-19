@@ -59,7 +59,7 @@ class Loginpage extends Component {
             onChange={this.props.onChangePassword}
           />
           </InputBox>
-          <Prompt></Prompt>
+          <Prompt>{this.props.message}</Prompt>
             <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
         </Content>
         {this.props.setid === 0 && this.props.token ? <Redirect to="/home/"/> : null}
@@ -74,7 +74,8 @@ const mapStateToProps = state => {
     username: state.login.username,
     password: state.login.password,
     token: state.login.token,
-    setid: state.login.setid
+    setid: state.login.setid,
+    message: state.login.message
   }
 }
 

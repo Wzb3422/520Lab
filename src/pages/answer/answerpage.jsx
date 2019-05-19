@@ -100,7 +100,7 @@ class answerpage extends Component {
     const Show = answerpage.showMiddleWare;
     return (
       <NewWrapper>
-        {this.props.questions.map(item => (
+        {false && this.props.questions.map(item => (
           <Container key={item.index}>
             <Box className={(num >= item.index) ?
               "animated fadeOutLeft fast" :

@@ -3,7 +3,10 @@ import {
   Card,
   BigRate,
   BigName,
-  JoinWarpper
+  JoinWarpper,
+  Tip,
+  EmptyBox,
+  TipText
 } from '../style'
 import 'animate.css'
 
@@ -14,6 +17,13 @@ class Ijoined extends Component {
         className={'animated fadeIn'}
         active={this.props.active}>
         {
+          this.props.IjoinedList.length === 0 ?
+          <Tip>
+            <EmptyBox/>
+            <TipText size={"large"}>档案是空的</TipText>
+            <TipText size={"small"}>快去发起新的研究叭 ੭ ᐕ)੭*⁾⁾</TipText>
+          </Tip>
+          :
           this.props.IjoinedList.map((item, index) => {
             return (
               <Card key={index}>
