@@ -7,7 +7,9 @@ import {
   Logo,
   Btnred,
   Btnblack,
-  Name
+  Name,
+  Boy,
+  Girl
 } from './style'
 import { connect } from 'react-redux'
 import {
@@ -15,12 +17,20 @@ import {
 } from 'react-router-dom'
 
 class Homepage extends Component {
+
+  static showMiddleWare(fn) {
+    return fn ? null : "none"
+  }
+
   render() {
+    const Show = Homepage.showMiddleWare
     return (
       <HomeWarpper>
         <Content>
           <Box>
             <Logo/>
+            <Boy style={{display: Show(this.props.sex === 1)}}/>
+            <Girl style={{display: Show(this.props.sex === 2)}}/>
             <Name>{this.props.name}</Name>
           </Box>
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
@@ -36,7 +46,8 @@ const mapStateToProps = state => {
   return {
     name: state.login.name,
     setid: state.login.setid,
-    token: state.login.token
+    token: state.login.token,
+    sex: state.login.sex
   }
 }
 
