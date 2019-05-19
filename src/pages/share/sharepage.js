@@ -14,11 +14,10 @@ class sharepage extends Component {
   render() {
     return (
       <ShareWrapper>
-      二维码出来了 给爷截图!
         <Box>
           <Img/>
           <Clipboard component={Button} data-clipboard-text={`https://520.ncuos.com/login?setid=${this.props.setid}`}>
-              点我复制网址到剪贴板分享
+              点我复制链接
           </Clipboard>
           <QRcodeBox>
             <QRCode value={`https://520.ncuos.com/login?setid=${this.props.setid}`} size={84} />

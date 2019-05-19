@@ -18,7 +18,7 @@ class whisperpage extends Component {
     this.props.getAlternativesList(this.props.token)
   }
   render() {
-    const tips = "在这里留言哦";
+    const tips = "戳这儿留下心里的声音，给彼此一段独一无二的记忆。";
     return (
       <WhisperWarpper>
         <Content>

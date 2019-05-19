@@ -50,9 +50,7 @@ export default (state = defaultState, action) => {
       return newState
     case DETAIL_CLICK:
       let answerstrArr = JSON.stringify(newState.IinitiatedList[action.value].answers).split('')
-      // console.log()
       let QuestionArr = Object.keys(newState.IinitiatedList[action.value].answers)
-      // console.log(QuestionArr)
       let reg = /(A|B|C|D)/
       let yoursTagArr = answerstrArr.filter(item => reg.test(item))
       let hisTags = JSON.stringify(newState.IinitiatedList[action.value].questions).split('')

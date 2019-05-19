@@ -24,6 +24,7 @@ export default (state = defaultState, action) => {
       if (newState.score > 90) {
         newState.index = 3
       }
+      console.log(`index = ${newState.index}`)
       return newState
     default:
       return newState

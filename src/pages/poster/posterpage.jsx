@@ -4,7 +4,8 @@ import {
   PosterWrapper,
   PosterImg,
   QRcodeBox,
-  NewBtn
+  NewBtn,
+  Qoute
 } from './style'
 import QRCode from 'qrcode.react'
 import {
@@ -22,6 +23,7 @@ class Posterpage extends Component {
           <Link to="/new/">
             <NewBtn>发起我的研究&nbsp;</NewBtn>
           </Link>
+          <Qoute>扫码成为研究员</Qoute>
         </PosterImg>
       </PosterWrapper>
     );

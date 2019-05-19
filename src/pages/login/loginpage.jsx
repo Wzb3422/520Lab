@@ -45,7 +45,7 @@ class Loginpage extends Component {
             <InputName>学号</InputName>
             <input
               type="number"
-              placeholder="请使用云家园的账号哦~"
+              placeholder="学号"
               value={this.props.username}
               onChange={this.props.onChangeUsername}
             />
