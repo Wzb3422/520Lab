@@ -24,7 +24,7 @@ export default (state = defaultState, action) => {
     case SHOW_ALTER:
       newState.message = newState.alter[newState.index]
       newState.index++
-      if (newState.index === 5) {
+      if (newState.index === 10) {
         newState.index = 0
       }
       return newState
