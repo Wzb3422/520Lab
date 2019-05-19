@@ -2,7 +2,8 @@ import {
   ON_CHANGE_USERNAME,
   ON_CHANGE_PASSWORD,
   SET_TOKEN,
-  SET_NAME
+  SET_NAME,
+  SET_ID
 } from './constants'
 import post from '../../../lib/post'
 
@@ -48,5 +49,10 @@ export const loginAsyncAction = (username, password) => {
 
 export const setTokenAction = (value) => ({
   type: SET_TOKEN,
+  value
+})
+
+export const setIdAction = value => ({
+  type: SET_ID,
   value
 })

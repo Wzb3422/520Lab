@@ -15,6 +15,20 @@ import { connect } from 'react-redux'
 import { actionCreator } from './store'
 
 class Loginpage extends Component {
+
+  componentDidMount() {
+    const qs = window.location.href.split('?')[1]
+    let qsItems = qs.split('&')
+    let qsObj = {}
+    qsItems.map(item => {
+      let key = item.split('=')[0]
+      let value = item.split('=')[1]
+      qsObj[key] = value
+    })
+    let { setid: id } = qsObj
+    this.props.updateSetid(id)
+  }
+
   render() {
     return (
       <LoginWrapper>
@@ -69,6 +83,9 @@ const mapDispatchToProps = dispatch => {
     },
     login(username, password) {
       dispatch(actionCreator.loginAsyncAction(username, password))
+    },
+    updateSetid(id) {
+      dispatch(actionCreator.setIdAction(id))
     }
   }
 }

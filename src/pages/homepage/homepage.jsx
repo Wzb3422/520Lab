@@ -12,6 +12,15 @@ import {
 import { connect } from 'react-redux'
 
 class Homepage extends Component {
+
+  componentDidMount() {
+    if (this.props.setid !== 0) {
+      console.log('有了!!!')
+    } else {
+      console.log('你没了')
+    }
+  }
+
   render() {
     return (
       <HomeWarpper>
@@ -31,7 +40,8 @@ class Homepage extends Component {
 
 const mapStateToProps = state => {
   return {
-    name: state.login.name
+    name: state.login.name,
+    setid: state.login.setid
   }
 }
 
