@@ -16,8 +16,6 @@ export const getQuestonTextAsyncAction = (token, obj) => {
       resolve(questionList)
     })
     .then(questionList =>{
-      console.log(obj)
-      console.log(questionList.data)
       const map = {A: 0, B: 1, C: 2, D: 3}
       let result = []
       obj.QuestionArr.map((item ,index) => {

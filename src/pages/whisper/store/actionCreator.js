@@ -46,7 +46,6 @@ export const postNewQuesAsyncAction = (newData, message, token) => {
   return dispatch => {
     const map = ['A', 'B', 'C', 'D']
     let questions = {}
-    console.log(newData)
     newData.map((item, index) => {
       questions[item.id.toString()] = map[item.yourOption]
       return null
@@ -55,13 +54,11 @@ export const postNewQuesAsyncAction = (newData, message, token) => {
       questions,
       messages: message
     }
-    console.log(data)
     new Promise(resolve => {
       let ret = post('/api/question/my', data, token)
       resolve(ret)
     })
     .then(ret => {
-      console.log(ret)
       dispatch(postNewQuesAction(ret.set_id))
     })
     .catch(err => {

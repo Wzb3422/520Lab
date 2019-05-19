@@ -12,7 +12,6 @@ export default (state = defaultState, action) => {
       );
       a.yourOption = action.optionIndex;                  //索引！
       newState.splice((5 - action.questionIndex), 1, a);
-      console.log(newState);
       return newState;
     case SET_QUESTIONS:
       newState = action.value;
