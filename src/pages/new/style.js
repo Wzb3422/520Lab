@@ -345,7 +345,7 @@ export const BackGround = styled.div`
 
 export const OptionContainer = styled.div`
   width: 300px;
-  height: 200px;
+  height: 300px;
   position: absolute;
   top: 180px;
   left: 8px;
@@ -363,7 +363,6 @@ export const Option = styled.div`
 `
 
 export const OptionsLayOut = styled.div`
-  overflow: hidden;
 `
 
 export const ActiveOptionFirst = styled.div`
