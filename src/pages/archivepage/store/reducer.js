@@ -3,7 +3,8 @@ import {
   TOGGLE_JOIN,
   GET_IJOINED,
   GET_IINIT,
-  DETAIL_CLICK
+  DETAIL_CLICK,
+  CLEAR_DETAILOBJ
 } from './constants'
 
 const defaultState = {
@@ -58,6 +59,11 @@ export default (state = defaultState, action) => {
         QuestionArr,
         yoursTagArr,
         hisTags
+      }
+      return newState
+    case CLEAR_DETAILOBJ:
+      newState.detailobj = {
+        empty: true
       }
       return newState
     default:

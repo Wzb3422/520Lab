@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 function RedirectToLogin(props) {
   return (
-    <Redirect to="/login" />
+    <div>去</div>
   )
 }
 

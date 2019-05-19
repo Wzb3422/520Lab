@@ -31,6 +31,10 @@ class Detail extends Component {
     this.props.getQuestionText(this.props.token, this.props.detailobj)
   }
 
+  componentWillUnmount() {
+    this.props.clearDetailobj()
+  }
+
   render() {
     return (
       <DetailWarpper>
@@ -86,6 +90,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getQuestionText(token, obj) {
       dispatch(actionCreator.getQuestonTextAsyncAction(token, obj))
+    },
+    clearDetailobj() {
+      dispatch(actionCreator.clearDetailobjAction())
     }
   }
 }

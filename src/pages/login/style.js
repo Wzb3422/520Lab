@@ -80,3 +80,20 @@ export const LoginBtn = styled.div`
   text-align: center;
   background: url(${whitebtn});
 `
+
+export const TotemBox = styled.div`
+  position: absolute;
+  bottom: 0px;
+  right: -20px;
+  height: 300px;
+  width: 500px;
+`
+
+export const Totem = styled.div`
+  height: 150px;
+  width: 200%;
+  background: url('https://ncustatic.ncuos.com/index/1558241808485.{752B9538-72B1-E041-0AB9-0B9C82F9A451}.png');
+  background-size: 170px;
+  position: relative;
+  right: ${props => props.right ? '50px' : '0'};
+`

@@ -1,7 +1,8 @@
 import {
   ON_CHANGE_USERNAME,
   ON_CHANGE_PASSWORD,
-  SET_TOKEN
+  SET_TOKEN,
+  SET_NAME
 } from './constants'
 import post from '../../../lib/post'
 
@@ -15,6 +16,10 @@ export const onPasswordChangeAction = (value) => ({
   value
 })
 
+export const setNameAction = value => ({
+  type: SET_NAME,
+  value
+})
 // const loginAction = (token) => {
 //   type: LOGIN
 // }
@@ -32,6 +37,7 @@ export const loginAsyncAction = (username, password) => {
     .then(ret => {
       console.log(ret)
       dispatch(setTokenAction(ret.token))
+      dispatch(setNameAction(ret.name))
     })
     .catch(err => {
       throw new Error(err)

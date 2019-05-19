@@ -1,5 +1,6 @@
 import {
-  GET_QUES_TEXT
+  GET_QUES_TEXT,
+  CLEAR_DETAILOBJ
 } from './constants'
 import get from '../../../lib/get'
 
@@ -43,3 +44,7 @@ export const getQuestonTextAsyncAction = (token, obj) => {
     })
   }
 }
+
+export const clearDetailobjAction = () => ({
+  type: CLEAR_DETAILOBJ
+})

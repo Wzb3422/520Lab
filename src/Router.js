@@ -8,7 +8,7 @@ import WhisperpageLoadable from './pages/whisper'
 import AnswerpageLoadable from './pages/answer'
 import LoginpageLoadable from './pages/login'
 import SharepageLoadable from './pages/share'
-import RedirectToLogin from './lib/redirectTologin'
+// import RedirectToLogin from './lib/redirectTologin'
 
 function Routers() {
   return (
@@ -21,6 +21,7 @@ function Routers() {
       <Route path="/answer/" component={AnswerpageLoadable} />
       <Route path="/login/" component={LoginpageLoadable} />
       <Route path="/share/" component={SharepageLoadable} />
+      {/* <Route path="/" component={RedirectToLogin} /> */}
     </Router>
   )
 }

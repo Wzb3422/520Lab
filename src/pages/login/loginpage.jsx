@@ -6,7 +6,9 @@ import {
   InputBox,
   InputName,
   Prompt,
-  LoginBtn
+  LoginBtn,
+  Totem,
+  TotemBox
 } from './style'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -16,6 +18,10 @@ class Loginpage extends Component {
   render() {
     return (
       <LoginWrapper>
+        <TotemBox>
+          <Totem />
+          <Totem right={true}/>
+        </TotemBox>
         <Content>
           <Title />
           <InputBox>
@@ -36,8 +42,8 @@ class Loginpage extends Component {
             onChange={this.props.onChangePassword}
           />
           </InputBox>
-          <Prompt>密码错误</Prompt>
-          <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
+          <Prompt></Prompt>
+            <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
         </Content>
         {this.props.token ? <Redirect to="/home/"/> : null}
       </LoginWrapper>

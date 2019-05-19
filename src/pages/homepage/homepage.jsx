@@ -9,8 +9,8 @@ import {
   Btnblack,
   Name
 } from './style'
+import { connect } from 'react-redux'
 
-const name = "2333333333"
 class Homepage extends Component {
   render() {
     return (
@@ -18,7 +18,7 @@ class Homepage extends Component {
         <Content>
           <Box>
             <Logo/>
-            <Name>{name}</Name>
+            <Name>{this.props.name}</Name>
           </Box>
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
           <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
@@ -29,4 +29,19 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage
+const mapStateToProps = state => {
+  return {
+    name: state.login.name
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Homepage)
