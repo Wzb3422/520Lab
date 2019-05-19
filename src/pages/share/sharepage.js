@@ -8,6 +8,7 @@ import {
 } from './style'
 import QRCode from 'qrcode.react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import Clipboard from 'react-clipboard.js';
 
 class sharepage extends Component {
@@ -35,6 +36,7 @@ class sharepage extends Component {
             <QRCode value={`https://520.ncuos.com/login?setid=${this.props.setid}`} size={84} />
           </QRcodeBox>
         </Box>
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}        
       </ShareWrapper>
     )
   }
@@ -42,7 +44,8 @@ class sharepage extends Component {
 
 const mapStateToProps = state => {
   return {
-    setid: state.whisper.set_id
+    setid: state.whisper.set_id,
+    token: state.login.token
   }
 }
 

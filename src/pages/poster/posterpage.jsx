@@ -9,7 +9,8 @@ import {
 } from './style'
 import QRCode from 'qrcode.react'
 import {
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom'
 
 class Posterpage extends Component {
@@ -25,6 +26,7 @@ class Posterpage extends Component {
           </Link>
           <Qoute>扫码成为研究员</Qoute>
         </PosterImg>
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </PosterWrapper>
     );
   }
@@ -33,7 +35,8 @@ class Posterpage extends Component {
 const mapStateToProps = state => {
   return {
     score: state.poster.score,
-    index: state.poster.index
+    index: state.poster.index,
+    token: state.login.token
   }
 }
 

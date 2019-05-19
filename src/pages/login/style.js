@@ -41,11 +41,16 @@ export const InputBox = styled.div`
   input {
     position: absolute;
     left: 100px;
-    bottom: 20px;
+    top: 25px;
     letter-spacing: .8px;
     background: none;
     color: #fff;
     width: 160px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
   }
 `
 

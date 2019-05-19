@@ -36,7 +36,6 @@ export const postAnswerAction = value => ({
 export const postAnswerAsyncAction = (answer, setid, token) => {
   return dispatch => {
     const map = ['A', 'B', 'C', 'D']
-    console.log(answer)
     let answerProp = {}
     answer.map((item, index) => {
       answerProp[item.id] = map[item.yourOption]
@@ -47,13 +46,11 @@ export const postAnswerAsyncAction = (answer, setid, token) => {
       answer: answerProp,
       message: ''
     }
-    console.log(answerProp)
     new Promise(resolve => {
       let ret = post('/api/answer/my', data, token)
       resolve(ret)
     })
     .then(ret => {
-      console.log(ret.data.score)
       dispatch(postAnswerAction(ret.data.score))
     })
     .catch(err => {

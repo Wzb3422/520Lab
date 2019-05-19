@@ -21,7 +21,7 @@ class Iinitiated extends Component {
         className={'animated fadeIn fast'}
         active={this.props.active}>
         {
-          Boolean(this.props.list) ?
+          this.props.list.length === 0 ?
             <Tip>
               <EmptyBox/>
               <TipText size={"large"}>档案是空的</TipText>
