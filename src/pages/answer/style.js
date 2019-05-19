@@ -13,7 +13,6 @@ import arrowleft from './img/arrow_l.svg'
 import no_arrowleft from './img/no_arrow_l.svg'
 import arrowright from './img/arrow_r.svg'
 import no_arrowright from './img/no_arrow_r.svg'
-import switchBtn from './img/switch.svg'
 import angel from './img/angel.png'
 import question from './img/question.png'
 import alert from './img/alert.svg'
@@ -274,26 +273,6 @@ export const NoArrowRight = styled(Arrow)`
   right: -4px;
   animation: ${move("right")} 1.1s ease infinite;
   background: url(${no_arrowright});
-`
-
-export const SwitchBtn = styled.div`
-  height: 64px;
-  width: 146px;
-  background: url(${switchBtn});
-  position: absolute;
-  left: 92px;
-  bottom: -26px;
-  pointer-events: auto;
-`
-
-export const SwitchText = styled.div`
-  height: 24px;
-  width: 100px;
-  font-size: 24px;
-  font-weight: bold;
-  position: absolute;
-  top: 15px;
-  left: 31px;
 `
 
 export const Alert = styled.div`
