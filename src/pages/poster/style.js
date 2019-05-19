@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import largeButton from './img/largeButton.svg'
 
 const urlArray = [
   'https://ncustatic.ncuos.com/index/1558261577665.poster1.jpg',
@@ -21,7 +22,7 @@ export const PosterWrapper = styled.div`
 `
 
 export const PosterImg = styled.div`
-  height: 564px;
+  height: 660px;
   width: 380px;
   background: url(${props => urlArray[props.index]}) no-repeat;
   background-size: 100%;
@@ -34,13 +35,25 @@ export const QRcodeBox = styled.div`
   right: 56px;
 `
 
-export const NewBtn = styled.div`
+export const NewBtn1 = styled.div`
   position: absolute;
-  top: 530px;
-  left: 120px;
-  height: 64px;
-  width: 146px;
-  background: url(${'https://ncustatic.ncuos.com/index/1558268869151.switch.svg'});
+  top: 544px;
+  height: 62px;
+  width: 302px;
+  left: 45px;
+  background: url(${largeButton});
+  line-height: 58px;
+  font-weight: bold;
+  text-align: center;
+`
+
+export const NewBtn2 = styled.div`
+  position: absolute;
+  top: 610px;
+  height: 62px;
+  width: 302px;
+  left: 45px;
+  background: url(${largeButton});
   line-height: 58px;
   font-weight: bold;
   text-align: center;
@@ -49,9 +62,11 @@ export const NewBtn = styled.div`
 export const Qoute = styled.div`
   position: absolute;
   top: 496px;
-  right: 49px;
-  font-size: 9px;
-  height：20px;
+  right: 50px;
+  font-size: 8px;
+  line-height: 11px;
+  height: 11px;
   width: 86px;
   color: #fff;
+  text-align: center;
 `

@@ -4,7 +4,8 @@ import {
   PosterWrapper,
   PosterImg,
   QRcodeBox,
-  NewBtn,
+  NewBtn1,
+  NewBtn2,
   Qoute
 } from './style'
 import QRCode from 'qrcode.react'
@@ -20,11 +21,11 @@ class Posterpage extends Component {
           <QRcodeBox>
             <QRCode value={`https://520.ncuos.com/login?setid=${this.props.setid}`} size={77} />
           </QRcodeBox>
-          <Link to="/home/">
-            <NewBtn>发起我的研究&nbsp;</NewBtn>
-          </Link>
-            <NewBtn>&nbsp;</NewBtn>
           <Qoute>扫码成为研究员</Qoute>
+          <Link to="/home/">
+            <NewBtn1>返回首页</NewBtn1>
+          </Link>
+            <NewBtn2>查看留言</NewBtn2>
         </PosterImg>
       </PosterWrapper>
     );
@@ -34,7 +35,8 @@ class Posterpage extends Component {
 const mapStateToProps = state => {
   return {
     score: state.poster.score,
-    index: state.poster.index
+    index: state.poster.index,
+    whisper: state.poster.whisper
   }
 }
 
