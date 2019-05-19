@@ -23,6 +23,7 @@ class Posterpage extends Component {
           <Link to="/new/">
             <NewBtn>发起我的研究&nbsp;</NewBtn>
           </Link>
+            <NewBtn>&nbsp;</NewBtn>
           <Qoute>扫码成为研究员</Qoute>
         </PosterImg>
       </PosterWrapper>
