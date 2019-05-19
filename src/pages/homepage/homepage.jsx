@@ -22,6 +22,7 @@ class Homepage extends Component {
           </Box>
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
           <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
+          <Link to="/answer/">Answer</Link>
         </Content>
       </HomeWarpper>
     );

@@ -8,11 +8,12 @@ import WhisperpageLoadable from './pages/whisper'
 import AnswerpageLoadable from './pages/answer'
 import LoginpageLoadable from './pages/login'
 import SharepageLoadable from './pages/share'
+import RedirectToLogin from './lib/redirectTologin'
 
 function Routers() {
   return (
     <Router>
-      <Route exact path="/" component={HomepageLoadable} />
+      <Route exact path="/home/" component={HomepageLoadable} />
       <Route path="/new/" component={NewpageLoadable} />
       <Route path="/archive/" component={ArchiveLoadable} />
       <Route path="/detail/" component={DetailLoadable} />

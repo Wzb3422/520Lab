@@ -39,7 +39,7 @@ class Loginpage extends Component {
           <Prompt>密码错误</Prompt>
           <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
         </Content>
-        {this.props.token ? <Redirect to="/"/> : null}
+        {this.props.token ? <Redirect to="/home/"/> : null}
       </LoginWrapper>
     );
   }
