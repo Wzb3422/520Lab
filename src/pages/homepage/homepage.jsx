@@ -12,6 +12,9 @@ import {
   Girl
 } from './style'
 import { connect } from 'react-redux'
+import {
+  Redirect
+} from 'react-router-dom'
 
 class Homepage extends Component {
 
@@ -33,6 +36,7 @@ class Homepage extends Component {
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
           <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
         </Content>
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </HomeWarpper>
     );
   }
@@ -42,6 +46,7 @@ const mapStateToProps = state => {
   return {
     name: state.login.name,
     setid: state.login.setid,
+    token: state.login.token,
     sex: state.login.sex
   }
 }

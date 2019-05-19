@@ -25,16 +25,17 @@ export const getQuestonTextAsyncAction = (token, obj) => {
         result.push({
           question,
           yours: {
-            choice: yourchoice,
-            content: questionList.data[item - 1].options[map[yourchoice]]
+            choice: hischoice, // hischoice
+            content: questionList.data[item - 1].options[map[hischoice]]
           },
           his: {
-            choice: hischoice,
-            content: questionList.data[item - 1].options[map[hischoice]]
+            choice: yourchoice,
+            content: questionList.data[item - 1].options[map[yourchoice]]
           }
         })
         return null
       })
+      console.log(result)
       dispatch(getQuestionTextAction(result))
     })
     .catch(err => {

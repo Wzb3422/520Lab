@@ -24,6 +24,9 @@ import {
 import {
   actionCreator
 } from './store'
+import {
+  Redirect
+} from 'react-router-dom'
 
 class Detail extends Component {
 
@@ -73,6 +76,7 @@ class Detail extends Component {
             </CardContainer>
           </Box>
         </Content>
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}        
       </DetailWarpper>
     );
   }

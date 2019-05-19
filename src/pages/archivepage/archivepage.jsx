@@ -15,7 +15,7 @@ import Iinitiated from './components/Iinitiated'
 import Ijoined from './components/Ijoined'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class Archive extends Component {
 
@@ -63,6 +63,7 @@ class Archive extends Component {
             </Link>
           </Box>
         </Content>
+        {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </ArchiveWarpper>
     );
   }

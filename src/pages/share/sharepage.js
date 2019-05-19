@@ -26,6 +26,7 @@ class sharepage extends Component {
     const {isCopy} = this.state;
     return (
       <ShareWrapper>
+      二维码出来了 给爷截图!
         <Box>
           <Img/>
           <Clipboard component={Button} onClick={()=>this.showAlert()} data-clipboard-text={"https://520.ncuos.com/login?setid="+this.props.setid}>

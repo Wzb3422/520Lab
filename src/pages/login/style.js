@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import title from './img/title.svg'
 import input from './img/input.svg'
 import whitebtn from './img/whitebtn.svg'
 
@@ -13,6 +12,7 @@ export const LoginWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   background: #fff;
   filter: drop-shadow(0 0 10px rgba(58,58,58,.27));
 `
@@ -28,7 +28,8 @@ export const Title = styled.div`
   height: 66px;
   width: 228px;
   margin-bottom: 10px;
-  background: url(${title});
+  background: url('https://ncustatic.ncuos.com/index/1558266589924.rsafcaasdsa.png') no-repeat;
+  background-size: 100%;
 `
 
 export const InputBox = styled.div`
@@ -44,7 +45,7 @@ export const InputBox = styled.div`
     letter-spacing: .8px;
     background: none;
     color: #fff;
-    width: 120px;
+    width: 160px;
   }
 `
 

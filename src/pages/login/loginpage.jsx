@@ -44,17 +44,17 @@ class Loginpage extends Component {
           <InputBox>
             <InputName>学号</InputName>
             <input
-            type="text"
-            placeholder="Username"
-            value={this.props.username}
-            onChange={this.props.onChangeUsername}
-          />
+              type="number"
+              placeholder="请使用云家园的账号哦~"
+              value={this.props.username}
+              onChange={this.props.onChangeUsername}
+            />
           </InputBox>
           <InputBox>
             <InputName>密码</InputName>
             <input
             type="password"
-            placeholder="来搞我"
+            placeholder="请输入云家园密码"
             value={this.props.password}
             onChange={this.props.onChangePassword}
           />

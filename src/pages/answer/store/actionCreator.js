@@ -53,6 +53,7 @@ export const postAnswerAsyncAction = (answer, setid, token) => {
       resolve(ret)
     })
     .then(ret => {
+      console.log(ret.data.score)
       dispatch(postAnswerAction(ret.data.score))
     })
     .catch(err => {

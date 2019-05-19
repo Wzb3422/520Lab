@@ -33,3 +33,15 @@ export const QRcodeBox = styled.div`
   bottom: 68px;
   right: 56px;
 `
+
+export const NewBtn = styled.div`
+  position: absolute;
+  bottom: -5px;
+  left: 126px;
+  height: 64px;
+  width: 146px;
+  background: url(${'https://ncustatic.ncuos.com/index/1558268869151.switch.svg'});
+  line-height: 58px;
+  font-weight: bold;
+  text-align: center;
+`
