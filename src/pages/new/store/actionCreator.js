@@ -47,4 +47,3 @@ export const getOneQuestionAction = (index, id, token) => {
       })
   }
 }
-

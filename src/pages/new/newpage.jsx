@@ -39,6 +39,7 @@ import {
 import "animate.css";
 import {connect} from 'react-redux'
 import {actionCreator} from './store'
+import { Redirect } from 'react-router-dom'
 
 const tag = ["A", "B", "C", "D"]
 
@@ -49,7 +50,9 @@ class newpage extends Component {
       num: 0,
       alertShow: false,
       selectTimes: 0,
+      updatedQues: false // 是否已经出好所有题
     }
+    this.updateQuestion = this.updateQuestion.bind(this)
   }
 
   componentDidMount() {
@@ -100,6 +103,12 @@ class newpage extends Component {
 
   static showMiddleWare(fn) {
     return fn ? null : "none"
+  }
+
+  updateQuestion() {
+    this.setState({
+      updatedQues: true
+    })
   }
 
   render() {
@@ -165,9 +174,10 @@ class newpage extends Component {
         <BackGround onClick={() => this.hideAlert()} style={{display: Show(alertShow)}}/>
         <Alert style={{display: Show(alertShow)}}>
           <AlertTitle>确认生成研究问卷</AlertTitle>
-          <Sure>确定</Sure>
+          <Sure onClick={this.updateQuestion}>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
+        {this.state.updatedQues ? <Redirect to="/whisper/" /> : null}
       </NewWrapper>
     );
   }
