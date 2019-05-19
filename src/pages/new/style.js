@@ -344,11 +344,12 @@ export const BackGround = styled.div`
 `
 
 export const OptionContainer = styled.div`
-  height: 300px;
+  width: 300px;
+  height: 200px;
   position: absolute;
   top: 180px;
   left: 8px;
-  width: 400px;
+  text-align: center;
   overflow: hidden;
 `
 
@@ -362,7 +363,6 @@ export const Option = styled.div`
 `
 
 export const OptionsLayOut = styled.div`
-  width: 300px;
   overflow: hidden;
 `
 
