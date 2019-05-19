@@ -31,7 +31,7 @@ export const getIjoinedAsyncAction = (token) => {
       let ret = get('/api/answer/my', token)
       resolve(ret)
     })
-    .then(ret =>{
+    .then(ret => {
       console.log(ret.data)
       dispatch(getIjoinedAction(ret.data))
     })
