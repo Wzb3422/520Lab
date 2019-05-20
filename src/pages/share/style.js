@@ -21,7 +21,7 @@ export const Box = styled.div`
 `
 
 export const Img = styled.img.attrs({
-  src: 'https://ncustatic.ncuos.com/index/1558281782956.AE4A8F1567EB96632CEE9F3F5AA8EB24.jpg'
+  src: 'https://ncustatic.ncuos.com/index/1558310199178.haibao.png'
 })`
   height: 100%;
   width: 100%;
@@ -31,7 +31,7 @@ export const QRcodeBox = styled.div.attrs({
   className: 'qrcode'
 })`
   position: absolute;
-  right: 12px;
+  right: 11px;
   bottom: 45px;
   background-color: white;
   height: 84px;

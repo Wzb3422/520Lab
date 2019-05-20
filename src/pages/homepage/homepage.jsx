@@ -9,7 +9,8 @@ import {
   Btnblack,
   Name,
   Boy,
-  Girl
+  Girl,
+  Tips
 } from './style'
 import { connect } from 'react-redux'
 import {
@@ -35,6 +36,7 @@ class Homepage extends Component {
           </Box>
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
           <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
+          <Tips>{this.props.everMessage}</Tips>
         </Content>
         {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </HomeWarpper>
@@ -47,7 +49,8 @@ const mapStateToProps = state => {
     name: state.login.name,
     setid: state.login.setid,
     token: state.login.token,
-    sex: state.login.sex
+    sex: state.login.sex,
+    everMessage: state.login.everMessage
   }
 }
 

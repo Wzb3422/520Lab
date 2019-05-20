@@ -72,8 +72,7 @@ export const checkEverAnswerAsyncAction = (token, setid) => {
       resolve(ret)
     })
     .then(ret => {
-      console.log(ret)
-      dispatch(checkEverAnswerAction(ret.status))
+      dispatch(checkEverAnswerAction(ret.message))
     })
     .catch(err => {
       throw new Error(err)

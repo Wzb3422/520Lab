@@ -38,7 +38,6 @@ export const loginAsyncAction = (username, password) => {
       resolve(ret)
     })
     .then(ret => {
-      console.log(ret)
       dispatch(setTokenAction(ret.token))
       dispatch(setNameAction(ret.name))
       dispatch(updateStatusMessage(ret.message))
@@ -49,7 +48,6 @@ export const loginAsyncAction = (username, password) => {
     })
   }
 }
-
 
 export const setTokenAction = (value) => ({
   type: SET_TOKEN,

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import outline from './img/outline.svg'
 import btnred from './img/btn-red.svg'
 import btnblack from './img/btn-black.svg'
@@ -93,4 +93,32 @@ export const Girl = styled.div`
   top: -13px;
   left: 63px;
   background: url("https://ncustatic.ncuos.com/index/1558268385034.G.svg");
+`
+
+const goOut = keyframes` 
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+`
+
+export const Tips = styled.div`
+  font-size: 12px;
+  margin-top: 26px;
+  background-color: #323232;
+  color: #ededed;
+  width: 170px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 26px;
+  animation: ${goOut} 3.3s ease;
+  opacity: 0;
 `

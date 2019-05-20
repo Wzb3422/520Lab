@@ -1,6 +1,6 @@
 import {ANSWER_SELECT_OPTION, ANSWER_SET_QUESTIONS} from './constants'
 
-const defaultState = [];
+const defaultState = []
 
 export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state))

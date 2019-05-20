@@ -53,7 +53,7 @@ class answerpage extends Component {
   }
 
   componentDidMount() {
-    this.props.getQuestionsList(this.props.token,this.props.setid)
+    this.props.getQuestionsList(this.props.token, this.props.setid)
     this.props.checkEverAnswer(this.props.token, this.props.setid)
   }
 
@@ -172,7 +172,7 @@ class answerpage extends Component {
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
         {this.state.updatedQues ? <Redirect to="/poster/" /> : null}
-        {this.props.everAnswer ? console.log('你没打过') : null}
+        {this.props.everMessage.length ? <Redirect to="/home/" /> : null}
         {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </NewWrapper>
     );
@@ -184,7 +184,7 @@ const mapStateToProps = state => {
     questions: state.answer,
     token: state.login.token,
     setid: state.login.setid,
-    everAnswer: state.login.everAnswer
+    everMessage: state.login.everMessage,
   };
 };
 

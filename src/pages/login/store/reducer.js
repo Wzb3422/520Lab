@@ -15,7 +15,7 @@ const defaultState = {
   password: '',
   setid: 0,
   message: '',
-  everAnswer: false
+  everMessage: false
 }
 
 
@@ -44,7 +44,7 @@ export default (state = defaultState, action) => {
       newState.sex = action.value
       return newState
     case CHECK_EVER_ANSWER:
-      newState.everAnswer = action.value
+      newState.everMessage = action.value
       return newState
     default:
       return newState
