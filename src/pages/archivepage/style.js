@@ -7,6 +7,26 @@ import outline from './img/outline.svg'
 import bottombtn from './img/bottom_button.svg'
 import emptybox from './img/empty_box.svg'
 import bigrate from './img/po3.svg'
+import B from  './img/Boy.png'
+import G from  './img/Girl.png'
+
+export const Boy = styled.div`
+  position: absolute;
+  left: 18px;
+  top: 4px;
+  width: 53px;
+  height: 52px;
+  background: url(${B});
+`
+
+export const Girl = styled.div`
+  position: absolute;
+  left: 18px;
+  top: 4px;
+  width: 53px;
+  height: 52px;
+  background-image: url(${G});
+`
 
 export const ArchiveWarpper = styled.div`
   position: absolute;

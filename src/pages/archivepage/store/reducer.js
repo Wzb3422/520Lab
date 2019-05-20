@@ -40,6 +40,7 @@ export default (state = defaultState, action) => {
             name: item.name,
             answers: item.answers,
             score: item.score,
+            sex: item.sex,
             questions
           })
           return null

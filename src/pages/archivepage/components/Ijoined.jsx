@@ -6,16 +6,23 @@ import {
   JoinWarpper,
   Tip,
   EmptyBox,
-  TipText
+  TipText,
+  Boy,
+  Girl
 } from '../style'
 import 'animate.css'
 
 class Ijoined extends Component {
+  static showMiddleWare(fn) {
+    return fn ? null : "none"
+  }
   render() {
+    const Show =  Ijoined.showMiddleWare;
     return (
       <JoinWarpper
         className={'animated fadeIn'}
         active={this.props.active}>
+        {console.log(this.props.IjoinedList)}
         {
           this.props.IjoinedList.length === 0 ?
           <Tip>
@@ -27,6 +34,8 @@ class Ijoined extends Component {
           this.props.IjoinedList.map((item, index) => {
             return (
               <Card key={index}>
+                <Boy style={{display: Show(item.set_sex === 1)}}/>
+                <Girl style={{display: Show(item.set_sex === 2)}}/>
                 <BigName>{item.set_man}</BigName>
                 <BigRate>{item.score}%</BigRate>
               </Card>
