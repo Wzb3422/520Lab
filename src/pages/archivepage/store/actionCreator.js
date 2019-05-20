@@ -32,8 +32,10 @@ export const getIjoinedAsyncAction = (token) => {
       resolve(ret)
     })
     .then(ret => {
-      console.log(ret.data)
-      dispatch(getIjoinedAction(ret.data))
+      // console.log(ret)
+      if (ret.status) {
+        dispatch(getIjoinedAction(ret.data))
+      }
     })
     .catch(err => {
       throw new Error(err)
