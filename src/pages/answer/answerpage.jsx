@@ -41,20 +41,26 @@ import { Redirect } from 'react-router-dom'
 
 const tag = ["A", "B", "C", "D"]
 
-class answerpage extends Component {
+class AnswerPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       num: 0,
       alertShow: false,
       selectTimes: 0,
-      updatedQues: false
+      updatedQues: false,
+      isOther: false,
     }
   }
 
   componentDidMount() {
     this.props.getQuestionsList(this.props.token, this.props.setid)
     this.props.checkEverAnswer(this.props.token, this.props.setid)
+    this.InWaiDi()
+  }
+
+  InWaiDi() {
+    this.props.everMessage === "other" && this.setState({isOther : true})
   }
 
   next() {
@@ -107,7 +113,7 @@ class answerpage extends Component {
 
   render() {
     const {num, alertShow} = this.state;
-    const Show = answerpage.showMiddleWare;
+    const Show = AnswerPage.showMiddleWare;
     return (
       <NewWrapper>
         {this.props.questions.map(item => (
@@ -172,7 +178,7 @@ class answerpage extends Component {
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
         {this.state.updatedQues ? <Redirect to="/poster/" /> : null}
-        {this.props.everMessage.length ? <Redirect to="/home/" /> : null}
+        {(this.props.everMessage === "不能回答自己出的题～" && this.state.isOther === false)? <Redirect to="/home/" /> : null}
         {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </NewWrapper>
     );
@@ -208,4 +214,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(answerpage);
+)(AnswerPage);

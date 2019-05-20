@@ -5,9 +5,11 @@ import {
   SET_NAME,
   SET_ID,
   UPDATE_MSG,
-  SET_SEX
+  SET_SEX,
+  GET_MY_SETIDS
 } from './constants'
 import post from '../../../lib/post'
+import get from '../../../lib/get'
 
 export const onUsernameChangeAction = (value) => ({
   type: ON_CHANGE_USERNAME,
@@ -68,3 +70,30 @@ export const updateStatusMessage = value => ({
   type: UPDATE_MSG,
   value
 })
+
+export const getMySetidsAction = value => ({
+  type: GET_MY_SETIDS,
+  value
+})
+
+export const getMySetidsAsyncAction = token => {
+  return dispatch => {
+    new Promise(resolve => {
+      let ret = get('/api/question/my', token)
+      resolve(ret)
+    })
+    .then(ret => {
+      let { data } = ret
+      let mySetids = []
+      data.map(item => {
+        mySetids.push(item.set_id)
+        return null
+      })
+      console.log(mySetids)
+      dispatch(getMySetidsAction(mySetids))
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+  }
+}

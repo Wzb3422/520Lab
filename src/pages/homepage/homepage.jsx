@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import {
   HomeWarpper,
   Content,
@@ -10,12 +10,13 @@ import {
   Name,
   Boy,
   Girl,
-  Tips
+  Tips,
+  GetToAnswer
 } from './style'
 import { connect } from 'react-redux'
 import {
-  Redirect
-} from 'react-router-dom'
+  actionCreator
+} from './store'
 
 class Homepage extends Component {
 
@@ -36,7 +37,16 @@ class Homepage extends Component {
           </Box>
           <Link to="/new/"><Btnred>发起研究</Btnred></Link>
           <Link to="/archive/"><Btnblack>研究档案</Btnblack></Link>
-          <Tips>{this.props.everMessage}</Tips>
+          {
+            this.props.everMessage === '你只能回答一次哦' && 
+            <Tips>{this.props.everMessage}</Tips>
+          }
+          {
+            this.props.everMessage === '不能回答自己出的题～' &&
+            <Link to="/answer/">
+              <GetToAnswer onClick={()=>this.props.clearEverMsg()}>自我探索&nbsp;</GetToAnswer>
+            </Link>
+          }
         </Content>
         {this.props.token === '' ? <Redirect to="/login/" /> : null}
       </HomeWarpper>
@@ -56,7 +66,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    clearEverMsg() { 
+      dispatch(actionCreator.clearEverMsgAction())
+    }
   }
 }
 
