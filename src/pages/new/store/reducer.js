@@ -1,17 +1,12 @@
-import {SELECT_OPTION,SET_QUESTIONS,CHANGE_QUESTION} from './constants'
+import {CHANGE_QUESTION, SELECT_OPTION, SET_QUESTIONS} from './constants'
 
 const defaultState = [];
 
 export default (state = defaultState, action) => {
-  let newState = JSON.parse(JSON.stringify(state))
+  let newState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case SELECT_OPTION:
-      let a;
-      a = newState.find(
-        item => (item.index === action.questionIndex)     //题号（非索引）
-      );
-      a.yourOption = action.optionIndex;                  //索引！
-      newState.splice((5 - action.questionIndex), 1, a);
+      newState.forEach(item => {item.index === action.questionIndex && (item.yourOption = action.optionIndex)});
       return newState;
     case SET_QUESTIONS:
       newState = action.value;
@@ -19,7 +14,7 @@ export default (state = defaultState, action) => {
     case CHANGE_QUESTION:
       action.data.index = action.questionIndex;
       action.data.id = Number(action.data.id);
-      newState[5 - action.questionIndex] = action.data ;
+      newState[5 - action.questionIndex] = action.data;
       return newState;
     default:
       return newState

@@ -39,9 +39,10 @@ import {
 import "animate.css";
 import {connect} from 'react-redux'
 import {actionCreator} from './store'
-import { Redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+import debounce from 'lodash/debounce'
 
-const tag = ["A", "B", "C", "D"]
+const tag = ["A", "B", "C", "D"];
 
 class newpage extends Component {
   constructor(props) {
@@ -50,9 +51,11 @@ class newpage extends Component {
       num: 0,
       alertShow: false,
       selectTimes: 0,
-      updatedQues: false // 是否已经出好所有题
-    }
-    this.updateQuestion = this.updateQuestion.bind(this)
+      updatedQues: false, // 是否已经出好所有题
+    };
+    this.updateQuestion = this.updateQuestion.bind(this);
+    this.next = debounce(this.next, 260);
+    this.showAlert = debounce(this.showAlert, 460);
   }
 
   componentDidMount() {
@@ -68,7 +71,7 @@ class newpage extends Component {
   }
 
   selectAnswer(value) {
-    this.props.selectOption(value)
+    this.props.selectOption(value);
     0 <= this.state.num && this.state.num <= 3 ?
       this.next() :
       this.showAlert()
@@ -118,7 +121,7 @@ class newpage extends Component {
       <NewWrapper>
         {this.props.questions.map(item => (
           <Container key={item.index}>
-            <Box className={(num >= item.index) ?
+            <Box className={num >= item.index ?
               "animated fadeOutLeft fast" :
               "animated fadeInLeft fast"
             }>
@@ -177,8 +180,8 @@ class newpage extends Component {
           <Sure onClick={this.updateQuestion}>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
-        {this.state.updatedQues ? <Redirect to="/whisper/" /> : null}
-        {this.props.token === '' ? <Redirect to="/login/" /> : null}
+        {this.state.updatedQues ? <Redirect to="/whisper/"/> : null}
+        {this.props.token === '' ? <Redirect to="/login/"/> : null}
       </NewWrapper>
     );
   }

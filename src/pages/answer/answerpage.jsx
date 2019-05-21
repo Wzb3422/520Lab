@@ -38,6 +38,7 @@ import "animate.css";
 import {connect} from 'react-redux'
 import {actionCreator} from './store'
 import { Redirect } from 'react-router-dom'
+import debounce from 'lodash/debounce'
 
 const tag = ["A", "B", "C", "D"]
 
@@ -49,7 +50,9 @@ class answerpage extends Component {
       alertShow: false,
       selectTimes: 0,
       updatedQues: false
-    }
+    };
+    this.next = debounce(this.next, 260);
+    this.showAlert = debounce(this.showAlert, 460);
   }
 
   componentDidMount() {
