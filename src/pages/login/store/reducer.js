@@ -6,7 +6,9 @@ import {
   SET_ID,
   UPDATE_MSG,
   SET_SEX,
-  CHECK_EVER_ANSWER
+  CHECK_EVER_ANSWER,
+  GET_MY_SETIDS,
+  CLEAT_EVERMSG
 } from './constants'
 
 const defaultState = {
@@ -15,7 +17,8 @@ const defaultState = {
   password: '',
   setid: 0,
   message: '',
-  everMessage: false
+  everMessage: false,
+  mySetIds: []
 }
 
 
@@ -45,6 +48,12 @@ export default (state = defaultState, action) => {
       return newState
     case CHECK_EVER_ANSWER:
       newState.everMessage = action.value
+      return newState
+    case GET_MY_SETIDS:
+      newState.mySetIds = action.value
+      return newState
+    case CLEAT_EVERMSG:
+      newState.everMessage = 'other'
       return newState
     default:
       return newState

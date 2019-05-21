@@ -122,3 +122,16 @@ export const Tips = styled.div`
   animation: ${goOut} 3.3s ease;
   opacity: 0;
 `
+
+export const GetToAnswer = styled.div`
+  height: 58px;
+  line-height: 58px;
+  width: 193px;
+  background: url(${btnblack});
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 6px;
+  color: #fff;
+  letter-spacing: 1px;
+`
