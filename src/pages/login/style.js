@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import input from './img/input.svg'
 import whitebtn from './img/whitebtn.svg'
+import angel from './img/angel_shadow.png'
 
 export const LoginWrapper = styled.div`
   position: absolute;
@@ -40,12 +41,13 @@ export const InputBox = styled.div`
   position: relative;
   input {
     position: absolute;
-    left: 100px;
-    top: 25px;
+    left: 94px;
+    top: 22px;
     letter-spacing: .8px;
     background: none;
     color: #fff;
     width: 160px;
+    font-size: 16px;
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -57,7 +59,7 @@ export const InputBox = styled.div`
 export const InputName = styled.div`
   position: absolute;
   top: 12px;
-  left: 22px;
+  left: 24px;
   height: 18px;
   width: 40px;
   text-align: center;
@@ -72,8 +74,10 @@ export const Prompt = styled.div`
   height: 40px;
   margin-top: 20px;
   line-height: 20px;
+  font-size: 15px;
   text-align: center;
-  color: red;
+  color: #ff3c79;
+  letter-spacing: 1.2px;
 `
 
 export const LoginBtn = styled.div`
@@ -89,17 +93,35 @@ export const LoginBtn = styled.div`
 
 export const TotemBox = styled.div`
   position: absolute;
-  bottom: 0px;
-  right: -20px;
-  height: 300px;
-  width: 500px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 `
 
 export const Totem = styled.div`
-  height: 150px;
-  width: 200%;
-  background: url('https://ncustatic.ncuos.com/index/1558241808485.{752B9538-72B1-E041-0AB9-0B9C82F9A451}.png');
-  background-size: 170px;
-  position: relative;
-  right: ${props => props.right ? '50px' : '0'};
+  height: 110px;
+  background: url(${angel}) repeat-x;
+  background-size: 120px;
+  background-position-x: ${props=>(props.position==="right" && "55px")}; 
+`
+
+export const Filter = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: 
+    linear-gradient(
+      rgba(255, 255, 255, 1) 30%,
+      rgba(255, 255, 255, 0) 100%
+    );
+`
+
+export const BottomText = styled.div`
+  position: absolute;
+  bottom: 18px;
+  font-size: 12px;
+  color: #858585;
+  letter-spacing: 1.6px;
 `

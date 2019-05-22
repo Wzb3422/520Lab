@@ -1,34 +1,38 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  LoginWrapper,
+  BottomText,
   Content,
-  Title,
+  Filter,
   InputBox,
   InputName,
-  Prompt,
   LoginBtn,
+  LoginWrapper,
+  Prompt,
+  Title,
   Totem,
   TotemBox
 } from './style'
-import { Redirect } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { actionCreator } from './store'
+import {Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {actionCreator} from './store'
 
-class Loginpage extends Component {
-
+class LoginPage extends Component {
   componentDidMount() {
-    const qs = window.location.href.split('?')[1]
+    this.requestIn()
+  }
+
+  requestIn() {
+    const qs = window.location.href.split('?')[1];
+    console.log(qs);
     if (qs) {
-      let qsItems = qs.split('&')
-      let qsObj = {}
-      qsItems.map(item => {
-        let key = item.split('=')[0]
-        let value = item.split('=')[1]
-        qsObj[key] = value
-        return null
-      })
-      let { setid: id } = qsObj
-      this.props.updateSetid(id)
+      let qsItems = qs.split('&');
+      let qsObj = {};
+      qsItems.forEach(item => {
+        let key = item.split('=')[0];
+        qsObj[key] = item.split('=')[1];
+      });
+      let {setid: id} = qsObj;
+      this.props.updateSetId(id)
     }
   }
 
@@ -36,16 +40,25 @@ class Loginpage extends Component {
     return (
       <LoginWrapper>
         <TotemBox>
-          <Totem />
-          <Totem right={true}/>
+          <Totem position={"right"}/>
+          <Totem/>
+          <Totem position={"right"}/>
+          <Totem/>
+          <Totem position={"right"}/>
+          <Totem/>
+          <Totem position={"right"}/>
+          <Totem/>
+          <Totem position={"right"}/>
+          <Totem/>
         </TotemBox>
+        <Filter/>
         <Content>
-          <Title />
+          <Title/>
           <InputBox>
             <InputName>学号</InputName>
             <input
               type="number"
-              placeholder="学号"
+              placeholder="请输入您的学号"
               value={this.props.username}
               onChange={this.props.onChangeUsername}
             />
@@ -53,17 +66,18 @@ class Loginpage extends Component {
           <InputBox>
             <InputName>密码</InputName>
             <input
-            type="password"
-            placeholder="请输入云家园密码"
-            value={this.props.password}
-            onChange={this.props.onChangePassword}
-          />
+              type="password"
+              placeholder="请输入云家园密码"
+              value={this.props.password}
+              onChange={this.props.onChangePassword}
+            />
           </InputBox>
           <Prompt>{this.props.message}</Prompt>
-            <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
+          <LoginBtn onClick={() => (this.props.login(this.props.username, this.props.password))}>进入研究所</LoginBtn>
         </Content>
-        {this.props.setid === 0 && this.props.token ? <Redirect to="/home/"/> : null}
-        {this.props.setid !== 0 && this.props.token ? <Redirect to="/answer/"/> : null}
+        <BottomText>南昌大学家园工作室巨献</BottomText>
+        {this.props.setid === 0 && this.props.token && <Redirect to="/home/"/>}
+        {this.props.setid !== 0 && this.props.token && <Redirect to="/answer/"/>}
       </LoginWrapper>
     );
   }
@@ -77,7 +91,7 @@ const mapStateToProps = state => {
     setid: state.login.setid,
     message: state.login.message
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -90,10 +104,10 @@ const mapDispatchToProps = dispatch => {
     login(username, password) {
       dispatch(actionCreator.loginAsyncAction(username, password))
     },
-    updateSetid(id) {
+    updateSetId(id) {
       dispatch(actionCreator.setIdAction(id))
     }
   }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Loginpage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

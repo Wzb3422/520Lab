@@ -59,3 +59,4 @@ export const Image = styled.div`
       rgba(255, 255, 255, 0) 100%
     );
 `
+
