@@ -37,33 +37,33 @@ import {
 import "animate.css";
 import {connect} from 'react-redux'
 import {actionCreator} from './store'
-import { Redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import debounce from 'lodash/debounce'
 
-const tag = ["A", "B", "C", "D"]
+const tag = ["A", "B", "C", "D"];
 
 class AnswerPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      num: 0,
+      num: 1,
       alertShow: false,
       selectTimes: 0,
       updatedQues: false,
       isOther: false,
     };
-    this.next = debounce(this.next, 260);
-    this.showAlert = debounce(this.showAlert, 460);
+    this.next = debounce(this.next, 515);
+    this.showAlert = debounce(this.showAlert, 515)
   }
 
   componentDidMount() {
-    this.props.getQuestionsList(this.props.token, this.props.setid)
-    this.props.checkEverAnswer(this.props.token, this.props.setid)
+    this.props.getQuestionsList(this.props.token, this.props.setid);
+    this.props.checkEverAnswer(this.props.token, this.props.setid);
     this.InWaiDi()
   }
 
   InWaiDi() {
-    this.props.everMessage === "other" && this.setState({isOther : true})
+    this.props.everMessage === "other" && this.setState({isOther: true})
   }
 
   next() {
@@ -74,9 +74,9 @@ class AnswerPage extends Component {
     this.setState({num: this.state.num - 1, selectTimes: this.state.selectTimes + 1})
   }
 
-  selectAnswer(value) {
-    this.props.selectOption(value)
-    0 <= this.state.num && this.state.num <= 3 ?
+  async selectAnswer(value) {
+    await this.props.selectOption(value);
+    1 <= this.state.num && this.state.num <= 4 ?
       this.next() :
       this.showAlert()
   }
@@ -95,18 +95,18 @@ class AnswerPage extends Component {
 
   isShowLeft() {
     let num = this.state.num;
-    return (1 <= num && num <= 4)
+    return (2 <= num && num <= 5)
   }
 
   isShowRight() {
     let num = this.state.num;
-    return (0 <= num && num <= 3)
+    return (1 <= num && num <= 4)
   }
 
   updateQuestion() {
     this.setState({
       updatedQues: true
-    })
+    });
     console.log(this.state.updatedQues)
   }
 
@@ -121,7 +121,7 @@ class AnswerPage extends Component {
       <NewWrapper>
         {this.props.questions.map(item => (
           <Container key={item.index}>
-            <Box className={(num >= item.index) ?
+            <Box className={(num > item.index) ?
               "animated fadeOutLeft fast" :
               "animated fadeInLeft fast"
             }>
@@ -144,12 +144,20 @@ class AnswerPage extends Component {
                   item.options.map((ele, index) => {
                       return (
                         <OptionsLayOut key={index}>
-                          <ActiveOptionFirst style={{display: Show(item.yourOption === 0)}}/>
-                          <ActiveOptionSecond style={{display: Show(item.yourOption === 1)}}/>
-                          <ActiveOptionThird style={{display: Show(item.yourOption === 2)}}/>
-                          <ActiveOptionForth style={{display: Show(item.yourOption === 3)}}/>
+                          <ActiveOptionFirst className={item.yourOption === 0 && "animated zoomInLeft faster"}
+                                             style={{display: Show(item.yourOption === 0)}}
+                          />
+                          <ActiveOptionSecond className={item.yourOption === 1 && "animated zoomInLeft faster"}
+                                              style={{display: Show(item.yourOption === 1)}}
+                          />
+                          <ActiveOptionThird className={item.yourOption === 2 && "animated zoomInLeft faster"}
+                                             style={{display: Show(item.yourOption === 2)}}
+                          />
+                          <ActiveOptionForth className={item.yourOption === 3 && "animated zoomInLeft faster"}
+                                             style={{display: Show(item.yourOption === 3)}}
+                          />
                           <Option
-                            onClick={() => this.selectAnswer({
+                            onClick={() => item.index === num && this.selectAnswer({
                               questionIndex: item.index,
                               optionIndex: index
                             })}>
@@ -165,24 +173,35 @@ class AnswerPage extends Component {
             </Box>
           </Container>
         ))}
-        <ArrowContainer style={{display: Show(this.isShowArrow())}}>
+        <ArrowContainer className={this.isShowArrow() && "animated fadeIn faster"}
+                        style={{display: Show(this.isShowArrow())}}
+        >
           <NoArrowLeft style={{display: Show(!this.isShowLeft())}}/>
           <NoArrowRight style={{display: Show(!this.isShowRight())}}/>
           <ArrowLeft onClick={() => this.back()} style={{display: Show(this.isShowLeft())}}/>
           <ArrowRight onClick={() => this.next()} style={{display: Show(this.isShowRight())}}/>
         </ArrowContainer>
-        <BackGround onClick={() => this.hideAlert()} style={{display: Show(alertShow)}}/>
-        <Alert style={{display: Show(alertShow)}}>
+        <BackGround className={alertShow && "animated fadeIn faster"}
+                    style={{display: Show(alertShow)}}
+                    onClick={() => this.hideAlert()}
+        />
+        <Alert className={alertShow && "animated zoomInDown fast"}
+               style={{display: Show(alertShow)}}
+        >
           <AlertTitle>确认提交研究问卷</AlertTitle>
           <Sure onClick={() => {
-            this.props.postAnswer(this.props.questions, this.props.setid, this.props.token)
+            this.props.postAnswer(this.props.questions, this.props.setid, this.props.token);
             this.updateQuestion()
           }}>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
         </Alert>
-        {this.state.updatedQues ? <Redirect to="/poster/" /> : null}
-        {(this.props.everMessage === "不能回答自己出的题～" && this.state.isOther === false)? <Redirect to="/home/" /> : null}
-        {this.props.token === '' ? <Redirect to="/login/" /> : null}
+        {this.state.updatedQues ? <Redirect to="/poster/"/> : null}
+        {
+          (this.props.everMessage === "不能回答自己出的题～" && this.state.isOther === false) ?
+          <Redirect to="/home/"/> :
+          null
+        }
+        {this.props.token === '' ? <Redirect to="/login/"/> : null}
       </NewWrapper>
     );
   }
@@ -202,8 +221,8 @@ const mapDispatchToProps = dispatch => {
     selectOption(value) {
       dispatch(actionCreator.AnswerselectOptionAction(value))
     },
-    getQuestionsList(token,id) {
-      dispatch(actionCreator.AnswerGetQuestionAction(token,id))
+    getQuestionsList(token, id) {
+      dispatch(actionCreator.AnswerGetQuestionAction(token, id))
     },
     postAnswer(answer, setid, token) {
       dispatch(actionCreator.postAnswerAsyncAction(answer, setid, token))

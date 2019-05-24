@@ -1,8 +1,9 @@
-const randomQuestions = function () {
-  let randoms = [];
+import randomInt from 'lodash/random.js'
+const randomQuestions = function (min, max) {
+  const randoms = [];
   while (true) {
     let isExists = false;
-    let random = parseInt(1 + 41 * (Math.random()));
+    let random = randomInt(min,max);
     for (let i = 0; i < randoms.length; i++) {
       if (random === randoms[i]) {
         isExists = true;
@@ -18,8 +19,8 @@ const randomQuestions = function () {
 };
 
 export const OriginDataFormat = function (arr) {
-  let List = new Set(randomQuestions(arr.length));
-  let result = arr.data.filter(
+  const List = new Set(randomQuestions(1, arr.data.length));
+  const result = arr.data.filter(
     item => (List.has(item.id))
   );
   return AddIndex(result)
@@ -29,4 +30,4 @@ export const AddIndex = function (result) {
   let startIndex = 1;
   result.map(item => (item.index = startIndex++));
   return result.reverse()
-}
+};

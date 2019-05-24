@@ -44,18 +44,19 @@ import debounce from 'lodash/debounce'
 
 const tag = ["A", "B", "C", "D"];
 
-class newpage extends Component {
+class NewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      num: 0,
+      num: 1,
       alertShow: false,
       selectTimes: 0,
-      updatedQues: false, // 是否已经出好所有题
+      updatedQues: false
     };
     this.updateQuestion = this.updateQuestion.bind(this);
-    this.next = debounce(this.next, 260);
-    this.showAlert = debounce(this.showAlert, 460);
+    this.next = debounce(this.next, 515);
+    this.showAlert = debounce(this.showAlert, 515);
+    this.changeYourQuestion = debounce(this.changeYourQuestion, 140)
   }
 
   componentDidMount() {
@@ -70,9 +71,9 @@ class newpage extends Component {
     this.setState({num: this.state.num - 1, selectTimes: this.state.selectTimes + 1})
   }
 
-  selectAnswer(value) {
-    this.props.selectOption(value);
-    0 <= this.state.num && this.state.num <= 3 ?
+  async selectAnswer(value) {
+    await this.props.selectOption(value);
+    1 <= this.state.num && this.state.num <= 4 ?
       this.next() :
       this.showAlert()
   }
@@ -91,12 +92,12 @@ class newpage extends Component {
 
   isShowLeft() {
     let num = this.state.num;
-    return (1 <= num && num <= 4)
+    return (2 <= num && num <= 5)
   }
 
   isShowRight() {
     let num = this.state.num;
-    return (0 <= num && num <= 3)
+    return (1 <= num && num <= 4)
   }
 
   changeYourQuestion(index) {
@@ -116,12 +117,12 @@ class newpage extends Component {
 
   render() {
     const {num, alertShow} = this.state;
-    const Show = newpage.showMiddleWare;
+    const Show = NewPage.showMiddleWare;
     return (
       <NewWrapper>
         {this.props.questions.map(item => (
           <Container key={item.index}>
-            <Box className={num >= item.index ?
+            <Box className={num > item.index ?
               "animated fadeOutLeft fast" :
               "animated fadeInLeft fast"
             }>
@@ -144,15 +145,24 @@ class newpage extends Component {
                   item.options.map((ele, index) => {
                       return (
                         <OptionsLayOut key={index}>
-                          <ActiveOptionFirst style={{display: Show(item.yourOption === 0)}}/>
-                          <ActiveOptionSecond style={{display: Show(item.yourOption === 1)}}/>
-                          <ActiveOptionThird style={{display: Show(item.yourOption === 2)}}/>
-                          <ActiveOptionForth style={{display: Show(item.yourOption === 3)}}/>
+                          <ActiveOptionFirst className={item.yourOption === 0 && "animated zoomInLeft faster"}
+                                             style={{display: Show(item.yourOption === 0)}}
+                          />
+                          <ActiveOptionSecond className={item.yourOption === 1 && "animated zoomInLeft faster"}
+                                              style={{display: Show(item.yourOption === 1)}}
+                          />
+                          <ActiveOptionThird className={item.yourOption === 2 && "animated zoomInLeft faster"}
+                                             style={{display: Show(item.yourOption === 2)}}
+                          />
+                          <ActiveOptionForth className={item.yourOption === 3 && "animated zoomInLeft faster"}
+                                             style={{display: Show(item.yourOption === 3)}}
+                          />
                           <Option
-                            onClick={() => this.selectAnswer({
+                            onClick={() => item.index === num && this.selectAnswer({
                               questionIndex: item.index,
                               optionIndex: index
-                            })}>
+                            })}
+                          >
                             <Label>{tag[index]}</Label>
                             <Text>{ele}</Text>
                           </Option>
@@ -168,14 +178,21 @@ class newpage extends Component {
             </Box>
           </Container>
         ))}
-        <ArrowContainer style={{display: Show(this.isShowArrow())}}>
+        <ArrowContainer className={this.isShowArrow() && "animated fadeIn faster"}
+                        style={{display: Show(this.isShowArrow())}}
+        >
           <NoArrowLeft style={{display: Show(!this.isShowLeft())}}/>
           <NoArrowRight style={{display: Show(!this.isShowRight())}}/>
           <ArrowLeft onClick={() => this.back()} style={{display: Show(this.isShowLeft())}}/>
           <ArrowRight onClick={() => this.next()} style={{display: Show(this.isShowRight())}}/>
         </ArrowContainer>
-        <BackGround onClick={() => this.hideAlert()} style={{display: Show(alertShow)}}/>
-        <Alert style={{display: Show(alertShow)}}>
+        <BackGround className={alertShow && "animated fadeIn faster"}
+                    style={{display: Show(alertShow)}}
+                    onClick={() => this.hideAlert()}
+        />
+        <Alert className={alertShow && "animated zoomInDown fast"}
+               style={{display: Show(alertShow)}}
+        >
           <AlertTitle>确认生成研究问卷</AlertTitle>
           <Sure onClick={this.updateQuestion}>确定</Sure>
           <Cancel onClick={() => this.hideAlert()}>取消</Cancel>
@@ -211,4 +228,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(newpage);
+)(NewPage);

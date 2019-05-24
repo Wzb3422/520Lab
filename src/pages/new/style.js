@@ -260,14 +260,14 @@ export const ArrowLeft = styled(Arrow)`
 export const NoArrowLeft = styled(Arrow)`
   animation: ${move("left")} 1.1s ease infinite;
   background: url(${no_arrowleft});
-  position:absolute
+  position: absolute;
 `
 
 export const ArrowRight = styled(Arrow)` 
   right: -4px;
   animation: ${move("right")} 1.1s ease infinite;
   background: url(${arrowright});
-  pointer-events: auto
+  pointer-events: auto;
 `
 
 export const NoArrowRight = styled(Arrow)`

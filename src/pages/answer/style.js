@@ -234,6 +234,7 @@ export const Text = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
 `
 
 export const ArrowContainer = styled.div`
@@ -259,14 +260,14 @@ export const ArrowLeft = styled(Arrow)`
 export const NoArrowLeft = styled(Arrow)`
   animation: ${move("left")} 1.1s ease infinite;
   background: url(${no_arrowleft});
-  position:absolute
+  position: absolute;
 `
 
 export const ArrowRight = styled(Arrow)` 
   right: -4px;
   animation: ${move("right")} 1.1s ease infinite;
   background: url(${arrowright});
-  pointer-events: auto
+  pointer-events: auto;
 `
 
 export const NoArrowRight = styled(Arrow)`
@@ -337,7 +338,7 @@ export const Option = styled.div`
   margin: 14px auto 0 auto;
   background: url(${option});
   position: relative;
-  pointer-events: auto
+  pointer-events: auto;
 `
 
 export const OptionsLayOut = styled.div`

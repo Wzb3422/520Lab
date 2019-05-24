@@ -6,7 +6,10 @@ export default (state = defaultState, action) => {
   let newState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case SELECT_OPTION:
-      newState.forEach(item => {item.index === action.questionIndex && (item.yourOption = action.optionIndex)});
+      newState.forEach(item => {
+        item.index === action.questionIndex && (item.yourOption = action.optionIndex)
+      });
+      console.log(newState);
       return newState;
     case SET_QUESTIONS:
       newState = action.value;
