@@ -107,7 +107,6 @@ class AnswerPage extends Component {
     this.setState({
       updatedQues: true
     });
-    console.log(this.state.updatedQues)
   }
 
   static showMiddleWare(fn) {

@@ -41,6 +41,7 @@ import {connect} from 'react-redux'
 import {actionCreator} from './store'
 import {Redirect} from 'react-router-dom'
 import debounce from 'lodash/debounce'
+import {randomId} from '../../lib/formatArray'
 
 const tag = ["A", "B", "C", "D"];
 
@@ -51,12 +52,13 @@ class NewPage extends Component {
       num: 1,
       alertShow: false,
       selectTimes: 0,
-      updatedQues: false
+      updatedQues: false,
+      isShake:false
     };
     this.updateQuestion = this.updateQuestion.bind(this);
     this.next = debounce(this.next, 515);
     this.showAlert = debounce(this.showAlert, 515);
-    this.changeYourQuestion = debounce(this.changeYourQuestion, 140)
+    this.getQuestion = debounce(this.getQuestion, 630);
   }
 
   componentDidMount() {
@@ -91,18 +93,24 @@ class NewPage extends Component {
   }
 
   isShowLeft() {
-    let num = this.state.num;
+    const num = this.state.num;
     return (2 <= num && num <= 5)
   }
 
   isShowRight() {
-    let num = this.state.num;
+    const num = this.state.num;
     return (1 <= num && num <= 4)
   }
 
   changeYourQuestion(index) {
-    let id = parseInt(Math.random() * 41 + 1);
-    this.props.getOneQuestion(index, id, this.props.token)
+    this.setState({isShake :true});
+    this.getQuestion(index);
+  }
+
+  getQuestion(index){
+    const id = randomId(this.props.questions);
+    this.props.getOneQuestion(index, id, this.props.token);
+    this.setState({isShake :false});
   }
 
   static showMiddleWare(fn) {
@@ -116,12 +124,12 @@ class NewPage extends Component {
   }
 
   render() {
-    const {num, alertShow} = this.state;
+    const {num, alertShow,isShake} = this.state;
     const Show = NewPage.showMiddleWare;
     return (
       <NewWrapper>
         {this.props.questions.map(item => (
-          <Container key={item.index}>
+          <Container key={item.index} className={isShake && "animated bounce fast"}>
             <Box className={num > item.index ?
               "animated fadeOutLeft fast" :
               "animated fadeInLeft fast"

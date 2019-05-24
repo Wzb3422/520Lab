@@ -22,7 +22,6 @@ class Ijoined extends Component {
       <JoinWarpper
         className={'animated fadeIn'}
         active={this.props.active}>
-        {console.log(this.props.IjoinedList)}
         {
           this.props.IjoinedList.length === 0 ?
           <Tip>

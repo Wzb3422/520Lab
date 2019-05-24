@@ -89,7 +89,6 @@ export const getMySetidsAsyncAction = token => {
         mySetids.push(item.set_id)
         return null
       })
-      console.log(mySetids)
       dispatch(getMySetidsAction(mySetids))
     })
     .catch(err => {

@@ -33,7 +33,7 @@ export default (state = defaultState, action) => {
       let originList = action.value
       let list = []
       originList.map((item, index) => {
-        let { set_id, questions } = item
+        let { set_id, questions } = item;
         item.all_answers.map(item => {
           list.push({
             set_id,
@@ -47,8 +47,8 @@ export default (state = defaultState, action) => {
         })
         return null
       })
-      newState.IinitiatedList = list
-      return newState
+      newState.IinitiatedList = list;
+      return newState;
     case DETAIL_CLICK:
       let answerstrArr = JSON.stringify(newState.IinitiatedList[action.value].answers).split('')
       let QuestionArr = Object.keys(newState.IinitiatedList[action.value].answers)

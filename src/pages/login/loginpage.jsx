@@ -23,7 +23,6 @@ class LoginPage extends Component {
 
   requestIn() {
     const qs = window.location.href.split('?')[1];
-    console.log(qs);
     if (qs) {
       let qsItems = qs.split('&');
       let qsObj = {};
@@ -33,6 +32,7 @@ class LoginPage extends Component {
       });
       let {setid: id} = qsObj;
       this.props.updateSetId(id)
+      // TODO:根据 setid 获取出题者姓名
     }
   }
 

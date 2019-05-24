@@ -9,7 +9,6 @@ export default (state = defaultState, action) => {
       newState.forEach(item => {
         item.index === action.questionIndex && (item.yourOption = action.optionIndex)
       });
-      console.log(newState);
       return newState;
     case SET_QUESTIONS:
       newState = action.value;
