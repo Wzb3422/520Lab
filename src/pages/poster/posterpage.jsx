@@ -12,6 +12,7 @@ import {
   BackGround,
   Cancel
 } from './style'
+import "animate.css"
 import QRCode from 'qrcode.react'
 import {
   Link,
@@ -36,7 +37,7 @@ class Posterpage extends Component {
       <PosterWrapper>
         <PosterImg index={this.props.index}>
           <QRcodeBox>
-            <QRCode value={`https://520.ncuos.com/login?setid=${this.props.setid}`} size={77} />
+            <QRCode value={`https://520.ncuos.com/`} size={77} />
           </QRcodeBox>
           <Qoute>扫码成为研究员</Qoute>
           <Link to="/home/">
@@ -45,8 +46,8 @@ class Posterpage extends Component {
             <NewBtn2 onClick={()=>this.setState({isShow:true})}>查看留言</NewBtn2>
         </PosterImg>
         {this.props.token === '' ? <Redirect to="/login/" /> : null}
-        <BackGround style={{display : Show(isShow)}}/>
-        <Alert style={{display : Show(isShow)}}>
+        <BackGround className={isShow && "animated fadeIn faster"} style={{display : Show(isShow)}}/>
+        <Alert className={isShow && "animated zoomInDown fast" } style={{display : Show(isShow)}}>
           <Text>{this.props.message}</Text>
           <Cancel onClick={()=>this.setState({isShow:false})}>关闭</Cancel>
         </Alert>

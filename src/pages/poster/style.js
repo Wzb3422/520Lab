@@ -62,14 +62,12 @@ export const NewBtn2 = styled.div`
 
 export const Qoute = styled.div`
   position: absolute;
-  top: 496px;
+  top: 495px;
   right: 50px;
-  font-size: 8px;
-  line-height: 11px;
-  height: 11px;
-  width: 86px;
-  color: #fff;
+  font-size: 12px;
+  width: 88px;
   text-align: center;
+  color: #fff;
 `
 
 export const Alert = styled.div`
@@ -89,6 +87,7 @@ export const Text = styled.div`
   font-size: 12px;
   color: #171717;
   font-weight: 600;
+  line-height: 15px;
   width: 228px;
   height: 81px;
   overflow: hidden;
