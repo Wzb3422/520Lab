@@ -234,7 +234,6 @@ export const Text = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-align: center;
 `
 
 export const ArrowContainer = styled.div`
@@ -324,11 +323,12 @@ export const BackGround = styled.div`
 `
 
 export const OptionContainer = styled.div`
+  width: 300px;
   height: 300px;
   position: absolute;
   top: 180px;
   left: 8px;
-  width: 400px;
+  text-align: center;
   overflow: hidden;
 `
 

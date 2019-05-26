@@ -53,7 +53,7 @@ class NewPage extends Component {
       alertShow: false,
       selectTimes: 0,
       updatedQues: false,
-      isShake:false
+      isShake: false
     };
     this.updateQuestion = this.updateQuestion.bind(this);
     this.next = debounce(this.next, 515);
